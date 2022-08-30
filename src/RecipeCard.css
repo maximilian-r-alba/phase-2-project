@@ -1,0 +1,39 @@
+/* //CSS from https://codepen.io/alexpopovich/pen/weMgMJ */
+
+.card{
+    position: relative;
+    background: #fff;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0px 0px 30px 2px #000;
+}
+
+.recipeDetails {
+	color: #212129;
+         text-align: left;
+         font-weight: normal;
+         text-transform: uppercase;
+         letter-spacing: 0.1em;
+         margin: 5px 30px;
+      }
+
+img {
+        max-width: 100%;
+    }
+
+    .info {
+        margin: 10px 30px;
+     }
+
+button{
+    display: block;
+      background: #EF3E36;
+      color: #fff;
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      text-align: center;
+      padding: 10px;
+      transition: 250ms;
+      width: 100%
+}
