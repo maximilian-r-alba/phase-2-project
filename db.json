@@ -1,0 +1,15 @@
+{
+  "cookbook": [
+    {
+      "id": 633876,
+      "title": "Baked Ziti",
+      "url": "https://spoonacular.com/recipeImages/633876-312x231.jpg",
+      "nutrition": {
+        "calories": "376k",
+        "carbs": "28g",
+        "fat": "18g",
+        "protein": "22g"
+      }
+    }
+  ]
+}

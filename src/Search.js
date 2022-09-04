@@ -1,4 +1,4 @@
-import React , {useState} from "react";
+import React , { useState } from "react";
 import RecipeList from "./RecipeList";
 
 function Search ({apiKey}){
@@ -11,20 +11,30 @@ function Search ({apiKey}){
         setSearchTerms(value)
     }
 
+
     function handleSubmit(e){
         e.preventDefault()
-        console.log(searchTerms, " submitted")
 
         fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${searchTerms}?`)
             .then((r) => r.json())
             .then((data) => {
-                setRecipes(data.results)
+                console.log('search ', data)
+                setRecipes((recipes) => {
+                    const updater = data.results.map((recipe) =>{
+                        const recipeObj = {}
+                        recipeObj['id'] = recipe.id
+                        recipeObj['title'] = recipe.title
+                        recipeObj['url'] = recipe.image
+                        
+                        return recipeObj
+                    })
+                    return updater
+                })
             })
         
             setSearchTerms("")
     }
-    
-    console.log(recipes)
+
 
     return (
         <>
@@ -41,7 +51,7 @@ function Search ({apiKey}){
             <input type = "submit" value = "Search"></input>
         </form>
 
-        <RecipeList recipes = {recipes} />
+        <RecipeList recipes = {recipes} setRecipes = {setRecipes} />
         </>
        
     )

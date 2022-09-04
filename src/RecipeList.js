@@ -1,11 +1,24 @@
 import React , {useState} from "react";
 import RecipeCard from "./RecipeCard";
 
-function RecipeList ({recipes}){
-    console.log('in recipelist ', recipes)
+function RecipeList ({recipes , setRecipes }){
+    console.log('in list ', recipes)
+    
+    function recipeFilter(id){
+       
+        setRecipes((recipes) => {
+            const list = recipes.filter((recipe) =>{
+                return recipe.id != id
+            })
+            return list
+        })
+    }
+
     const recipeArray = recipes.map((recipe) => {
-        return <RecipeCard id = {recipe.id} title = {recipe.title} image = {recipe.image} />
+        return <RecipeCard key = {recipe.id} addRecipe = {recipeFilter} id = {recipe.id} title = {recipe.title} url = {recipe.url} />
     })
+
+    console.log('recipelist array ', recipeArray)
     return(
         <>
         <h1>Found Recipes</h1>
