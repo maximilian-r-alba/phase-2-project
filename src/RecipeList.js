@@ -2,7 +2,6 @@ import React , {useState} from "react";
 import RecipeCard from "./RecipeCard";
 
 function RecipeList ({recipes , setRecipes }){
-    console.log('in list ', recipes)
     
     function recipeFilter(id){
        
@@ -18,7 +17,7 @@ function RecipeList ({recipes , setRecipes }){
         return <RecipeCard key = {recipe.id} addRecipe = {recipeFilter} id = {recipe.id} title = {recipe.title} url = {recipe.url} />
     })
 
-    console.log('recipelist array ', recipeArray)
+   
     return(
         <>
         <h1>Found Recipes</h1>

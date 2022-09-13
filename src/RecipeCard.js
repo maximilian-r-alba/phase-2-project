@@ -2,36 +2,71 @@ import React, { useState , useEffect } from "react";
 import './RecipeCard.css'
 //CSS from https://codepen.io/alexpopovich/pen/weMgMJ
 
-function RecipeCard({ id , title , url , addRecipe , macros}){
+function RecipeCard({ id , title , url , addRecipe , details , cookbook}){
 
     const apiKey = "c7d05118b4bd43739598790d73ed2abb"
     const [nutritionInfo, setNutritionInfo] = useState({calories: 'loading', protein: 'loading', fat: 'loading', carbs: 'loading'})
-    const recipeInfo = {id: id, title: title, url: url}
-
+    const [recipeInfo, setRecipeInfo] = useState({id: id, title: title, url: url})
+    const [ingredients, setIngredients] = useState([])
+    
+  
   useEffect(() => {
-    console.log('use effect')
-    if(macros === undefined){
-      console.log('fetch')
-      fetch(`https://api.spoonacular.com/recipes/${id}/nutritionWidget.json?apiKey=${apiKey}`)
+    
+
+    if(details === undefined){
+      console.log(details)
+      console.log('details undefined?, ', details)
+      fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=true`)
       .then((r) => r.json())
       .then((data) => {
-        console.log(data)
+        
         setNutritionInfo((nutritionInfo) => {
           
-          return {calories: data.calories, carbs: data.carbs, fat: data.fat, protein: data.protein}
+          const nutrition = data.nutrition.nutrients.map((nutrient) =>{
+
+            return [
+              nutrient.name , `${nutrient.amount} ${nutrient.unit}`
+            ]
+          })
+          
+          const nutrition2 = Object.fromEntries(nutrition)
+
+              return {...nutritionInfo , calories: nutrition2.Calories, carbs: nutrition2.Carbohydrates, fat: nutrition2.Fat, protein: nutrition2.Protein, servings: data.servings}
+
         })
-      })
+
+        setIngredients((ingredients) => {
+
+              const ingredientArray = Object.fromEntries(data.extendedIngredients.map((ingredient) =>
+            {
+                      return [
+                        ingredient.name , `${ingredient.amount} ${ingredient.unit}`
+                      ]
+
+                    }))
+
+                      return ingredientArray
+
+            })
+
+          setRecipeInfo((recipeInfo) =>{
+              return {...recipeInfo, nutrition: nutritionInfo , ingredients: ingredients, instructions: data.instructions , summary: data.summary}
+            })
+     })
     }
+    
     else{
-      setNutritionInfo(macros)
+   
+      setNutritionInfo(details)
     }
   }, [])
 
 
-function handleAddRecipe(){
   
-  recipeInfo['nutrition'] = {...nutritionInfo}
-  fetch('http://localhost:3001/cookbook', {
+function handleAddRecipe(){
+  console.log('post')
+  
+  fetch('http://localhost:3000/cookbook', {
   method: "POST",
   headers: {"Content-Type" : "application/json"},
   body: JSON.stringify({...recipeInfo})})
@@ -49,6 +84,7 @@ function handleAddRecipe(){
             <h1>{title}</h1>
             <img src = {url} alt = {title}></img>
             <div>
+              <p>Per Serving</p>
                <ul>
                     <li>
                     Calories:{nutritionInfo.calories}
@@ -65,7 +101,7 @@ function handleAddRecipe(){
                 </ul>
             </div>
             </div>
-            <button onClick={handleAddRecipe}>Add to Cookbook</button>
+            {!cookbook ? <button onClick={handleAddRecipe}>Add to Cookbook</button> : <button onClick={null}>View Recipe</button>}
 
         </div>
     )

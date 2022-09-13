@@ -18,7 +18,7 @@ function Search ({apiKey}){
         fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${searchTerms}?`)
             .then((r) => r.json())
             .then((data) => {
-                console.log('search ', data)
+                
                 setRecipes((recipes) => {
                     const updater = data.results.map((recipe) =>{
                         const recipeObj = {}

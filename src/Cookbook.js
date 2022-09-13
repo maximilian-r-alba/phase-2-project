@@ -6,33 +6,38 @@ function CookBook(){
     const [recipes, setRecipes] = useState()
     const [recipeArray, setRecipeArray] = useState()
 
-    console.log("cookbook load")
+    
     useEffect(() => {
-        fetch("http://localhost:3001/cookbook")
+        console.log('use effect 1')
+        fetch("http://localhost:3000/cookbook")
     .then((r) => r.json())
-    .then((data) => setRecipes(data))
+    .then((data) => {
+        console.log('set recipes')
+        setRecipes(data)
+    })
     },[])
 
     useEffect(() =>{
+        console.log('use effect 2 ', recipes)
         if(recipes != undefined){
-            console.log('recipe array')
+          console.log('recipes here')
             setRecipeArray((recipeArray) =>{
             const updater = recipes.map((recipe) => {
-                return <RecipeCard key = {recipe.id} id = {recipe.id} title = {recipe.title} url = {recipe.url} macros = {recipe.nutrition} />
+                return <RecipeCard key = {recipe.id} id = {recipe.id} title = {recipe.title} url = {recipe.url} details = {recipe.nutrition} cookbook = {true} />
             })
-            console.log(updater)
+            
             return [...updater]
         })
         }
         
     }, [recipes])
 
-    console.log('after load ', recipeArray)
+
     
     return <>
     <h1>Saved Meals</h1>
-    {recipeArray ? recipeArray
-     : <h1>No Recipes Added</h1>}
+    {!recipeArray ? <h1>No Recipes Added</h1> : recipeArray}
+    
     
     </>
 
