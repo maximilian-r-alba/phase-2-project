@@ -10,34 +10,36 @@ function RecipeCard({ id , title , url , addRecipe , details , cookbook}){
     const [ingredients, setIngredients] = useState([])
     
   
+  
   useEffect(() => {
     
 
     if(details === undefined){
-      console.log(details)
-      console.log('details undefined?, ', details)
+      console.log('fetch made')
+
       fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=true`)
       .then((r) => r.json())
       .then((data) => {
         
         setNutritionInfo((nutritionInfo) => {
           
-          const nutrition = data.nutrition.nutrients.map((nutrient) =>{
+          const nutritionArray = data.nutrition.nutrients.map((nutrient) =>{
 
             return [
               nutrient.name , `${nutrient.amount} ${nutrient.unit}`
             ]
           })
           
-          const nutrition2 = Object.fromEntries(nutrition)
-
-              return {...nutritionInfo , calories: nutrition2.Calories, carbs: nutrition2.Carbohydrates, fat: nutrition2.Fat, protein: nutrition2.Protein, servings: data.servings}
+          const nutritionObj = Object.fromEntries(nutritionArray)
+          
+              return {...nutritionInfo , calories: nutritionObj.Calories, carbs: nutritionObj.Carbohydrates, fat: nutritionObj.Fat, protein: nutritionObj.Protein, servings: data.servings}
 
         })
 
+
         setIngredients((ingredients) => {
 
-              const ingredientArray = Object.fromEntries(data.extendedIngredients.map((ingredient) =>
+              const ingredientObj = Object.fromEntries(data.extendedIngredients.map((ingredient) =>
             {
                       return [
                         ingredient.name , `${ingredient.amount} ${ingredient.unit}`
@@ -45,27 +47,35 @@ function RecipeCard({ id , title , url , addRecipe , details , cookbook}){
 
                     }))
 
-                      return ingredientArray
+                      return ingredientObj
 
             })
 
           setRecipeInfo((recipeInfo) =>{
-              return {...recipeInfo, nutrition: nutritionInfo , ingredients: ingredients, instructions: data.instructions , summary: data.summary}
+              return {...recipeInfo, instructions: data.instructions , summary: data.summary}
             })
      })
     }
     
     else{
-   
+      console.log('fetch not made, details used')
       setNutritionInfo(details)
     }
   }, [])
 
-
   
+  useEffect(() =>{
+    setRecipeInfo((recipeInfo) =>{
+      return {...recipeInfo, nutrition: nutritionInfo, ingredients: ingredients}
+    })
+  }, [nutritionInfo])
+
+
 function handleAddRecipe(){
   console.log('post')
   
+  
+
   fetch('http://localhost:3000/cookbook', {
   method: "POST",
   headers: {"Content-Type" : "application/json"},

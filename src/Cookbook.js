@@ -8,19 +8,18 @@ function CookBook(){
 
     
     useEffect(() => {
-        console.log('use effect 1')
-        fetch("http://localhost:3000/cookbook")
+        
+    fetch("http://localhost:3000/cookbook")
     .then((r) => r.json())
     .then((data) => {
-        console.log('set recipes')
         setRecipes(data)
     })
     },[])
 
     useEffect(() =>{
-        console.log('use effect 2 ', recipes)
+        
         if(recipes != undefined){
-          console.log('recipes here')
+         
             setRecipeArray((recipeArray) =>{
             const updater = recipes.map((recipe) => {
                 return <RecipeCard key = {recipe.id} id = {recipe.id} title = {recipe.title} url = {recipe.url} details = {recipe.nutrition} cookbook = {true} />
@@ -36,7 +35,7 @@ function CookBook(){
     
     return <>
     <h1>Saved Meals</h1>
-    {!recipeArray ? <h1>No Recipes Added</h1> : recipeArray}
+    {recipeArray ? recipeArray :  <h1>No Recipes Added</h1> }
     
     
     </>
