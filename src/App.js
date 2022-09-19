@@ -3,6 +3,7 @@ import {Routes , Route} from "react-router-dom"
 import Search from './Search';
 import NavBar from './NavBar';
 import CookBook from './Cookbook';
+import RecipePage from './RecipePage'
 
 function App() {
   
@@ -19,6 +20,8 @@ function App() {
       element = {<Search apiKey = {apiKey}/>}/>
       <Route path="/cookBook" 
       element = {<CookBook apiKey = {apiKey}/>}/>
+      <Route path = "/cookBook/:id"
+      element = {<RecipePage/>}/>
       {/* <Route path="/mealplan" 
       element = {<Search apiKey = {apiKey}/>}/> */}
         

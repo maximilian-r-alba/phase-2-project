@@ -86,6 +86,9 @@ function handleAddRecipe(){
   addRecipe(id)
 }
 
+function handleViewPage(e){
+  console.log(e.target.parentNode.id)
+}
 
     return(
         <div id = {id} className = "card" >
@@ -111,7 +114,7 @@ function handleAddRecipe(){
                 </ul>
             </div>
             </div>
-            {!cookbook ? <button onClick={handleAddRecipe}>Add to Cookbook</button> : <button onClick={null}>View Recipe</button>}
+            {!cookbook ? <button onClick={handleAddRecipe}>Add to Cookbook</button> : <button onClick={handleViewPage}>View Recipe</button>}
 
         </div>
     )
