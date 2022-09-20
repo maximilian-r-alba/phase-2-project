@@ -5,6 +5,7 @@ function Search ({apiKey}){
 
     const [searchTerms, setSearchTerms] = useState("")
     const [recipes, setRecipes] = useState([])
+    const [offset, setOffset] = useState(0)
 
     function handleChange(e){
         const value = e.target.value
@@ -15,7 +16,7 @@ function Search ({apiKey}){
     function handleSubmit(e){
         e.preventDefault()
 
-        fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${searchTerms}?`)
+        fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${searchTerms}?&offset=${offset}`)
             .then((r) => r.json())
             .then((data) => {
                 
@@ -34,7 +35,12 @@ function Search ({apiKey}){
         
             setSearchTerms("")
     }
+//Started working on offset handling for viewing more options on search
 
+    function handleOffset(e){
+        const button = e.target.textContent
+        
+    }
 
     return (
         <>
@@ -52,6 +58,8 @@ function Search ({apiKey}){
         </form>
 
         <RecipeList recipes = {recipes} setRecipes = {setRecipes} />
+        <button onClick = {handleOffset}>Back</button> 
+        <button onClick = {handleOffset}>Forward</button>
         </>
        
     )

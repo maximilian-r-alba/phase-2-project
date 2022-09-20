@@ -16,6 +16,7 @@ function App() {
     <>
     <NavBar onChangePage={setPage} />
     <Routes>
+      
       <Route path="/search" 
       element = {<Search apiKey = {apiKey}/>}/>
       <Route path="/cookBook" 

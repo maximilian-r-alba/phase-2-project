@@ -1,4 +1,5 @@
 import React, { useState , useEffect } from "react";
+import {Link} from "react-router-dom"
 import './RecipeCard.css'
 //CSS from https://codepen.io/alexpopovich/pen/weMgMJ
 
@@ -8,14 +9,17 @@ function RecipeCard({ id , title , url , addRecipe , details , cookbook}){
     const [nutritionInfo, setNutritionInfo] = useState({calories: 'loading', protein: 'loading', fat: 'loading', carbs: 'loading'})
     const [recipeInfo, setRecipeInfo] = useState({id: id, title: title, url: url})
     const [ingredients, setIngredients] = useState([])
-    
+    const [instructions, setInstructions] = useState([])  
   
   
   useEffect(() => {
     
 
     if(details === undefined){
-      console.log('fetch made')
+
+      fetch(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${apiKey}`)
+    .then((r) => r.json())
+    .then((data) => setInstructions(data))
 
       fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=true`)
       .then((r) => r.json())
@@ -52,43 +56,42 @@ function RecipeCard({ id , title , url , addRecipe , details , cookbook}){
             })
 
           setRecipeInfo((recipeInfo) =>{
-              return {...recipeInfo, instructions: data.instructions , summary: data.summary}
+              return {...recipeInfo, summary: data.summary}
             })
      })
     }
     
     else{
-      console.log('fetch not made, details used')
+      
       setNutritionInfo(details)
     }
   }, [])
 
   
   useEffect(() =>{
+    
+
     setRecipeInfo((recipeInfo) =>{
-      return {...recipeInfo, nutrition: nutritionInfo, ingredients: ingredients}
+      return {...recipeInfo, nutrition: nutritionInfo, ingredients: ingredients, instructions: instructions}
     })
   }, [nutritionInfo])
 
 
 function handleAddRecipe(){
-  console.log('post')
   
   
-
   fetch('http://localhost:3000/cookbook', {
-  method: "POST",
-  headers: {"Content-Type" : "application/json"},
-  body: JSON.stringify({...recipeInfo})})
-  .then((r) => r.json())
-  .then((data) => console.log(data))
+    method: "POST",
+    headers: {"Content-Type" : "application/json"},
+    body: JSON.stringify({...recipeInfo})})
+    .then((r) => r.json())
+    .then((data) => console.log(data))
+  
 
   addRecipe(id)
 }
 
-function handleViewPage(e){
-  console.log(e.target.parentNode.id)
-}
+
 
     return(
         <div id = {id} className = "card" >
@@ -114,7 +117,7 @@ function handleViewPage(e){
                 </ul>
             </div>
             </div>
-            {!cookbook ? <button onClick={handleAddRecipe}>Add to Cookbook</button> : <button onClick={handleViewPage}>View Recipe</button>}
+            {!cookbook ? <button onClick={handleAddRecipe}>Add to Cookbook</button> : <Link to = {`/cookbook/${id}`} style = {{textDecoration: 'none'}}> <button type = "button"> View Recipe</button> </Link>}
 
         </div>
     )
