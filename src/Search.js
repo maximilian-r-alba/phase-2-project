@@ -12,10 +12,17 @@ function Search ({apiKey}){
         setSearchTerms(value)
     }
 
+    useState(()=>{
+        if(offset != 0){
+            handleSubmit()
+        }
+        
+    }, [offset])
 
     function handleSubmit(e){
         e.preventDefault()
-        console.log('submit')
+        
+        console.log('submit', offset)
         fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${searchTerms}?&offset=${offset}`)
             .then((r) => r.json())
             .then((data) => {
@@ -33,7 +40,7 @@ function Search ({apiKey}){
                 })
             })
         
-            setSearchTerms("")
+       
     }
 //Started working on offset handling for viewing more options on search
 
@@ -48,7 +55,7 @@ function Search ({apiKey}){
         else if (button === "Back"){
             setOffset((offset-10))
         }
-       
+       console.log(offset)
         
     }
 

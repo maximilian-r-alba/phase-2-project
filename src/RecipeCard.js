@@ -1,6 +1,6 @@
 import React, { useState , useEffect } from "react";
 import {Link} from "react-router-dom"
-import './RecipeCard.css'
+
 //CSS from https://codepen.io/alexpopovich/pen/weMgMJ
 
 function RecipeCard({ id , title , url , addRecipe , details , cookbook}){

@@ -1,5 +1,6 @@
 import React , {useState} from "react";
 import RecipeCard from "./RecipeCard";
+import './RecipeCard.css'
 
 function RecipeList ({recipes , setRecipes }){
     
@@ -21,7 +22,9 @@ function RecipeList ({recipes , setRecipes }){
     return(
         <>
         <h1>Found Recipes</h1>
+        
         {recipeArray}
+        
         </>
       
     )

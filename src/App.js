@@ -4,6 +4,7 @@ import Search from './Search';
 import NavBar from './NavBar';
 import CookBook from './Cookbook';
 import RecipePage from './RecipePage'
+import MealPlan from './MealPlan';
 
 function App() {
   
@@ -63,8 +64,8 @@ function App() {
       element = {<CookBook apiKey = {apiKey}/>}/>
       <Route path = "/cookBook/:id"
       element = {<RecipePage/>}/>
-      {/* <Route path="/mealplan" 
-      element = {<Search apiKey = {apiKey}/>}/> */}
+      <Route path="/mealplan" 
+      element = {<MealPlan apiKey = {apiKey}/>}/>
         
     </Routes>
     
