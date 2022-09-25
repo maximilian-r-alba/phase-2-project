@@ -23,7 +23,8 @@ function App() {
       })
     
   }
-  console.log(macros)
+  
+
   return (
     <>
     <NavBar onChangePage={setPage} />
@@ -65,7 +66,7 @@ function App() {
       <Route path = "/cookBook/:id"
       element = {<RecipePage/>}/>
       <Route path="/mealplan" 
-      element = {<MealPlan apiKey = {apiKey}/>}/>
+      element = {<MealPlan apiKey = {apiKey} macros = {macros}/>}/>
         
     </Routes>
     

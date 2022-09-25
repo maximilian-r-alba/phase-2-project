@@ -1,7 +1,7 @@
 import React , { useEffect , useState }from "react";
 import './MealPlan.css'
 
-function MealPlan(){
+function MealPlan({macros}){
     const [recipes,setRecipes] = useState()
     const [options,setOptions] = useState()
 
@@ -11,14 +11,14 @@ function MealPlan(){
         .then((data) => {
             setRecipes(data)
         })
-    },[])
-console.log(recipes)
+    }, [])
+
     
     useEffect(()=>{
         if(recipes != undefined){
             setOptions((options) => {
                 const updater = recipes.map((recipe) => {
-                    return <option value = {recipe.title}>{recipe.title}</option>
+                    return <option key = {recipes.indexOf(recipe)} value = {recipe.title}>{recipe.title}</option>
                 })
                 return updater
             })
@@ -26,10 +26,43 @@ console.log(recipes)
         
     }, [recipes])
 
+    function handleClick(e){
+        e.preventDefault()
+
+        console.log(e.target)
+    }
+
+
+const test = recipes.map((recipe) =>{
+    return (
+    <tr className = 'meal'>
+        <th>{recipe.title}</th>
+        <th>{recipe.nutrition.calories}</th>
+        <th>{recipe.nutrition.calories}</th>
+        <th>{recipe.nutrition.calories}</th>
+        <th>{recipe.nutrition.calories}</th>
+    </tr>
+    )
+})
+console.log(recipes)
+console.log(test)
     return (
 <div className = "mealplan">
-    <select>{options}</select>
-    <button>Add meal</button>
+    
+    <form onSubmit = {handleClick}>
+        <input type = 'checkbox' id = 'monday' value = 'monday'></input>
+        <label for = 'monday'>Monday</label><br></br>
+        <input type = 'checkbox' id = 'tuesday' value = 'tuesday'></input>
+        <label for = 'tuesday'>Tuesday</label>
+        <select>
+            <option value = "breakfast">Breakfast</option>
+            <option value = "lunch">Lunch</option>
+            <option value = "dinner">Dinner</option>
+        </select>
+        <select>{options}</select>
+        <input type = 'submit' value = "Add Meal"></input>
+    </form>
+    
     <table id="monday">
     <tbody>
         <tr>
@@ -46,8 +79,10 @@ console.log(recipes)
             <td>Breakfast</td>
         </tr>
     </tbody>
-    
+
     <tbody name = 'breakfastMeals'>
+        {test}
+        
         <tr className = 'meal'>
             <th>Pasta</th>
             <th>123</th>
@@ -115,7 +150,7 @@ console.log(recipes)
     <tbody name = 'totals'>
         <tr>
             <th></th>
-            <th>123</th>
+            <th>{macros.calories}</th>
             <th>456</th>
             <th>123</th>
             <th>456</th>
@@ -127,7 +162,7 @@ console.log(recipes)
     
 
 
-    <table id= "tuesday">
+    {/* <table id= "tuesday">
     <tbody>
         <tr>
             <th>Tuesday </th>
@@ -216,7 +251,7 @@ console.log(recipes)
 
     </tbody>
 
-    </table>
+    </table> */}
 </div>
 )
 }
