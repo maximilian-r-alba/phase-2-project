@@ -1,4 +1,5 @@
 import React , { useEffect , useState }from "react";
+import MealTable from "./MealTable";
 import './MealPlan.css'
 
 function MealPlan({macros}){
@@ -14,9 +15,9 @@ function MealPlan({macros}){
         sunday:{breakfast:[] , lunch: [] , dinner: []} 
     })
 
-    const [mondayMeals, setMondayMeals] = useState([])
-    const [formValues, setFormValues] = useState({day: 'monday',meal: 'breakfast', recipe: null , servingSize: '1'})
-    const [total, setTotal] = useState({carbs:0, protein: 0 , fat: 0, calories: 0})
+    const [formValues, setFormValues] = useState({day: null,meal: 'breakfast', recipe: null , servingSize: '1'})
+  
+
 
     useEffect(() => {
         fetch("http://localhost:3000/cookbook")
@@ -53,17 +54,21 @@ function MealPlan({macros}){
         // console.log(recipe)
     
         const day = formValues.day
+        if (day === null){
+            return;
+        }
+
         const meal = formValues.meal
 
         const updater = selectedRecipe.map((recipe) =>{
             const multiplier = parseFloat(formValues.servingSize)
             
-            setTotal((total) => {
-                return {carbs: parseFloat(total.carbs) + (multiplier*parseFloat(recipe.nutrition.carbs)) , 
-                    protein: parseFloat(total.protein) + (multiplier*parseFloat(recipe.nutrition.protein)) , 
-                    fat: parseFloat(total.fat) + (multiplier*parseFloat(recipe.nutrition.fat)), 
-                    calories: parseFloat(total.calories) + (multiplier*parseFloat(recipe.nutrition.calories))}
-            })
+            // setTotal((total) => {
+            //     return {carbs: parseFloat(total.carbs) + (multiplier*parseFloat(recipe.nutrition.carbs)) , 
+            //         protein: parseFloat(total.protein) + (multiplier*parseFloat(recipe.nutrition.protein)) , 
+            //         fat: parseFloat(total.fat) + (multiplier*parseFloat(recipe.nutrition.fat)), 
+            //         calories: parseFloat(total.calories) + (multiplier*parseFloat(recipe.nutrition.calories))}
+            // })
 
             return (
             <tr className = 'meal'>
@@ -80,27 +85,7 @@ function MealPlan({macros}){
         setMealPlan((mealPlan) => {
             return {...mealPlan, [day]: {...mealPlan[day], [meal]:[...mealPlan[day][meal], updater]}}
         })
-        
-
-        // switch(day){
-        //     case 'monday' :
-        //         console.log('case monday ')
-        //         setMondayMeals((mondayMeals) => {
-        //             return [...mondayMeals, updater]
-        //         })
-        
-        //     break;
-
-        //     case 'tuesday' :
-        //         console.log('its tuesday')
-        //         break;
-
-        //     default:
-        //         break;
-        // }
-        
-        
-            
+        //  mealPlan add servingsize dicitonary key and value
         e.target.reset()
     }
 
@@ -113,16 +98,13 @@ function MealPlan({macros}){
 
     }
 
+    console.log(formValues)
 
-
-console.log(formValues)
-// console.log('monday meals ' , mondayMeals)
-
-    return (
+return (
 <div className = "mealplan">
     
     <form onSubmit = {addMeal}>
-        <input onChange={handleChange} id = 'monday' className='day' type = 'radio' name = 'weekday' value = 'monday' checked = {true}></input>
+        <input onChange={handleChange} id = 'monday' className='day' type = 'radio' name = 'weekday' value = 'monday'></input>
         <label for = 'monday'>Monday</label><br></br>
         <input onChange={handleChange} id = 'tuesday' className= 'day' type = 'radio' name = 'weekday' value = 'tuesday'></input>
         <label for = 'tuesday'>Tuesday</label>
@@ -138,165 +120,8 @@ console.log(formValues)
         <input type = 'submit' value = "Add Meal"></input>
     </form>
     
-    <table id="mondayTable">
-    <tbody>
-        <tr>
-            <th>Monday </th>
-            <th>Carbs</th>
-            <th>Protein </th>
-            <th>Fat</th>
-            <th>Calories</th>
-            <th>Servings</th>
-        </tr>
-    </tbody>
-       
-    <tbody name = 'breakfast'>
-        <tr>
-            <td>Breakfast</td>
-        </tr>
-    </tbody>
+    <MealTable mealPlan = {mealPlan}/>
 
-    <tbody name = 'breakfastMeals'>
-        
-           {mealPlan.monday.breakfast ? mealPlan.monday.breakfast : null}
-
-    </tbody>
-
-    <tbody name = 'lunch'>
-        <tr>
-            <td>Lunch</td>
-        </tr>
-    </tbody>
-    <tbody name = 'lunchMeals'>
-
-        {mealPlan.monday.lunch ? mealPlan.monday.lunch : null}
-
-    </tbody>
-
-    <tbody name = 'dinner'>
-        <tr>
-            <td>Dinner</td>
-        </tr>
-    </tbody>
-    <tbody name = 'dinnerMeals'>
-      
-    {mealPlan.monday.dinner ? mealPlan.monday.dinner : null}
-
-    </tbody>
-
-   
-    <tbody>
-        <tr name ='totals'>
-            <th>Daily Total</th>
-        </tr>
-    </tbody>
-    
-
-    <tbody name = 'totals'>
-        <tr>
-            <th></th>
-            <th>{total.carbs.toFixed(2)}</th>
-            <th>{total.protein.toFixed(2)}</th>
-            <th>{total.fat.toFixed(2)}</th>
-            <th>{total.calories.toFixed(2)}</th>
-        </tr>
-
-    </tbody>
-
-    </table>
-    
-
-
-    {/* <table id= "tuesday">
-    <tbody>
-        <tr>
-            <th>Tuesday </th>
-            <th>Carbs</th>
-            <th>Protein </th>
-            <th>Fat</th>
-            <th>Calories</th>
-        </tr>
-    </tbody>
-    <tbody name = 'breakfast'>
-        <tr>
-            <td>Breakfast</td>
-        </tr>
-    </tbody>
-    <tbody name = 'breakfastMeals'>
-        <tr className = 'meal'>
-            <th>Pasta</th>
-            <th>123</th>
-            <th>456</th>
-            <th>123</th>
-            <th>456</th>
-        </tr>
-        <tr className = 'meal'>
-            <th>Pasta</th>
-            <th>123</th>
-            <th>456</th>
-        </tr>
-    </tbody>
-
-    <tbody name = 'lunch'>
-        <tr>
-            <td>Lunch</td>
-        </tr>
-    </tbody>
-    <tbody name = 'lunchMeals'>
-        <tr className = 'meal' >
-            <th>Pasta</th>
-            <th>123</th>
-            <th>456</th>
-            <th>123</th>
-            <th>456</th>
-        </tr>
-        <tr className = 'meal'>
-            <th>Pasta</th>
-            <th>123</th>
-            <th>456</th>
-        </tr>
-    </tbody>
-
-    <tbody name = 'dinner'>
-        <tr>
-            <td>Dinner</td>
-        </tr>
-    </tbody>
-    <tbody name = 'dinnerMeals'>
-        <tr className = 'meal'>
-            <th>Pasta</th>
-            <th>123</th>
-            <th>456</th>
-            <th>123</th>
-            <th>456</th>
-        </tr>
-        <tr className = 'meal'>
-            <th>Pasta</th>
-            <th>123</th>
-            <th>456</th>
-        </tr>
-    </tbody>
-
-  
-    
-    <tbody>
-        <tr name ='totals'>
-            <th>Daily Total</th>
-        </tr>
-    </tbody>
-
-    <tbody name = 'totals'>
-        <tr>
-            <th></th>
-            <th>123</th>
-            <th>456</th>
-            <th>123</th>
-            <th>456</th>
-        </tr>
-
-    </tbody>
-
-    </table> */}
 </div>
 )
 }
