@@ -8,6 +8,8 @@ function MealTable({mealPlan}) {
     console.log(total)
     
     const table = days.map((day) => {
+
+
         return <table key = {`${day}Table`} id = {`${day}Table`}>
             <tbody>
         <tr>

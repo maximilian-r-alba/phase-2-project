@@ -1,5 +1,6 @@
 import React, { useEffect , useState } from 'react';
 import { useParams } from "react-router-dom";
+import './RecipePage.css'
 
 function RecipePage(){
     const [recipe, setRecipe] = useState(null)
@@ -49,18 +50,20 @@ function RecipePage(){
 
 console.log(recipe)
 
-    return <>
+    return <div className = 'recipepage'>
         {recipe?
         <>
-        <h1>{recipe.title}</h1>
-        <img src={recipe.url}></img>
+        <h1 style = {{textAlign: 'center' , fontSize: '40px'}}>{recipe.title}</h1>
+
+        <img style = {{display: 'block', marginLeft: 'auto' , marginRight: 'auto' , left: '50%' , width: '400px' , border: '10px solid #993300' , padding: '0px'}} src={recipe.url}></img>
+
         </>
         : <p>Loading</p>}
         {nutrition? 
         <>
-            <p>Total Servings: {recipe.nutrition.servings}</p>
-            <p>Macros per Serving:</p>
-            <ul>
+            <p style= {{display: 'inline-block' , position: 'absolute' , left: '500px'}}>Total Servings: {recipe.nutrition.servings}</p>
+            <p style = {{position: 'absolute' , right: '500px' ,textAlign: 'center' , fontWeight: 'bold' , display: 'inline-block'}}>Macros per Serving:</p>
+            <ul style = {{ position: 'absolute' , top: '590px' , right: '500px' ,textAlign: 'center' , listStyle: 'none', display: 'inline-block'}}>
                     <li>
                     Calories: {recipe.nutrition.calories}
                     </li>
@@ -76,16 +79,18 @@ console.log(recipe)
                 </ul> 
         </>       
                 : <p>No information available</p>}
-
-    <ul>
+    <div>
+    <ul style= {{display: 'block' , position: 'relative' , top: '150px' , textAlign: 'left'}}>
         {ingredients}
     </ul>
+    </div>
+    
 
-    <ol>
+    <ol style ={{display: 'inline-block' , position: 'absolute' , right: '90px' , top: '750px'}}>
         {instructions}
     </ol>
 
-    </>
+    </div>
 }
 
 export default RecipePage

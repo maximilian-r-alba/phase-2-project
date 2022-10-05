@@ -23,7 +23,7 @@ function Search ({apiKey}){
         e.preventDefault()
         
         console.log('submit', offset)
-        fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${searchTerms}?&offset=${offset}`)
+        fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${searchTerms}?&offset=${offset}&number=25`)
             .then((r) => r.json())
             .then((data) => {
                 
