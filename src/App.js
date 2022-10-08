@@ -28,7 +28,7 @@ function App() {
   return (
     <>
     <NavBar onChangePage={setPage} />
-    <form>
+    <form style = {{display: 'none'}}>
     <label>
 
       Target Daily Macros

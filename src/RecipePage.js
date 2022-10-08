@@ -61,9 +61,9 @@ console.log(recipe)
         : <p>Loading</p>}
         {nutrition? 
         <>
-            <p style= {{display: 'inline-block' , position: 'absolute' , left: '500px'}}>Total Servings: {recipe.nutrition.servings}</p>
-            <p style = {{position: 'absolute' , right: '500px' ,textAlign: 'center' , fontWeight: 'bold' , display: 'inline-block'}}>Macros per Serving:</p>
-            <ul style = {{ position: 'absolute' , top: '590px' , right: '500px' ,textAlign: 'center' , listStyle: 'none', display: 'inline-block'}}>
+            <p style= {{display: 'inline-block' , position: 'absolute' , right: '380px' , top: '330px' }}>Total Servings: {recipe.nutrition.servings}</p>
+            <p style = {{position: 'absolute' , right: '350px' , top: '170px',textAlign: 'center' , fontWeight: 'bold' , fontSize: '20px' , display: 'inline-block'}}>Macros per Serving:</p>
+            <ul style = {{ position: 'absolute' , top: '200px' , right: '370px' ,textAlign: 'center' , listStyle: 'none', display: 'inline-block'}}>
                     <li>
                     Calories: {recipe.nutrition.calories}
                     </li>
@@ -79,14 +79,14 @@ console.log(recipe)
                 </ul> 
         </>       
                 : <p>No information available</p>}
-    <div>
-    <ul style= {{display: 'block' , position: 'relative' , top: '150px' , textAlign: 'left'}}>
+    
+    <ul style= {{display: 'inline-block' , position: 'absolute' , top: '150px' , left: '150px', textAlign: 'left' , columnCount: '2' , columnFill:'balance' }}>
         {ingredients}
     </ul>
-    </div>
     
-
-    <ol style ={{display: 'inline-block' , position: 'absolute' , right: '90px' , top: '750px'}}>
+    
+    
+    <ol style ={{display: 'inline-block' , position: 'absolute' , left: '550px' , top: '550px' , fontSize: '20px'}}>
         {instructions}
     </ol>
 

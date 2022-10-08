@@ -97,11 +97,11 @@ function handleAddRecipe(){
         <div id = {id} className = "card" >
 
             <div className = "recipeDetails">
-            <h1>{title}</h1>
+            <h1 style = {{fontSize: '25px'}}>{title}</h1>
             <img src = {url} alt = {title}></img>
             <div>
-              <p>Per Serving</p>
-               <ul>
+              <p style = {{fontFamily: 'cursive'}} >Per Serving</p>
+               <ul style = {{fontFamily: 'cursive'}}>
                     <li>
                     Calories:{nutritionInfo.calories}
                     </li>
@@ -117,7 +117,7 @@ function handleAddRecipe(){
                 </ul>
             </div>
             </div>
-            {!cookbook ? <button onClick={handleAddRecipe}>Add to Cookbook</button> : <Link to = {`/cookbook/${id}`} style = {{textDecoration: 'none'}}> <button type = "button"> View Recipe</button> </Link>}
+            {!cookbook ? <button onClick={handleAddRecipe} style = {{fontFamily: 'cursive'}}>Add to Cookbook</button> : <Link to = {`/cookbook/${id}`} style = {{textDecoration: 'none'}}> <button type = "button" style = {{fontFamily: 'cursive'}}> View Recipe</button> </Link>}
 
         </div>
     )
