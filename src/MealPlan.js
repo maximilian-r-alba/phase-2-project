@@ -6,16 +6,17 @@ function MealPlan({macros}){
     const [recipes,setRecipes] = useState()
     const [options,setOptions] = useState()
     const [mealPlan, setMealPlan] = useState({
-        monday:{breakfast:[] , lunch: [] , dinner: []} , 
-        tuesday:{breakfast:[] , lunch: [] , dinner: []} , 
-        wednesday:{breakfast:[] , lunch: [] , dinner: []} , 
-        thursday:{breakfast:[] , lunch: [] , dinner: []} , 
-        friday:{breakfast:[] , lunch: [] , dinner: []} , 
-        saturday:{breakfast:[] , lunch: [] , dinner: []} , 
-        sunday:{breakfast:[] , lunch: [] , dinner: []} 
+        monday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}} , 
+        tuesday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}} , 
+        wednesday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}} , 
+        thursday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}} , 
+        friday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}}
     })
 
-    const [formValues, setFormValues] = useState({day: null,meal: 'breakfast', recipe: null , servingSize: '1'})
+    const defaultValue = {day: 'monday',meal: 'breakfast', recipe: null , servingSize: '1'}
+
+    const [formValues, setFormValues] = useState(defaultValue)
+
   
 
 
@@ -50,12 +51,14 @@ function MealPlan({macros}){
         const selectedRecipe = recipes.filter((recipe) => {
             return recipe.title === formValues.recipe
         })
-        console.log(e.target)
-        // console.log(recipe)
     
         const day = formValues.day
         if (day === null){
             return;
+        }
+
+        const mealCSS = {
+            fontFamily: 'cursive'
         }
 
         const meal = formValues.meal
@@ -63,21 +66,28 @@ function MealPlan({macros}){
         const updater = selectedRecipe.map((recipe) =>{
             const multiplier = parseFloat(formValues.servingSize)
             
-            // setTotal((total) => {
-            //     return {carbs: parseFloat(total.carbs) + (multiplier*parseFloat(recipe.nutrition.carbs)) , 
-            //         protein: parseFloat(total.protein) + (multiplier*parseFloat(recipe.nutrition.protein)) , 
-            //         fat: parseFloat(total.fat) + (multiplier*parseFloat(recipe.nutrition.fat)), 
-            //         calories: parseFloat(total.calories) + (multiplier*parseFloat(recipe.nutrition.calories))}
-            // })
+            setMealPlan((mealPlan) => {
+                return {...mealPlan , [day]: {...mealPlan[day], ['total']:{ ...mealPlan[day]['total'], 
+                
+                carbs: parseFloat(mealPlan[day]['total'].carbs) + (multiplier*parseFloat(recipe.nutrition.carbs)),
+
+                protein: parseFloat(mealPlan[day]['total'].protein) + (multiplier*parseFloat(recipe.nutrition.protein)) , 
+
+                fat: parseFloat(mealPlan[day]['total'].fat) + (multiplier*parseFloat(recipe.nutrition.fat)), 
+
+                calories: parseFloat(mealPlan[day]['total'].calories) + (multiplier*parseFloat(recipe.nutrition.calories))
+            }}
+            }})
 
             return (
-            <tr className = 'meal'>
-                <th>{recipe.title}</th>
-                <th>{recipe.nutrition.carbs}</th>
-                <th>{recipe.nutrition.protein}</th>
-                <th>{recipe.nutrition.fat}</th>
-                <th>{recipe.nutrition.calories}</th>
-                <th>{formValues.servingSize}</th>
+            <tr   className = 'meal'>
+                <th style = {mealCSS}>{recipe.title}</th>
+                <th style = {mealCSS}>{(recipe.nutrition.carbs).slice(0, -1)}</th>
+                <th style = {mealCSS}>{(recipe.nutrition.protein.slice(0, -1))}</th>
+                <th style = {mealCSS}>{(recipe.nutrition.fat).slice(0, -1)}</th>
+                <th style = {mealCSS}>{(recipe.nutrition.calories.slice(0, -4))}</th>
+                <th style = {mealCSS}>{formValues.servingSize}</th>
+                <button>remove?</button>
             </tr>
             )
         })
@@ -85,10 +95,16 @@ function MealPlan({macros}){
         setMealPlan((mealPlan) => {
             return {...mealPlan, [day]: {...mealPlan[day], [meal]:[...mealPlan[day][meal], updater]}}
         })
-        //  mealPlan add servingsize dicitonary key and value
+        
+        setFormValues((formValues) => {
+            return {...defaultValue, recipe: recipes[0].title}
+        })
+        
         e.target.reset()
     }
 
+    console.log(formValues)
+    
     function handleChange(e){
         const key = e.target.className
         const value = e.target.value
@@ -98,16 +114,27 @@ function MealPlan({macros}){
 
     }
 
-    console.log(formValues)
-
+    
 return (
 <div className = "mealplan">
     
     <form onSubmit = {addMeal}>
-        <input onChange={handleChange} id = 'monday' className='day' type = 'radio' name = 'weekday' value = 'monday'></input>
-        <label for = 'monday'>Monday</label><br></br>
+        <input onChange={handleChange} id = 'monday' className='day' type = 'radio' name = 'weekday' value = 'monday' checked></input>
+        <label for = 'monday'>Monday</label>
+        <br></br>
+
         <input onChange={handleChange} id = 'tuesday' className= 'day' type = 'radio' name = 'weekday' value = 'tuesday'></input>
         <label for = 'tuesday'>Tuesday</label>
+
+        <input onChange={handleChange} id = 'wednesday' className='day' type = 'radio' name = 'weekday' value = 'wednesday'></input>
+        <label for = 'wednesday'>Wednesday</label>
+        <br></br>
+        
+        <input onChange={handleChange} id = 'thursday' className= 'day' type = 'radio' name = 'weekday' value = 'thursday'></input>
+        <label for = 'thursday'>Thursday</label>
+
+        <input onChange={handleChange} id = 'friday' className= 'day' type = 'radio' name = 'weekday' value = 'friday'></input>
+        <label for = 'friday'>Friday</label>
 
         <select onChange={handleChange} className='meal' >
             <option value = "breakfast">Breakfast</option>

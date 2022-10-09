@@ -50,7 +50,7 @@ function RecipePage(){
 
 console.log(recipe)
 
-    return <div className = 'recipepage'>
+    return <div className = 'recipepage' style = {{border: '5px solid ' , margin: '30px' , backgroundColor: '#FAF9F6'}}>
         {recipe?
         <>
         <h1 style = {{textAlign: 'center' , fontSize: '40px'}}>{recipe.title}</h1>
@@ -61,9 +61,9 @@ console.log(recipe)
         : <p>Loading</p>}
         {nutrition? 
         <>
-            <p style= {{display: 'inline-block' , position: 'absolute' , right: '380px' , top: '330px' }}>Total Servings: {recipe.nutrition.servings}</p>
-            <p style = {{position: 'absolute' , right: '350px' , top: '170px',textAlign: 'center' , fontWeight: 'bold' , fontSize: '20px' , display: 'inline-block'}}>Macros per Serving:</p>
-            <ul style = {{ position: 'absolute' , top: '200px' , right: '370px' ,textAlign: 'center' , listStyle: 'none', display: 'inline-block'}}>
+            <p style= {{display: 'inline-block' , position: 'absolute' , right: '380px' , top: '670px' , fontSize: '25px' , fontWeight: 'bold' }}>Total Servings: {recipe.nutrition.servings}</p>
+            <p style = {{position: 'absolute' , right: '350px' , top: '500px',textAlign: 'center' , fontWeight: 'bold' , fontSize: '25px' , display: 'inline-block'}}>Macros per Serving:</p>
+            <ul style = {{ position: 'absolute' , top: '550px' , right: '370px' ,textAlign: 'center' , listStyle: 'none', display: 'inline-block' , fontSize: '20px'}}>
                     <li>
                     Calories: {recipe.nutrition.calories}
                     </li>
@@ -80,13 +80,13 @@ console.log(recipe)
         </>       
                 : <p>No information available</p>}
     
-    <ul style= {{display: 'inline-block' , position: 'absolute' , top: '150px' , left: '150px', textAlign: 'left' , columnCount: '2' , columnFill:'balance' }}>
+    <ul style= {{display: 'inline-block' , position: 'absolute' , top: '500px' , left: '150px', textAlign: 'left' , columnCount: '2' , columnFill:'balance' , fontSize: '100%' , maxHeight:'80%' }}>
         {ingredients}
     </ul>
     
     
     
-    <ol style ={{display: 'inline-block' , position: 'absolute' , left: '550px' , top: '550px' , fontSize: '20px'}}>
+    <ol style ={{display: 'inline-block' , position: 'relative' , left: '600px' , top: '20px' , fontSize: '20px' , padding: '30px' , maxWidth: '50%'}}>
         {instructions}
     </ol>
 

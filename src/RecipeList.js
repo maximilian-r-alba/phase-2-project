@@ -22,7 +22,7 @@ function RecipeList ({recipes , setRecipes }){
     return(
         <>
         <h1>Found Recipes</h1>
-        <div style={{display: 'grid' }}>
+        <div style={{display: 'grid' , gridTemplateColumns: '33% 33% 33%' , gridAutoRows: 'minmax(0, auto)' , gridGap: '40px 20px'}}>
             {recipeArray}
         </div>
         

@@ -6,7 +6,9 @@ function Search ({apiKey}){
     const [searchTerms, setSearchTerms] = useState("")
     const [recipes, setRecipes] = useState([])
     const [offset, setOffset] = useState(0)
+    const CSS = {textDecoration: 'none' , borderStyle: 'solid' , textAlign: 'center' , backgroundColor: '#AAC6E6' , fontFamily:'Lucida Handwriting , cursive' , color: 'purple' }
 
+    
     function handleChange(e){
         const value = e.target.value
         setSearchTerms(value)
@@ -61,8 +63,8 @@ function Search ({apiKey}){
 
     return (
         <>
-         <form onSubmit = {handleSubmit}>
-            <label>
+         <form onSubmit = {handleSubmit} style= {{margin: '30px'}}>
+            <label style = {{fontFamily:'Lucida Handwriting , cursive' , color: 'purple' }}>
                 Search Recipes:
 
                 <input onChange = {handleChange} type = "text" 
@@ -71,7 +73,7 @@ function Search ({apiKey}){
                 value = {searchTerms}></input>
 
             </label>
-            <input type = "submit" value = "Search"></input>
+            <input type = "submit" value = "Search" style = {CSS}></input>
         </form>
 
         <RecipeList recipes = {recipes} setRecipes = {setRecipes} />

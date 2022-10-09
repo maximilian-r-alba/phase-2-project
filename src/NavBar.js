@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom"
 
 
 function NavBar() {
+    const navLinkCSS = {textDecoration: 'none' , borderStyle: 'solid' , textAlign: 'center' , padding: '10px' , margin: '25px' , backgroundColor: '#AAC6E6'}
     return (
         <>
         
@@ -10,10 +11,11 @@ function NavBar() {
         
    
         <nav style={{width: '30vw' , height:'2em' , fontSize: '20px' , fontFamily:'Lucida Handwriting , cursive' , width: '100vw'}} >
-            <NavLink exact to="/" style={{textDecoration: 'none' , borderStyle: 'solid' , textAlign: 'center' , padding: '10px' , margin: '25px' }}>Home </NavLink>
-            <NavLink to="/search" style={{textDecoration: 'none' , borderStyle: 'solid' , textAlign: 'center' , padding: '10px' , margin: '25px' }}>Search </NavLink>
-            <NavLink to="/cookbook" style={{textDecoration: 'none' , borderStyle: 'solid' , textAlign: 'center' , padding: '10px' , margin: '25px' }}>Cookbook </NavLink>
-            <NavLink to="/mealplan" style={{textDecoration: 'none' , borderStyle: 'solid' , textAlign: 'center' , padding: '10px' , margin: '25px' }}>Meal Plan </NavLink>
+            
+            <NavLink to="/" style={navLinkCSS}>Search </NavLink>
+            <NavLink to="/cookbook" style={navLinkCSS}>Cookbook </NavLink>
+            <NavLink to="/mealplan" style={navLinkCSS}>Meal Plan </NavLink>
+
         </nav>
         </>
         

@@ -1,5 +1,4 @@
 import React , {useState , useEffect} from "react";
-import RecipeList from "./RecipeList";
 import RecipeCard from "./RecipeCard";
 import './Cookbook.css'
 

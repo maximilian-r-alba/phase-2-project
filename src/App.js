@@ -6,6 +6,7 @@ import CookBook from './Cookbook';
 import RecipePage from './RecipePage'
 import MealPlan from './MealPlan';
 
+
 function App() {
   
   const apiKey =  "c7d05118b4bd43739598790d73ed2abb"
@@ -59,7 +60,7 @@ function App() {
     </form>
     <Routes>
       
-      <Route path="/search" 
+      <Route path="/" 
       element = {<Search apiKey = {apiKey}/>}/>
       <Route path="/cookBook" 
       element = {<CookBook apiKey = {apiKey}/>}/>
@@ -67,7 +68,7 @@ function App() {
       element = {<RecipePage/>}/>
       <Route path="/mealplan" 
       element = {<MealPlan apiKey = {apiKey} macros = {macros}/>}/>
-        
+     
     </Routes>
     
     </>

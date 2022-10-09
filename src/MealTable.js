@@ -4,31 +4,46 @@ import React , { useEffect , useState }from "react";
 function MealTable({mealPlan}) {
 
     const days = Object.keys(mealPlan)
-    const [total, setTotal] = useState({carbs:0, protein: 0 , fat: 0, calories: 0})
-    console.log(total)
+    const tableCSS = {
+        width: '90%' , 
+        border: 'double' , 
+        margin: '10px' ,
+        borderCollapse: 'collapse' ,
+        fontFamily: 'Papyrus'
+    
+    }
+
+    const mealTimeCSS = {
+        border: 'double' 
+    }
+
+    const titleCSS = {fontStyle:'italic' , 
+    fontWeight: 'bold' ,
+    fontSize: '20px' ,
+    padding: '10px'
+}
     
     const table = days.map((day) => {
 
-
-        return <table key = {`${day}Table`} id = {`${day}Table`}>
+        return <table style = {tableCSS}key = {`${day}Table`} id = {`${day}Table`}>
             <tbody>
         <tr>
-            <th>{day}</th>
-            <th>Carbs</th>
-            <th>Protein </th>
-            <th>Fat</th>
-            <th>Calories</th>
+            <th style = {{fontSize: '20px'}}>{day.slice(0,1).toUpperCase() + day.slice(1)}</th>
+            <th>Carbs (g)</th>
+            <th>Protein (g)</th>
+            <th>Fat (g)</th>
+            <th>Calories (kcal)</th>
             <th>Servings</th>
         </tr>
     </tbody>
 
     <tbody name = 'breakfast'>
         <tr>
-            <td>Breakfast</td>
+            <td style={titleCSS}>Breakfast</td>
         </tr>
     </tbody>
 
-    <tbody name = 'breakfastMeals'>
+    <tbody style = {mealTimeCSS}  name = 'breakfastMeals'>
         
            {mealPlan[day]['breakfast'] ? mealPlan[day]['breakfast'] : null}
 
@@ -36,10 +51,10 @@ function MealTable({mealPlan}) {
 
     <tbody name = 'lunch'>
         <tr>
-            <td>Lunch</td>
+            <td style={titleCSS}>Lunch</td>
         </tr>
     </tbody>
-    <tbody name = 'lunchMeals'>
+    <tbody style = {mealTimeCSS} name = 'lunchMeals'>
 
         {mealPlan[day]['lunch'] ? mealPlan[day]['lunch'] : null}
 
@@ -47,10 +62,10 @@ function MealTable({mealPlan}) {
 
     <tbody name = 'dinner'>
         <tr>
-            <td>Dinner</td>
+            <td style={titleCSS}>Dinner</td>
         </tr>
     </tbody>
-    <tbody name = 'dinnerMeals'>
+    <tbody style = {mealTimeCSS} name = 'dinnerMeals'>
       
     {mealPlan[day]['dinner'] ? mealPlan[day]['dinner'] : null}
 
@@ -60,7 +75,7 @@ function MealTable({mealPlan}) {
 
     <tbody>
         <tr name ='totals'>
-            <th>Daily Total</th>
+            <th style={{fontSize: '20px' , padding: '10px'}}>Daily Total</th>
         </tr>
     </tbody>
     
@@ -68,10 +83,10 @@ function MealTable({mealPlan}) {
     <tbody name = 'totals'>
         <tr>
             <th></th>
-            <th>{total.carbs.toFixed(2)}</th>
-            <th>{total.protein.toFixed(2)}</th>
-            <th>{total.fat.toFixed(2)}</th>
-            <th>{total.calories.toFixed(2)}</th>
+            <th>{mealPlan[day]['total'].carbs.toFixed(2)}</th>
+            <th>{mealPlan[day]['total'].protein.toFixed(2)}</th>
+            <th>{mealPlan[day]['total'].fat.toFixed(2)}</th>
+            <th>{mealPlan[day]['total'].calories.toFixed(2)}</th>
         </tr>
 
     </tbody>
@@ -80,7 +95,6 @@ function MealTable({mealPlan}) {
     return (
         <>
         {table}
-        <p>hi</p>
         </>
         
     )
