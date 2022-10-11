@@ -1,4 +1,4 @@
-import React , {useState} from "react";
+import React from "react";
 import RecipeCard from "./RecipeCard";
 import './RecipeCard.css'
 
@@ -8,7 +8,7 @@ function RecipeList ({recipes , setRecipes }){
        
         setRecipes((recipes) => {
             const list = recipes.filter((recipe) =>{
-                return recipe.id != id
+                return recipe.id !== id
             })
             return list
         })
@@ -21,7 +21,7 @@ function RecipeList ({recipes , setRecipes }){
    
     return(
         <>
-        <h1>Found Recipes</h1>
+        <h1 style={{fontFamily:'Lucida Handwriting , cursive'}}>Found Recipes</h1>
         <div style={{display: 'grid' , gridTemplateColumns: '33% 33% 33%' , gridAutoRows: 'minmax(0, auto)' , gridGap: '40px 20px'}}>
             {recipeArray}
         </div>

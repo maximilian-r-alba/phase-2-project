@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {Routes , Route} from "react-router-dom"
 import Search from './Search';
 import NavBar from './NavBar';
@@ -9,7 +9,7 @@ import MealPlan from './MealPlan';
 
 function App() {
   
-  const apiKey =  "c7d05118b4bd43739598790d73ed2abb"
+  const apiKey =  "20743aca11a74bf5b68b217a5df2ac20"
   
 
   const [page, setPage] = useState("/")

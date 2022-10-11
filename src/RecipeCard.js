@@ -10,6 +10,19 @@ function RecipeCard({ id , title , url , addRecipe , details , cookbook}){
     const [recipeInfo, setRecipeInfo] = useState({id: id, title: title, url: url})
     const [ingredients, setIngredients] = useState([])
     const [instructions, setInstructions] = useState([])  
+    const viewRecipeCSS = {
+
+      display: 'block' ,
+        background: '#EF3E36' ,
+        color: '#fff' ,
+        position: 'absolute' ,
+        letterSpacing: '0.1em',
+        textAlign: 'center' ,
+        padding: '10px' ,
+        width: '100%' ,
+        height: '8%' , 
+        fontFamily: 'cursive'
+  }
   
   
   useEffect(() => {
@@ -91,6 +104,17 @@ function handleAddRecipe(){
   addRecipe(id)
 }
 
+function handleDeleteRecipe(e){
+  const recipeId = e.target.parentNode.parentNode.id
+  fetch(`http://localhost:3000/cookbook/${recipeId}`, {
+    method: "DELETE"
+  })
+  .then(() => [
+    window.location.reload()
+  ])
+  
+}
+
 
 
     return(
@@ -98,6 +122,7 @@ function handleAddRecipe(){
 
             <div className = "recipeDetails">
             <h1 style = {{fontSize: '25px'}}>{title}</h1>
+            <button style = {{width: '10%' , textAlign: 'center' , position: 'absolute' , right: '0px' , top: '0px' , color: '#fff' , background: '#EF3E36' }} onClick = {handleDeleteRecipe}>X</button>
             <img src = {url} alt = {title}></img>
             <div>
               <p style = {{fontFamily: 'cursive'}} >Per Serving</p>
@@ -117,7 +142,7 @@ function handleAddRecipe(){
                 </ul>
             </div>
             </div>
-            {!cookbook ? <button onClick={handleAddRecipe} style = {{fontFamily: 'cursive'}}>Add to Cookbook</button> : <Link to = {`/cookbook/${id}`} style = {{textDecoration: 'none'}}> <button type = "button" style = {{fontFamily: 'cursive'}}> View Recipe</button> </Link>}
+            {!cookbook ? <button onClick={handleAddRecipe} style = {viewRecipeCSS}>Add to Cookbook</button> : <Link to = {`/cookbook/${id}`} style = {{textDecoration: 'none'}}> <button type = "button" style = {viewRecipeCSS}> View Recipe</button> </Link>}
 
         </div>
     )

@@ -1,6 +1,5 @@
 import React , { useEffect , useState }from "react";
 import MealTable from "./MealTable";
-import './MealPlan.css'
 
 function MealPlan({macros}){
     const [recipes,setRecipes] = useState()
@@ -30,7 +29,7 @@ function MealPlan({macros}){
 
     
     useEffect(()=>{
-        if(recipes != undefined){
+        if(recipes !== undefined){
             setOptions((options) => {
                 const updater = recipes.map((recipe) => {
                     return <option key = {recipes.indexOf(recipe)} id = {recipe.id} value = {recipe.title}>{recipe.title}</option>
@@ -78,16 +77,17 @@ function MealPlan({macros}){
                 calories: parseFloat(mealPlan[day]['total'].calories) + (multiplier*parseFloat(recipe.nutrition.calories))
             }}
             }})
-
+            
             return (
-            <tr   className = 'meal'>
+            <tr id = {recipe.id} className = 'meal'>
                 <th style = {mealCSS}>{recipe.title}</th>
                 <th style = {mealCSS}>{(recipe.nutrition.carbs).slice(0, -1)}</th>
                 <th style = {mealCSS}>{(recipe.nutrition.protein.slice(0, -1))}</th>
                 <th style = {mealCSS}>{(recipe.nutrition.fat).slice(0, -1)}</th>
                 <th style = {mealCSS}>{(recipe.nutrition.calories.slice(0, -4))}</th>
                 <th style = {mealCSS}>{formValues.servingSize}</th>
-                <button>remove?</button>
+                <th><button onClick={removeMeal}>remove?</button></th>
+             
             </tr>
             )
         })
@@ -95,15 +95,10 @@ function MealPlan({macros}){
         setMealPlan((mealPlan) => {
             return {...mealPlan, [day]: {...mealPlan[day], [meal]:[...mealPlan[day][meal], updater]}}
         })
-        
-        setFormValues((formValues) => {
-            return {...defaultValue, recipe: recipes[0].title}
-        })
-        
-        e.target.reset()
+       
     }
 
-    console.log(formValues)
+   
     
     function handleChange(e){
         const key = e.target.className
@@ -114,12 +109,43 @@ function MealPlan({macros}){
 
     }
 
+    function removeMeal(e){
+        const id = e.target.parentNode.parentNode.id
+        const mealTime = e.target.parentNode.parentNode.parentNode.id
+        const day = e.target.parentNode.parentNode.parentNode.parentNode.id.slice(0,-5)
+        const multiplier = formValues.servingSize
+        const removedRecipe = recipes.filter((recipe) => {
+            return recipe.id == id
+        })
+        
+        console.log(removedRecipe)
+
+        setMealPlan((mealPlan) => {
+            
+            const jsxUpdater = mealPlan[day][mealTime].filter((meal) =>{
+                return meal[0].props.id != id
+            })
+           
+            return {...mealPlan, [day]: {...mealPlan[day], [mealTime]: jsxUpdater,
+                
+            ['total']: {...mealPlan[day]['total'],
+                
+            carbs: parseFloat(mealPlan[day]['total'].carbs) - (multiplier*parseFloat(removedRecipe[0].nutrition.carbs)),
+
+            protein: parseFloat(mealPlan[day]['total'].protein) - (multiplier*parseFloat(removedRecipe[0].nutrition.protein)),  
+
+            fat: parseFloat(mealPlan[day]['total'].fat) - (multiplier*parseFloat(removedRecipe[0].nutrition.fat)), 
+
+            calories: parseFloat(mealPlan[day]['total'].calories) - (multiplier*parseFloat(removedRecipe[0].nutrition.calories))
+        }}}})
+       
+    }
     
 return (
 <div className = "mealplan">
     
     <form onSubmit = {addMeal}>
-        <input onChange={handleChange} id = 'monday' className='day' type = 'radio' name = 'weekday' value = 'monday' checked></input>
+        <input onChange={handleChange} id = 'monday' className='day' type = 'radio' name = 'weekday' value = 'monday' defaultChecked></input>
         <label for = 'monday'>Monday</label>
         <br></br>
 
@@ -147,7 +173,7 @@ return (
         <input type = 'submit' value = "Add Meal"></input>
     </form>
     
-    <MealTable mealPlan = {mealPlan}/>
+    <MealTable mealPlan = {mealPlan} />
 
 </div>
 )

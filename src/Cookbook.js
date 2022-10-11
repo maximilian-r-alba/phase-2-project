@@ -1,6 +1,5 @@
 import React , {useState , useEffect} from "react";
 import RecipeCard from "./RecipeCard";
-import './Cookbook.css'
 
 function CookBook(){
     const [recipes, setRecipes] = useState()
@@ -18,7 +17,7 @@ function CookBook(){
 
     useEffect(() =>{
         
-        if(recipes != undefined){
+        if(recipes !== undefined){
          
             setRecipeArray((recipeArray) =>{
             const updater = recipes.map((recipe) => {

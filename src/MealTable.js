@@ -2,7 +2,7 @@ import React , { useEffect , useState }from "react";
 
 
 function MealTable({mealPlan}) {
-
+    
     const days = Object.keys(mealPlan)
     const tableCSS = {
         width: '90%' , 
@@ -37,35 +37,35 @@ function MealTable({mealPlan}) {
         </tr>
     </tbody>
 
-    <tbody name = 'breakfast'>
+    <tbody>
         <tr>
             <td style={titleCSS}>Breakfast</td>
         </tr>
     </tbody>
 
-    <tbody style = {mealTimeCSS}  name = 'breakfastMeals'>
+    <tbody style = {mealTimeCSS}  id = 'breakfast'>
         
            {mealPlan[day]['breakfast'] ? mealPlan[day]['breakfast'] : null}
 
     </tbody>
 
-    <tbody name = 'lunch'>
+    <tbody>
         <tr>
             <td style={titleCSS}>Lunch</td>
         </tr>
     </tbody>
-    <tbody style = {mealTimeCSS} name = 'lunchMeals'>
+    <tbody style = {mealTimeCSS} id = 'lunch'>
 
         {mealPlan[day]['lunch'] ? mealPlan[day]['lunch'] : null}
 
     </tbody>
 
-    <tbody name = 'dinner'>
+    <tbody>
         <tr>
             <td style={titleCSS}>Dinner</td>
         </tr>
     </tbody>
-    <tbody style = {mealTimeCSS} name = 'dinnerMeals'>
+    <tbody style = {mealTimeCSS} id = 'dinner'>
       
     {mealPlan[day]['dinner'] ? mealPlan[day]['dinner'] : null}
 
