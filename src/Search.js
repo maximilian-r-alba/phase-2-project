@@ -6,7 +6,7 @@ function Search ({apiKey}){
     const [searchTerms, setSearchTerms] = useState("")
     const [recipes, setRecipes] = useState([])
     
-    const CSS = {textDecoration: 'none' , borderStyle: 'solid' , textAlign: 'center' , backgroundColor: '#AAC6E6' , fontFamily:'Lucida Handwriting , cursive' , color: 'purple' }
+    const CSS = {textDecoration: 'none'  , textAlign: 'center' , backgroundColor: '#AAC6E6' , border: 'solid purple' , fontFamily:'Lucida Handwriting , cursive' , color: 'purple' }
 
     
     function handleChange(e){
