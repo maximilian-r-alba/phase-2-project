@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom"
 
 
 function NavBar() {
-    const navLinkCSS = {textDecoration: 'none' , borderStyle: 'solid' , textAlign: 'center' , padding: '10px' , margin: '25px' , backgroundColor: '#AAC6E6'}
+    const navLinkCSS = {textDecoration: 'none' , borderStyle: 'solid' , textAlign: 'center' , padding: '10px' , margin: '25px' , backgroundColor: '#AAC6E6' , color: '#551A8B'}
 
     function handleClick(e){
         console.log(e.target.style.color)

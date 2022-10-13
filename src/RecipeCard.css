@@ -10,6 +10,16 @@
     
 }
 
+button{
+    text-Decoration: 'none' ; 
+    border-Style: 'solid' ; 
+    text-Align: 'center' ; 
+    padding: '10px' ; 
+    margin: '25px' ; 
+    background-Color: '#AAC6E6' ; 
+    color : '#551A8B'
+}
+
 .recipeDetails {
 	color: #212129;
          text-align: left;
@@ -25,6 +35,6 @@ img {
         max-width: 100%;
     }
 
-    .info {
+.info {
         margin: 10px 30px;
      }

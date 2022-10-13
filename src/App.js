@@ -10,6 +10,13 @@ import MealPlan from './MealPlan';
 function App() {
   
   const apiKey =  "20743aca11a74bf5b68b217a5df2ac20"
+  const [mealPlan, setMealPlan] = useState({
+    monday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}} , 
+    tuesday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}} , 
+    wednesday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}} , 
+    thursday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}} , 
+    friday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}}
+})
   
 
   const [page, setPage] = useState("/")
@@ -67,7 +74,7 @@ function App() {
       <Route path = "/cookBook/:id"
       element = {<RecipePage/>}/>
       <Route path="/mealplan" 
-      element = {<MealPlan apiKey = {apiKey} macros = {macros}/>}/>
+      element = {<MealPlan apiKey = {apiKey} mealPlan = {mealPlan} setMealPlan = {setMealPlan}/>}/>
      
     </Routes>
     

@@ -23,8 +23,7 @@ function RecipeCard({ id , title , url , addRecipe , details , cookbook}){
         height: '8%' , 
         fontFamily: 'cursive'
   }
-  
-  
+
   useEffect(() => {
     
 

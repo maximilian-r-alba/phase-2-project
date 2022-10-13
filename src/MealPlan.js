@@ -1,20 +1,17 @@
 import React , { useEffect , useState }from "react";
 import MealTable from "./MealTable";
 
-function MealPlan({macros}){
+function MealPlan({mealPlan , setMealPlan}){
     const [recipes,setRecipes] = useState()
     const [options,setOptions] = useState()
-    const [mealPlan, setMealPlan] = useState({
-        monday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}} , 
-        tuesday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}} , 
-        wednesday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}} , 
-        thursday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}} , 
-        friday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}}
-    })
+    
 
     const defaultValue = {day: 'monday',meal: 'breakfast', recipe: null , servingSize: '1'}
 
     const [formValues, setFormValues] = useState(defaultValue)
+
+    const CSS = {textDecoration: 'none' , borderStyle: 'solid' , textAlign: 'center' , padding: '10px' , backgroundColor: '#AAC6E6' , color : '#551A8B' , fontFamily: 'Lucida Handwriting , cursive' }
+
 
   
 
@@ -26,6 +23,7 @@ function MealPlan({macros}){
             setRecipes(data)
         })
     }, [])
+    
 
     
     useEffect(()=>{
@@ -117,8 +115,7 @@ function MealPlan({macros}){
         const removedRecipe = recipes.filter((recipe) => {
             return recipe.id == id
         })
-        
-        console.log(removedRecipe)
+
 
         setMealPlan((mealPlan) => {
             
@@ -144,7 +141,8 @@ function MealPlan({macros}){
 return (
 <div className = "mealplan">
     
-    <form onSubmit = {addMeal}>
+    <form style = {{fontFamily: 'Lucida Handwriting , cursive' , color: '#5518AB'}} onSubmit = {addMeal}>
+        <div style = {{margin: '20px'}}>
         <input onChange={handleChange} id = 'monday' className='day' type = 'radio' name = 'weekday' value = 'monday' defaultChecked></input>
         <label for = 'monday'>Monday</label>
         <br></br>
@@ -161,7 +159,9 @@ return (
 
         <input onChange={handleChange} id = 'friday' className= 'day' type = 'radio' name = 'weekday' value = 'friday'></input>
         <label for = 'friday'>Friday</label>
-
+        </div>
+        
+        <div style = {{width: '30vw' ,}}>
         <select onChange={handleChange} className='meal' >
             <option value = "breakfast">Breakfast</option>
             <option value = "lunch">Lunch</option>
@@ -170,7 +170,9 @@ return (
         
         <select onChange={handleChange} className='recipe'>{options}</select>
         <input type = 'number' onChange={handleChange} className = 'servingSize' defaultValue={1}></input>
-        <input type = 'submit' value = "Add Meal"></input>
+        <input style = {CSS} type = 'submit' value = "Add Meal"></input>
+        </div>
+       
     </form>
     
     <MealTable mealPlan = {mealPlan} />

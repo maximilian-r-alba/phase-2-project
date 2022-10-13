@@ -3,7 +3,7 @@ import RecipeCard from "./RecipeCard";
 import './RecipeCard.css'
 
 function RecipeList ({recipes , setRecipes }){
-    
+
     function recipeFilter(id){
        
         setRecipes((recipes) => {
@@ -21,7 +21,7 @@ function RecipeList ({recipes , setRecipes }){
    
     return(
         <>
-        <h1 style={{fontFamily:'Lucida Handwriting , cursive'}}>Found Recipes</h1>
+
         <div style={{display: 'grid' , gridTemplateColumns: '33% 33% 33%' , gridAutoRows: 'minmax(0, auto)' , gridGap: '40px 20px'}}>
             {recipeArray}
         </div>

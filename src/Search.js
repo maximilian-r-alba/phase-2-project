@@ -6,7 +6,9 @@ function Search ({apiKey}){
     const [searchTerms, setSearchTerms] = useState("")
     const [recipes, setRecipes] = useState([])
     
-    const CSS = {textDecoration: 'none'  , textAlign: 'center' , backgroundColor: '#AAC6E6' , border: 'solid purple' , fontFamily:'Lucida Handwriting , cursive' , color: 'purple' }
+    const CSS = {textDecoration: 'none'  , textAlign: 'center' , backgroundColor: '#AAC6E6' , border: 'solid #5518AB' , fontFamily:'Lucida Handwriting , cursive' , color: '#5518AB' ,  width: '70px' , height: '40px' , marginRight: 'auto'}
+
+    const formCSS = {}
 
     
     function handleChange(e){
@@ -19,7 +21,7 @@ function Search ({apiKey}){
     function handleSubmit(e){
         e.preventDefault()
         
-        console.log('search')
+        
         
         fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${searchTerms}&number=15`)
             .then((r) => r.json())
@@ -46,19 +48,22 @@ console.log(recipes)
 
     return (
         <>
-         <form onSubmit = {handleSubmit} style= {{margin: '30px'}}>
-            <label style = {{fontFamily:'Lucida Handwriting , cursive' , color: 'purple' }}>
-                Search Recipes:
-
-                <input onChange = {handleChange} type = "text" 
+         <form onSubmit = {handleSubmit} style= {{marginLeft: 'auto' , marginRight: 'auto' , width: '70vw'}}>
+            <h1 style = {{fontFamily:'Lucida Handwriting , cursive' , color: '#5518AB' , fontSize: '40px' , textAlign: 'center', display: "block"}}>
+                Find Good Eats!
+            </h1>   
+            <div style = {{display: 'flex' , flexDirection: 'row' , margin: 'auto' , alignContent: 'center'}}>
+            <input onChange = {handleChange} type = "text" 
                 name = "search" 
                 placeholder = "e.g. chicken and broccoli" 
-                value = {searchTerms}></input>
-
-            </label>
+                value = {searchTerms} style = {{width: '30vw', height: '30px', fontSize: '15px' , marginLeft: 'auto'}}>
+            </input>
             <input type = "submit" value = "Search" style = {CSS}></input>
+            </div>
+           
+            
         </form>
-
+        {recipes.length != 0 ? <h1 style = {{fontFamily: 'Lucida Handwriting , cursive' , color: '#5518AB'}}>Found Recipes</h1> : <></>}
         <RecipeList recipes = {recipes} setRecipes = {setRecipes} />
         </>
        
