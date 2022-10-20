@@ -82,7 +82,7 @@ console.log(recipe)
     
     
     
-    <ol style ={{display: 'inline-block' , position: 'absolute' , bottom: '0px' , left: '600px' , fontSize: '20px' , padding: '30px' , maxWidth: '50%'}}>
+    <ol style ={{display: 'inline-block' , position: 'absolute' , bottom: '0px' , left: '600px' , fontSize: '100%' , padding: '30px' , maxWidth: '50%'}}>
         {instructions}
     </ol>
 

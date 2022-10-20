@@ -10,12 +10,14 @@ function RecipeCard({ id , title , url , addRecipe , details , cookbook}){
     const [recipeInfo, setRecipeInfo] = useState({id: id, title: title, url: url})
     const [ingredients, setIngredients] = useState([])
     const [instructions, setInstructions] = useState([])  
+    
     const viewRecipeCSS = {
 
       display: 'block' ,
         background: '#EF3E36' ,
         color: '#fff' ,
         position: 'absolute' ,
+        bottom: '0px',
         letterSpacing: '0.1em',
         textAlign: 'center' ,
         padding: '10px' ,
@@ -23,6 +25,17 @@ function RecipeCard({ id , title , url , addRecipe , details , cookbook}){
         height: '8%' , 
         fontFamily: 'cursive'
   }
+
+    const cardCSS = {
+        display: 'inline-block',
+        position: 'relative',
+        background: '#fff',
+        width: '350px',
+        heght: '750px',
+        margin: '20px auto',
+        boxShadow: '0px 0px 30px 2px #000'
+    
+    }
 
   useEffect(() => {
     
@@ -108,24 +121,24 @@ function handleDeleteRecipe(e){
   fetch(`http://localhost:3000/cookbook/${recipeId}`, {
     method: "DELETE"
   })
-  .then(() => [
+  .then(() => {
     window.location.reload()
-  ])
+})
   
 }
 
 
 
     return(
-        <div id = {id} className = "card" >
+        <div id = {id} style = {cardCSS} >
 
-            <div className = "recipeDetails">
-            <h1 style = {{fontSize: '25px'}}>{title}</h1>
+          <div className = "recipeDetails">
+            <h1 style = {{fontSize: '90%'}}>{title}</h1>
             <button style = {{width: '10%' , textAlign: 'center' , position: 'absolute' , right: '0px' , top: '0px' , color: '#fff' , background: '#EF3E36' }} onClick = {handleDeleteRecipe}>X</button>
             <img src = {url} alt = {title}></img>
-            <div>
-              <p style = {{fontFamily: 'cursive'}} >Per Serving</p>
-               <ul style = {{fontFamily: 'cursive'}}>
+            <div style = {{display: 'absolute' , fontFamily: 'cursive' , fontSize: '100%'}}>
+              <p >Per Serving</p>
+               <ul>
                     <li>
                     Calories:{nutritionInfo.calories}
                     </li>
@@ -140,7 +153,7 @@ function handleDeleteRecipe(e){
                     </li>
                 </ul>
             </div>
-            </div>
+          </div>
             {!cookbook ? <button onClick={handleAddRecipe} style = {viewRecipeCSS}>Add to Cookbook</button> : <Link to = {`/cookbook/${id}`} style = {{textDecoration: 'none'}}> <button type = "button" style = {viewRecipeCSS}> View Recipe</button> </Link>}
 
         </div>

@@ -34,7 +34,7 @@ function CookBook(){
     
     return <>
     <h1 style={{fontFamily: 'Papyrus, fantasy'}}>Saved Meals</h1>
-    {recipeArray ? <div style={{display: 'grid' , gridTemplateColumns: '33% 33% 33%' , gridAutoRows: 'minmax(0, auto)' , gridGap: '40px 20px'}}> {recipeArray}</div> :  <h1>No Recipes Added</h1> }
+    {recipeArray ? <div style={{display: 'grid' , gridTemplateColumns: '33% 33% 33%' , gridAutoRows: '550px' , gridGap: '40px 20px'}}> {recipeArray}</div> :  <h1>No Recipes Added</h1> }
     
     
     </>
