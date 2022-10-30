@@ -1,14 +1,14 @@
 import React , { useState } from "react";
 import RecipeList from "./RecipeList";
 
-function Search ({apiKey}){
+function Search ({apiKey , handleRecipes , recipes}){
 
     const [searchTerms, setSearchTerms] = useState("")
-    const [recipes, setRecipes] = useState([])
     
-    const CSS = {textDecoration: 'none'  , textAlign: 'center' , backgroundColor: '#AAC6E6' , border: 'solid #5518AB' , fontFamily:'Lucida Handwriting , cursive' , color: '#5518AB' ,  width: '70px' , height: '40px' , marginRight: 'auto'}
+    
+    // const CSS = {textDecoration: 'none'  , textAlign: 'center' , backgroundColor: '#AAC6E6' , border: 'solid #5518AB' , fontFamily:'Lucida Handwriting , cursive' , color: '#5518AB' ,  width: '70px' , height: '40px' , marginRight: 'auto'}
 
-    const formCSS = {}
+    // const formCSS = {}
 
     
     function handleChange(e){
@@ -20,35 +20,41 @@ function Search ({apiKey}){
 
     function handleSubmit(e){
         e.preventDefault()
-        
-        
-        
-        fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${searchTerms}&number=15`)
+
+        fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${searchTerms}&number=1`)
             .then((r) => r.json())
             .then((data) => {
-                
-                setRecipes((recipes) => {
-                    const updater = data.results.map((recipe) =>{
-                        const recipeObj = {}
-                        recipeObj['id'] = recipe.id
-                        recipeObj['title'] = recipe.title
-                        recipeObj['url'] = recipe.image
-                        
-                        return recipeObj
-                    })
-                    return updater
-                })
+
+                const foundRecipes = data.results.map((recipe) =>{
+                    const recipeObj = {id: recipe.id, title: recipe.title, url: recipe.image}
+     
+                    return recipeObj})
+
+                handleRecipes(foundRecipes)
             })
-        
+
+        setSearchTerms("")
        
     }
 
-
-console.log(recipes)
-
     return (
         <>
-         <form onSubmit = {handleSubmit} style= {{marginLeft: 'auto' , marginRight: 'auto' , width: '70vw'}}>
+         <form onSubmit = {handleSubmit}>
+            <h1>Find Good Eats!</h1>   
+            <div>
+            <input onChange = {handleChange} type = "text" 
+                name = "search" 
+                placeholder = "e.g. chicken and broccoli" 
+                value = {searchTerms} >
+            </input>
+            <input type = "submit" value = "Search"></input>
+            </div>
+           
+            
+        </form>
+        {recipes.length != 0 ? <h1>Found Recipes</h1> : <></>}
+
+         {/* <form onSubmit = {handleSubmit} style= {{marginLeft: 'auto' , marginRight: 'auto' , width: '70vw'}}>
             <h1 style = {{fontFamily:'Lucida Handwriting , cursive' , color: '#5518AB' , fontSize: '40px' , textAlign: 'center', display: "block"}}>
                 Find Good Eats!
             </h1>   
@@ -63,8 +69,8 @@ console.log(recipes)
            
             
         </form>
-        {recipes.length != 0 ? <h1 style = {{fontFamily: 'Lucida Handwriting , cursive' , color: '#5518AB'}}>Found Recipes</h1> : <></>}
-        <RecipeList recipes = {recipes} setRecipes = {setRecipes} />
+        {recipes.length != 0 ? <h1 style = {{fontFamily: 'Lucida Handwriting , cursive' , color: '#5518AB'}}>Found Recipes</h1> : <></>} */}
+        <RecipeList recipes = {recipes} />
         </>
        
     )

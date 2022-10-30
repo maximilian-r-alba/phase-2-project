@@ -1,28 +1,6 @@
 {
   "cookbook": [
     {
-      "id": 634476,
-      "title": "Bbq Chicken",
-      "url": "https://spoonacular.com/recipeImages/634476-312x231.jpg",
-      "nutrition": {
-        "calories": "478.31 kcal",
-        "protein": "37.1 g",
-        "fat": "29.24 g",
-        "carbs": "15.21 g",
-        "servings": 4
-      },
-      "ingredients": {
-        "brown sugar": "3 tablespoons",
-        "catsup": "0.25 cup",
-        "chicken pieces": "2.5 pounds",
-        "dry mustard": "1 teaspoon",
-        "soy sauce": "2 tablespoons",
-        "worcestershire sauce": "2 tablespoons"
-      },
-      "instructions": [],
-      "summary": "The recipe Bbq Chicken could satisfy your American craving in about <b>45 minutes</b>. This main course has <b>490 calories</b>, <b>38g of protein</b>, and <b>30g of fat</b> per serving. For <b>95 cents per serving</b>, this recipe <b>covers 17%</b> of your daily requirements of vitamins and minerals. This recipe from Foodista has 1 fans. If you have brown sugar, soy sauce, chicken pieces, and a few other ingredients on hand, you can make it. All things considered, we decided this recipe <b>deserves a spoonacular score of 47%</b>. This score is solid. Similar recipes include <a href=\"https://spoonacular.com/recipes/the-best-bbq-chicken-marinade-908666\">The BEST BBQ Chicken Marinade</a>, <a href=\"https://spoonacular.com/recipes/bbq-cheddar-chicken-925478\">BBQ Cheddar Chicken</a>, and <a href=\"https://spoonacular.com/recipes/italian-bbq-grilled-chicken-921481\">Italian BBQ Grilled Chicken</a>."
-    },
-    {
       "id": 635675,
       "title": "Boozy Bbq Chicken",
       "url": "https://spoonacular.com/recipeImages/635675-312x231.jpg",
@@ -1185,6 +1163,253 @@
         }
       ],
       "summary": "Pasta Vegetable Soup might be just the soup you are searching for. For <b>64 cents per serving</b>, this recipe <b>covers 14%</b> of your daily requirements of vitamins and minerals. One serving contains <b>167 calories</b>, <b>10g of protein</b>, and <b>3g of fat</b>. It is perfect for <b>Autumn</b>. Only a few people made this recipe, and 1 would say it hit the spot. A mixture of onion, water, thyme, and a handful of other ingredients are all it takes to make this recipe so flavorful. From preparation to the plate, this recipe takes around <b>45 minutes</b>. All things considered, we decided this recipe <b>deserves a spoonacular score of 78%</b>. This score is good. Try <a href=\"https://spoonacular.com/recipes/beef-and-pasta-vegetable-soup-411736\">Beef and Pasta Vegetable Soup</a>, <a href=\"https://spoonacular.com/recipes/pantry-vegetable-and-pasta-soup-530939\">Pantry Vegetable and Pasta Soup</a>, and <a href=\"https://spoonacular.com/recipes/easy-vegetable-soup-with-pasta-699450\">Easy Vegetable Soup with Pasta</a> for similar recipes."
+    },
+    {
+      "id": 665671,
+      "title": "Zomppa's Chicken and Broccoli Stir-Fry",
+      "url": "https://spoonacular.com/recipeImages/665671-312x231.jpg",
+      "nutrition": {
+        "calories": "325.17 kcal",
+        "protein": "19.35 g",
+        "fat": "10.57 g",
+        "carbs": "41.13 g",
+        "servings": 4
+      },
+      "ingredients": {
+        "broccoli florets": "0.5 pound",
+        "brown sugar": "2 tablespoons",
+        "canola oil": "2 tablespoons",
+        "chicken breast": "1 medium",
+        "chili flakes": "1 teaspoon",
+        "garlic cloves": "2 ",
+        "ginger": "1 inch",
+        "hoisin sauce": "0.25 cup",
+        "onion": "0.5 ",
+        "sesame oil": "1 teaspoon",
+        "soba noodles": "4 ounces",
+        "soy sauce": "0.125 cup"
+      },
+      "instructions": [
+        {
+          "name": "",
+          "steps": [
+            {
+              "number": 1,
+              "step": "In a large wok or frying pan, heat the oil, garlic, ginger and pepper flakes over low heat for 5-6 minutes.  Do not allow garlic to burn!  You just want to infuse the oil.In the meantime, tenderize your meat by placing the chicken breast in between two pieces of plastic wrap.  Beat it with a meat tenderizer or rolling pin and flatten to about   inch thick.   Slice into  inch strips.Bring another pot of water to boil (enough to cook the noodles)Turn the heat up to medium and add the chicken.  Stir constantly, but allow meat to brown.  When meat is about half way cooked, add the hoisin sauce, soy sauce and brown sugar.  Cook meat thoroughly then remove from heat.",
+              "ingredients": [
+                {
+                  "id": 5062,
+                  "name": "chicken breast",
+                  "localizedName": "chicken breast",
+                  "image": "chicken-breasts.png"
+                },
+                {
+                  "id": 6175,
+                  "name": "hoisin sauce",
+                  "localizedName": "hoisin sauce",
+                  "image": "dark-sauce.jpg"
+                },
+                {
+                  "id": 19334,
+                  "name": "brown sugar",
+                  "localizedName": "brown sugar",
+                  "image": "dark-brown-sugar.png"
+                },
+                {
+                  "id": 16124,
+                  "name": "soy sauce",
+                  "localizedName": "soy sauce",
+                  "image": "soy-sauce.jpg"
+                },
+                {
+                  "id": 5006,
+                  "name": "whole chicken",
+                  "localizedName": "whole chicken",
+                  "image": "whole-chicken.jpg"
+                },
+                {
+                  "id": 20420,
+                  "name": "pasta",
+                  "localizedName": "pasta",
+                  "image": "fusilli.jpg"
+                },
+                {
+                  "id": 11215,
+                  "name": "garlic",
+                  "localizedName": "garlic",
+                  "image": "garlic.png"
+                },
+                {
+                  "id": 11216,
+                  "name": "ginger",
+                  "localizedName": "ginger",
+                  "image": "ginger.png"
+                },
+                {
+                  "id": 1002030,
+                  "name": "pepper",
+                  "localizedName": "pepper",
+                  "image": "pepper.jpg"
+                },
+                {
+                  "id": 14412,
+                  "name": "water",
+                  "localizedName": "water",
+                  "image": "water.png"
+                },
+                {
+                  "id": 1065062,
+                  "name": "meat",
+                  "localizedName": "meat",
+                  "image": "whole-chicken.jpg"
+                },
+                {
+                  "id": 10018364,
+                  "name": "wrap",
+                  "localizedName": "wrap",
+                  "image": "flour-tortilla.jpg"
+                },
+                {
+                  "id": 4582,
+                  "name": "cooking oil",
+                  "localizedName": "cooking oil",
+                  "image": "vegetable-oil.jpg"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 3846,
+                  "name": "meat tenderizer",
+                  "localizedName": "meat tenderizer",
+                  "image": "meat-mallet.jpg"
+                },
+                {
+                  "id": 404730,
+                  "name": "plastic wrap",
+                  "localizedName": "plastic wrap",
+                  "image": "plastic-wrap.jpg"
+                },
+                {
+                  "id": 404746,
+                  "name": "rolling pin",
+                  "localizedName": "rolling pin",
+                  "image": "rolling-pin.jpg"
+                },
+                {
+                  "id": 404645,
+                  "name": "frying pan",
+                  "localizedName": "frying pan",
+                  "image": "pan.png"
+                },
+                {
+                  "id": 404752,
+                  "name": "pot",
+                  "localizedName": "pot",
+                  "image": "stock-pot.jpg"
+                },
+                {
+                  "id": 404666,
+                  "name": "wok",
+                  "localizedName": "wok",
+                  "image": "wok.png"
+                }
+              ],
+              "length": {
+                "number": 6,
+                "unit": "minutes"
+              }
+            },
+            {
+              "number": 2,
+              "step": "Add the broccoli and cook for 5 minutes.Once the pot of water is boiling, add the noodles and cook for about 7-8 minutes.  Should be slightly al dente.After 5 minutes, add the chicken back into the wok with the broccoli and cook for another 2-3 minutes.  When the noodles are done, drain, and quickly add to the chicken and broccoli dish.",
+              "ingredients": [
+                {
+                  "id": 11090,
+                  "name": "broccoli",
+                  "localizedName": "broccoli",
+                  "image": "broccoli.jpg"
+                },
+                {
+                  "id": 5006,
+                  "name": "whole chicken",
+                  "localizedName": "whole chicken",
+                  "image": "whole-chicken.jpg"
+                },
+                {
+                  "id": 20420,
+                  "name": "pasta",
+                  "localizedName": "pasta",
+                  "image": "fusilli.jpg"
+                },
+                {
+                  "id": 14412,
+                  "name": "water",
+                  "localizedName": "water",
+                  "image": "water.png"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404752,
+                  "name": "pot",
+                  "localizedName": "pot",
+                  "image": "stock-pot.jpg"
+                },
+                {
+                  "id": 404666,
+                  "name": "wok",
+                  "localizedName": "wok",
+                  "image": "wok.png"
+                }
+              ],
+              "length": {
+                "number": 21,
+                "unit": "minutes"
+              }
+            },
+            {
+              "number": 3,
+              "step": "Remove the wok from dish once the noodles absorb the liquid.",
+              "ingredients": [
+                {
+                  "id": 20420,
+                  "name": "pasta",
+                  "localizedName": "pasta",
+                  "image": "fusilli.jpg"
+                }
+              ],
+              "equipment": [
+                {
+                  "id": 404666,
+                  "name": "wok",
+                  "localizedName": "wok",
+                  "image": "wok.png"
+                }
+              ]
+            },
+            {
+              "number": 4,
+              "step": "Add the teaspoon of toasted sesame oil.",
+              "ingredients": [
+                {
+                  "id": 4058,
+                  "name": "sesame oil",
+                  "localizedName": "sesame oil",
+                  "image": "sesame-oil.png"
+                }
+              ],
+              "equipment": []
+            },
+            {
+              "number": 5,
+              "step": "Serve and enjoy!",
+              "ingredients": [],
+              "equipment": []
+            }
+          ]
+        }
+      ],
+      "summary": "You can never have too many main course recipes, so give Zomppa's Chicken and Broccoli Stir-Fry a try. This recipe serves 4 and costs $1.12 per serving. Watching your figure? This dairy free recipe has <b>293 calories</b>, <b>13g of protein</b>, and <b>10g of fat</b> per serving. 1 person were impressed by this recipe. Head to the store and pick up soy sauce, ginger, chili pepper flakes, and a few other things to make it today. To use up the onion you could follow this main course with the <a href=\"https://spoonacular.com/recipes/candy-corn-cupcakes-63881\">Candy Corn Cupcakes</a> as a dessert. All things considered, we decided this recipe <b>deserves a spoonacular score of 53%</b>. This score is pretty good. Try <a href=\"https://spoonacular.com/recipes/chicken-and-broccoli-stir-fry-915113\">Chicken and Broccoli Stir-Fry</a>, <a href=\"https://spoonacular.com/recipes/quick-chicken-broccoli-stir-fry-910053\">Quick Chicken & Broccoli Stir-Fry</a>, and <a href=\"https://spoonacular.com/recipes/chicken-stir-fry-with-broccoli-and-snap-peas-+-video-917255\">Chicken Stir Fry with Broccoli and Snap Peas + VIDEO</a> for similar recipes."
     }
   ]
 }

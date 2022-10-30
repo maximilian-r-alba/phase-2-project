@@ -17,7 +17,11 @@ function App() {
     thursday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}} , 
     friday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}}
 })
-  
+  const [recipes, setRecipes] = useState([]) 
+
+  const handleRecipes = (recipeList) =>{
+    setRecipes(recipeList)
+  }
 
   const [page, setPage] = useState("/")
 
@@ -28,7 +32,7 @@ function App() {
     <Routes>
       
       <Route path="/" 
-      element = {<Search apiKey = {apiKey}/>}/>
+      element = {<Search handleRecipes = {handleRecipes} recipes= {recipes} apiKey = {apiKey}/>}/>
       <Route path="/cookBook" 
       element = {<CookBook apiKey = {apiKey}/>}/>
       <Route path = "/cookBook/:id"

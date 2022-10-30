@@ -5,7 +5,6 @@ import './RecipeCard.css'
 function RecipeList ({recipes , setRecipes }){
 
     function recipeFilter(id){
-       
         setRecipes((recipes) => {
             const list = recipes.filter((recipe) =>{
                 return recipe.id !== id
