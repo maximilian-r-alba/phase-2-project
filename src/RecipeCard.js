@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 
 //CSS from https://codepen.io/alexpopovich/pen/weMgMJ
 
-function RecipeCard({ id , title , url , addRecipe , details , cookbook}){
+function RecipeCard({ recipeObj:{ id , title , url} , addRecipe , details , cookbook}){
 
     const apiKey = "c7d05118b4bd43739598790d73ed2abb"
     const [nutritionInfo, setNutritionInfo] = useState({calories: 'loading', protein: 'loading', fat: 'loading', carbs: 'loading'})

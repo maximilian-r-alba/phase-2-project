@@ -1,7 +1,7 @@
 import React , { useState } from "react";
-import RecipeList from "./RecipeList";
+import RecipeCard from "./RecipeCard";
 
-function Search ({apiKey , handleRecipes , recipes}){
+function Search ({apiKey , setRecipes , recipes}){
 
     const [searchTerms, setSearchTerms] = useState("")
     
@@ -30,12 +30,23 @@ function Search ({apiKey , handleRecipes , recipes}){
      
                     return recipeObj})
 
-                handleRecipes(foundRecipes)
+                    setRecipes(foundRecipes)
+
+                if(foundRecipes.length <= 0) alert('No recipes found')
             })
 
         setSearchTerms("")
        
     }
+
+    function recipeFilter(id){
+        const list = recipes.filter((recipe) =>{
+            return recipe.id !== id
+        })
+        
+        setRecipes(list)
+    }
+
 
     return (
         <>
@@ -49,10 +60,9 @@ function Search ({apiKey , handleRecipes , recipes}){
             </input>
             <input type = "submit" value = "Search"></input>
             </div>
-           
-            
         </form>
-        {recipes.length != 0 ? <h1>Found Recipes</h1> : <></>}
+
+        {recipes.length > 0 ? <h1>Found Recipes</h1> : <></>}
 
          {/* <form onSubmit = {handleSubmit} style= {{marginLeft: 'auto' , marginRight: 'auto' , width: '70vw'}}>
             <h1 style = {{fontFamily:'Lucida Handwriting , cursive' , color: '#5518AB' , fontSize: '40px' , textAlign: 'center', display: "block"}}>
@@ -70,7 +80,10 @@ function Search ({apiKey , handleRecipes , recipes}){
             
         </form>
         {recipes.length != 0 ? <h1 style = {{fontFamily: 'Lucida Handwriting , cursive' , color: '#5518AB'}}>Found Recipes</h1> : <></>} */}
-        <RecipeList recipes = {recipes} />
+
+        {recipes.map((recipe) => {
+            return <RecipeCard key = {recipe.id} addRecipe = {recipeFilter} recipeObj = {recipe} />
+        })}
         </>
        
     )

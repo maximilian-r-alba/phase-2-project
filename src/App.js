@@ -32,7 +32,7 @@ function App() {
     <Routes>
       
       <Route path="/" 
-      element = {<Search handleRecipes = {handleRecipes} recipes= {recipes} apiKey = {apiKey}/>}/>
+      element = {<Search setRecipes = {setRecipes} recipes= {recipes} apiKey = {apiKey}/>}/>
       <Route path="/cookBook" 
       element = {<CookBook apiKey = {apiKey}/>}/>
       <Route path = "/cookBook/:id"
