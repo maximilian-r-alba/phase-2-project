@@ -1,7 +1,7 @@
 import React , { useState } from "react";
 import RecipeCard from "./RecipeCard";
 
-function Search ({apiKey , setRecipes , recipes}){
+function Search ({apiKey , handleRecipes , recipes}){
 
     const [searchTerms, setSearchTerms] = useState("")
     
@@ -29,8 +29,8 @@ function Search ({apiKey , setRecipes , recipes}){
                     const recipeObj = {id: recipe.id, title: recipe.title, url: recipe.image}
      
                     return recipeObj})
-
-                    setRecipes(foundRecipes)
+                    console.log('found recipes')
+                    handleRecipes(foundRecipes)
 
                 if(foundRecipes.length <= 0) alert('No recipes found')
             })
@@ -44,7 +44,7 @@ function Search ({apiKey , setRecipes , recipes}){
             return recipe.id !== recipeObj.id
         })
         
-        setRecipes(filteredList , recipeObj)
+        handleRecipes(filteredList , recipeObj)
     }
 
 

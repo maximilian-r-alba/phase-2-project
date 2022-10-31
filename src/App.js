@@ -26,9 +26,13 @@ function App() {
     .then(savedRecipes => setCookbookRecipes(savedRecipes))
   }, [])
 
- 
-
+console.log(cookbookRecipes)
   const [page, setPage] = useState("/")
+
+  function handleRecipes(recipeArray , recipeObj){
+    setRecipes(recipeArray)
+    if(recipeObj) setCookbookRecipes([recipeObj, ...cookbookRecipes])
+  }
 
   return (
     <>
@@ -37,7 +41,7 @@ function App() {
     <Routes>
       
       <Route path="/" 
-      element = {<Search setRecipes = {setRecipes} recipes= {recipes} apiKey = {apiKey}/>}/>
+      element = {<Search handleRecipes = {handleRecipes} recipes= {recipes} apiKey = {apiKey}/>}/>
       <Route path="/cookBook" 
       element = {<CookBook cookbookRecipes = {cookbookRecipes} apiKey = {apiKey}/>}/>
       <Route path = "/cookBook/:id"

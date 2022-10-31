@@ -49,7 +49,7 @@ function RecipeCard({ recipeObj:{ id , title , url} , recipeObj , addRecipe , co
         fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=true`)
           .then((r) => r.json())
           .then((data) => {
-          console.log(data)
+      
 
             setRecipeInfo((recipeInfo) => {
               
@@ -94,7 +94,7 @@ function RecipeCard({ recipeObj:{ id , title , url} , recipeObj , addRecipe , co
   
     }, [])
 
-    console.log(recipeInfo)
+
   
   // useEffect(() => {
     
@@ -180,9 +180,9 @@ function handleAddRecipe(){
     body: JSON.stringify({...recipeInfo})})
     .then((r) => r.json())
     .then((data) => console.log(data))
+    
   
-
-  addRecipe(recipeObj)
+  addRecipe(recipeInfo)
 }
 
 function handleDeleteRecipe(e){
