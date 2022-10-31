@@ -34,17 +34,17 @@ function Search ({apiKey , setRecipes , recipes}){
 
                 if(foundRecipes.length <= 0) alert('No recipes found')
             })
-
+        
         setSearchTerms("")
        
     }
 
-    function recipeFilter(id){
-        const list = recipes.filter((recipe) =>{
-            return recipe.id !== id
+    function recipeFilter(recipeObj){
+        const filteredList = recipes.filter((recipe) =>{
+            return recipe.id !== recipeObj.id
         })
         
-        setRecipes(list)
+        setRecipes(filteredList , recipeObj)
     }
 
 

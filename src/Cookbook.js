@@ -1,19 +1,10 @@
 import React , {useState , useEffect} from "react";
 import RecipeCard from "./RecipeCard";
 
-function CookBook(){
-    const [recipes, setRecipes] = useState()
-    const [recipeArray, setRecipeArray] = useState()
 
-    
-    useEffect(() => {
-        
-    fetch("http://localhost:3000/cookbook")
-    .then((r) => r.json())
-    .then((data) => {
-        setRecipes(data)
-    })
-    },[])
+function CookBook({cookbookRecipes}){
+    const [recipes, setRecipes] = useState(cookbookRecipes)
+    const [recipeArray, setRecipeArray] = useState([])
 
     useEffect(() =>{
         
@@ -21,7 +12,7 @@ function CookBook(){
          
             setRecipeArray((recipeArray) =>{
             const updater = recipes.map((recipe) => {
-                return <RecipeCard key = {recipe.id} id = {recipe.id} title = {recipe.title} url = {recipe.url} details = {recipe.nutrition} cookbook = {true} />
+                return <RecipeCard key = {recipe.id} recipeObj = {recipe} cookbook = {true} />
             })
             
             return [...updater]

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import {Routes , Route} from "react-router-dom"
 import Search from './Search';
 import NavBar from './NavBar';
@@ -18,10 +18,15 @@ function App() {
     friday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}}
 })
   const [recipes, setRecipes] = useState([]) 
+  const [cookbookRecipes, setCookbookRecipes] = useState([])
 
-  const handleRecipes = (recipeList) =>{
-    setRecipes(recipeList)
-  }
+  useEffect(() => {
+    fetch("http://localhost:3000/cookbook")
+    .then(res => res.json())
+    .then(savedRecipes => setCookbookRecipes(savedRecipes))
+  }, [])
+
+ 
 
   const [page, setPage] = useState("/")
 
@@ -34,7 +39,7 @@ function App() {
       <Route path="/" 
       element = {<Search setRecipes = {setRecipes} recipes= {recipes} apiKey = {apiKey}/>}/>
       <Route path="/cookBook" 
-      element = {<CookBook apiKey = {apiKey}/>}/>
+      element = {<CookBook cookbookRecipes = {cookbookRecipes} apiKey = {apiKey}/>}/>
       <Route path = "/cookBook/:id"
       element = {<RecipePage/>}/>
       <Route path="/mealplan" 
