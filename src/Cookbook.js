@@ -10,9 +10,6 @@ function CookBook({cookbookRecipes , handleDeleteRecipe }){
     })}
     
     </>
-
-
-
 }
 
 export default CookBook;
