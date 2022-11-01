@@ -19,6 +19,7 @@ function App() {
 })
   const [recipes, setRecipes] = useState([]) 
   const [cookbookRecipes, setCookbookRecipes] = useState([])
+  const [page, setPage] = useState("/")
 
   useEffect(() => {
     fetch("http://localhost:3000/cookbook")
@@ -26,12 +27,26 @@ function App() {
     .then(savedRecipes => setCookbookRecipes(savedRecipes))
   }, [])
 
-console.log(cookbookRecipes)
-  const [page, setPage] = useState("/")
-
   function handleRecipes(recipeArray , recipeObj){
     setRecipes(recipeArray)
     if(recipeObj) setCookbookRecipes([recipeObj, ...cookbookRecipes])
+  }
+
+  function handleDeleteRecipe(e){
+    const targetRecipeId = parseInt(e.target.parentNode.parentNode.id)
+    
+    const filteredList = cookbookRecipes.filter(recipe => {
+        
+        return recipe.id !== targetRecipeId
+    })
+    
+    fetch(`http://localhost:3000/cookbook/${targetRecipeId}`, {
+      method: "DELETE"
+    })
+    .then(() => {
+      setCookbookRecipes(filteredList)
+  })
+    
   }
 
   return (
@@ -43,7 +58,7 @@ console.log(cookbookRecipes)
       <Route path="/" 
       element = {<Search handleRecipes = {handleRecipes} recipes= {recipes} apiKey = {apiKey}/>}/>
       <Route path="/cookBook" 
-      element = {<CookBook cookbookRecipes = {cookbookRecipes} apiKey = {apiKey}/>}/>
+      element = {<CookBook setCookbookRecipes = {setCookbookRecipes} cookbookRecipes = {cookbookRecipes} handleDeleteRecipe = {handleDeleteRecipe} apiKey = {apiKey}/>}/>
       <Route path = "/cookBook/:id"
       element = {<RecipePage/>}/>
       <Route path="/mealplan" 

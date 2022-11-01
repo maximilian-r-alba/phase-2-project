@@ -1,14 +1,12 @@
-import React , {useState , useEffect} from "react";
 import RecipeCard from "./RecipeCard";
 
 
-function CookBook({cookbookRecipes}){
-    const [recipes, setRecipes] = useState(cookbookRecipes)
+function CookBook({cookbookRecipes , handleDeleteRecipe }){
     
     return <>
-    <h1 style={{fontFamily: 'Papyrus, fantasy'}}>Saved Meals</h1>
-    {recipes.map((recipe) => {
-        return <RecipeCard key = {recipe.id} recipeObj = {recipe} cookbook = {true} />
+    <h1>Saved Meals</h1>
+    {cookbookRecipes.map((recipe) => {
+        return <RecipeCard key = {recipe.id} recipeObj = {recipe} cookbook = {true} handleDeleteRecipe = {handleDeleteRecipe} />
     })}
     
     </>
