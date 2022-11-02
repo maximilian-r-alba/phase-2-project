@@ -60,7 +60,7 @@ function App() {
       <Route path="/cookBook" 
       element = {<CookBook setCookbookRecipes = {setCookbookRecipes} cookbookRecipes = {cookbookRecipes} handleDeleteRecipe = {handleDeleteRecipe} apiKey = {apiKey}/>}/>
       <Route path = "/cookBook/:id"
-      element = {<RecipePage/>}/>
+      element = {<RecipePage />}/>
       <Route path="/mealplan" 
       element = {<MealPlan apiKey = {apiKey} mealPlan = {mealPlan} setMealPlan = {setMealPlan}/>}/>
      
