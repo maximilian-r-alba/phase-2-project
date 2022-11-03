@@ -5,11 +5,11 @@ import NavBar from './NavBar';
 import CookBook from './Cookbook';
 import RecipePage from './RecipePage'
 import MealPlan from './MealPlan';
-
+import {API_KEY} from './config.js'
 
 function App() {
   
-  const apiKey =  "20743aca11a74bf5b68b217a5df2ac20"
+
   const [mealPlan, setMealPlan] = useState({
     monday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}} , 
     tuesday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}} , 
@@ -56,13 +56,13 @@ function App() {
     <Routes>
       
       <Route path="/" 
-      element = {<Search handleRecipes = {handleRecipes} recipes= {recipes} apiKey = {apiKey}/>}/>
+      element = {<Search handleRecipes = {handleRecipes} recipes= {recipes} apiKey = {API_KEY}/>}/>
       <Route path="/cookBook" 
-      element = {<CookBook setCookbookRecipes = {setCookbookRecipes} cookbookRecipes = {cookbookRecipes} handleDeleteRecipe = {handleDeleteRecipe} apiKey = {apiKey}/>}/>
+      element = {<CookBook setCookbookRecipes = {setCookbookRecipes} cookbookRecipes = {cookbookRecipes} handleDeleteRecipe = {handleDeleteRecipe}/>}/>
       <Route path = "/cookBook/:id"
       element = {<RecipePage />}/>
       <Route path="/mealplan" 
-      element = {<MealPlan apiKey = {apiKey} mealPlan = {mealPlan} setMealPlan = {setMealPlan}/>}/>
+      element = {<MealPlan mealPlan = {mealPlan} setMealPlan = {setMealPlan}/>}/>
      
     </Routes>
     
