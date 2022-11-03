@@ -1,19 +1,30 @@
-import React , { useState } from "react";
+import { useState } from "react";
 import RecipeCard from "./RecipeCard";
 
 function Search ({apiKey , handleRecipes , recipes}){
 
     const [searchTerms, setSearchTerms] = useState("")
-    
+    const [offset, setOffset] = useState(0)
+
+
+
     function handleChange(e){
         const value = e.target.value
         setSearchTerms(value)
     }
 
+    function handleOffset(e){
+
+       
+        setOffset((offset) => offset + parseInt(e.target.value))
+        handleSubmit(e)
+        
+    }
+    
     function handleSubmit(e){
         e.preventDefault()
-
-        fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${searchTerms}&number=1`)
+        
+        fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${searchTerms}&number=5&offset=${offset}`)
             .then((r) => r.json())
             .then((data) => {
 
@@ -27,7 +38,7 @@ function Search ({apiKey , handleRecipes , recipes}){
                 if(foundRecipes.length <= 0) alert('No recipes found')
             })
         
-        setSearchTerms("")
+        
        
     }
 
@@ -59,6 +70,9 @@ function Search ({apiKey , handleRecipes , recipes}){
         {recipes.map((recipe) => {
             return <RecipeCard key = {recipe.id} addRecipe = {recipeFilter} recipeObj = {recipe} />
         })}
+       
+       { offset >0 ? <button onClick = {handleOffset} value = {-5}>Go backward</button> : null}
+       <button onClick= {handleOffset} value = {5}> Go forward</button>
         </>
        
     )
