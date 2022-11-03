@@ -19,7 +19,6 @@ function App() {
 })
   const [recipes, setRecipes] = useState([]) 
   const [cookbookRecipes, setCookbookRecipes] = useState([])
-  const [page, setPage] = useState("/")
 
   useEffect(() => {
     fetch("http://localhost:3000/cookbook")
@@ -33,7 +32,7 @@ function App() {
   }
 
   function handleDeleteRecipe(e){
-    const targetRecipeId = parseInt(e.target.parentNode.parentNode.id)
+    const targetRecipeId = parseInt(e.target.parentNode.id)
     
     const filteredList = cookbookRecipes.filter(recipe => {
         
@@ -51,7 +50,7 @@ function App() {
 
   return (
     <>
-    <NavBar onChangePage={setPage} />
+    <NavBar  />
     
     <Routes>
       
@@ -62,7 +61,7 @@ function App() {
       <Route path = "/cookBook/:id"
       element = {<RecipePage />}/>
       <Route path="/mealplan" 
-      element = {<MealPlan mealPlan = {mealPlan} setMealPlan = {setMealPlan}/>}/>
+      element = {<MealPlan recipes = {cookbookRecipes} mealPlan = {mealPlan} setMealPlan = {setMealPlan}/>}/>
      
     </Routes>
     

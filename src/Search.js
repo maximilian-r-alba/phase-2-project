@@ -24,10 +24,10 @@ function Search ({apiKey , handleRecipes , recipes}){
     function handleSubmit(e){
         e.preventDefault()
         
-        fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${searchTerms}&number=5&offset=${offset}`)
+        fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${searchTerms}&number=1&offset=${offset}`)
             .then((r) => r.json())
             .then((data) => {
-
+                
                 const foundRecipes = data.results.map((recipe) =>{
                     const recipeObj = {id: recipe.id, title: recipe.title, url: recipe.image}
      

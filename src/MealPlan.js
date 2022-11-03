@@ -1,8 +1,8 @@
 import React , { useEffect , useState }from "react";
 import MealTable from "./MealTable";
 
-function MealPlan({mealPlan , setMealPlan}){
-    const [recipes,setRecipes] = useState()
+function MealPlan({mealPlan , setMealPlan , recipes }){
+    
     const [options,setOptions] = useState()
     
 
@@ -10,25 +10,11 @@ function MealPlan({mealPlan , setMealPlan}){
 
     const [formValues, setFormValues] = useState(defaultValue)
 
-    const CSS = {textDecoration: 'none' , borderStyle: 'solid' , textAlign: 'center' , padding: '10px' , backgroundColor: '#AAC6E6' , color : '#551A8B' , fontFamily: 'Lucida Handwriting , cursive' }
-
-
-  
-
-
-    useEffect(() => {
-        fetch("http://localhost:3000/cookbook")
-        .then((r) => r.json())
-        .then((data) => {
-            setRecipes(data)
-        })
-    }, [])
-    
 
     
     useEffect(()=>{
-        if(recipes !== undefined){
-            setOptions((options) => {
+        if(recipes.length !== 0){
+            setOptions(() => {
                 const updater = recipes.map((recipe) => {
                     return <option key = {recipes.indexOf(recipe)} id = {recipe.id} value = {recipe.title}>{recipe.title}</option>
                 })
@@ -37,31 +23,26 @@ function MealPlan({mealPlan , setMealPlan}){
           
             setFormValues({...formValues, recipe: recipes[0].title})
         }
+        else{
+            setOptions(<option>No Recipes Available</option>)
+            setFormValues({...formValues, recipe: 'No Recipes Available'})
+        }
         
     }, [recipes])
 
     
-  
-
     function addMeal(e){
         e.preventDefault()
+       
         const selectedRecipe = recipes.filter((recipe) => {
             return recipe.title === formValues.recipe
         })
-    
+     
         const day = formValues.day
-        if (day === null){
-            return;
-        }
-
-        const mealCSS = {
-            fontFamily: 'cursive'
-        }
-
         const meal = formValues.meal
 
-        const updater = selectedRecipe.map((recipe) =>{
-            const multiplier = parseFloat(formValues.servingSize)
+        const nutritionStats = selectedRecipe.map((recipe) =>{
+            const multiplier = parseInt(formValues.servingSize)
             
             setMealPlan((mealPlan) => {
                 return {...mealPlan , [day]: {...mealPlan[day], ['total']:{ ...mealPlan[day]['total'], 
@@ -78,12 +59,12 @@ function MealPlan({mealPlan , setMealPlan}){
             
             return (
             <tr id = {recipe.id} className = 'meal'>
-                <th style = {mealCSS}>{recipe.title}</th>
-                <th style = {mealCSS}>{(recipe.nutrition.carbs).slice(0, -1)}</th>
-                <th style = {mealCSS}>{(recipe.nutrition.protein.slice(0, -1))}</th>
-                <th style = {mealCSS}>{(recipe.nutrition.fat).slice(0, -1)}</th>
-                <th style = {mealCSS}>{(recipe.nutrition.calories.slice(0, -4))}</th>
-                <th style = {mealCSS}>{formValues.servingSize}</th>
+                <th>{recipe.title}</th>
+                <th>{(recipe.nutrition.carbs).slice(0, -1)}</th>
+                <th>{(recipe.nutrition.protein.slice(0, -1))}</th>
+                <th>{(recipe.nutrition.fat).slice(0, -1)}</th>
+                <th>{(recipe.nutrition.calories.slice(0, -4))}</th>
+                <th>{formValues.servingSize}</th>
                 <th><button onClick={removeMeal}>remove?</button></th>
              
             </tr>
@@ -91,20 +72,18 @@ function MealPlan({mealPlan , setMealPlan}){
         })
 
         setMealPlan((mealPlan) => {
-            return {...mealPlan, [day]: {...mealPlan[day], [meal]:[...mealPlan[day][meal], updater]}}
+            return {...mealPlan, [day]: {...mealPlan[day], [meal]:[...mealPlan[day][meal], nutritionStats]}}
         })
        
     }
 
-   
-    
     function handleChange(e){
         const key = e.target.className
         const value = e.target.value
         setFormValues((formValues) =>{
         return {...formValues, [key]: value}
         })
-
+        
     }
 
     function removeMeal(e){
@@ -141,27 +120,27 @@ function MealPlan({mealPlan , setMealPlan}){
 return (
 <div className = "mealplan">
     
-    <form style = {{fontFamily: 'Lucida Handwriting , cursive' , color: '#5518AB'}} onSubmit = {addMeal}>
+    <form onSubmit = {addMeal}>
         <div style = {{margin: '20px'}}>
         <input onChange={handleChange} id = 'monday' className='day' type = 'radio' name = 'weekday' value = 'monday' defaultChecked></input>
-        <label for = 'monday'>Monday</label>
+        <label htmlFor = 'monday'>Monday</label>
         <br></br>
 
         <input onChange={handleChange} id = 'tuesday' className= 'day' type = 'radio' name = 'weekday' value = 'tuesday'></input>
-        <label for = 'tuesday'>Tuesday</label>
+        <label htmlFor = 'tuesday'>Tuesday</label>
 
         <input onChange={handleChange} id = 'wednesday' className='day' type = 'radio' name = 'weekday' value = 'wednesday'></input>
-        <label for = 'wednesday'>Wednesday</label>
+        <label htmlFor = 'wednesday'>Wednesday</label>
         <br></br>
         
         <input onChange={handleChange} id = 'thursday' className= 'day' type = 'radio' name = 'weekday' value = 'thursday'></input>
-        <label for = 'thursday'>Thursday</label>
+        <label htmlFor = 'thursday'>Thursday</label>
 
         <input onChange={handleChange} id = 'friday' className= 'day' type = 'radio' name = 'weekday' value = 'friday'></input>
-        <label for = 'friday'>Friday</label>
+        <label htmlFor = 'friday'>Friday</label>
         </div>
         
-        <div style = {{width: '30vw' ,}}>
+        <div s>
         <select onChange={handleChange} className='meal' >
             <option value = "breakfast">Breakfast</option>
             <option value = "lunch">Lunch</option>
@@ -170,7 +149,7 @@ return (
         
         <select onChange={handleChange} className='recipe'>{options}</select>
         <input type = 'number' onChange={handleChange} className = 'servingSize' defaultValue={1}></input>
-        <input style = {CSS} type = 'submit' value = "Add Meal"></input>
+        {recipes.length > 0 ? <input type = 'submit' value = "Add Meal"></input> : <input disabled  type = 'submit' value = "Add Meal"></input>}
         </div>
        
     </form>

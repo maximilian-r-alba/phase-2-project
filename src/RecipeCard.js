@@ -89,29 +89,28 @@ function handleAddRecipe(){
 
       <div id = {id} >
 
-          <div className = "recipeDetails">
-            <h1 >{title}</h1>
-            {cookbook ? <button onClick = {handleDeleteRecipe}>X</button> : null}
-            <img src = {url} alt = {title}></img>
-            <div >
-              <p >Per Serving</p>
-                {recipeInfo.nutrition ? <ul>
-                    <li>
-                    Calories: {recipeInfo.nutrition.calories}
-                    </li>
-                    <li>
-                    Protein: {recipeInfo.nutrition.protein}
-                    </li>
-                    <li>
-                    Carbs: {recipeInfo.nutrition.carbs}
-                    </li>
-                    <li>
-                    Fat: {recipeInfo.nutrition.fat}
-                    </li>
-                </ul> : <p>Recipe Nutrition Information is Loading, Try a Reload</p>}
-            </div>
-          </div>
-            {cookbook ? <Link to = {`/cookbook/${id}`} > <button type = "button" > View Recipe</button> </Link>  : <button onClick={handleAddRecipe} >Add to Cookbook</button>}
+          <h1 >{title}</h1>
+          {cookbook ? <button onClick = {handleDeleteRecipe}>X</button> : null}
+          <img src = {url} alt = {title}></img>
+              <div >
+                <p >Per Serving</p>
+                  {recipeInfo.nutrition ? <ul>
+                      <li>
+                      Calories: {recipeInfo.nutrition.calories}
+                      </li>
+                      <li>
+                      Protein: {recipeInfo.nutrition.protein}
+                      </li>
+                      <li>
+                      Carbs: {recipeInfo.nutrition.carbs}
+                      </li>
+                      <li>
+                      Fat: {recipeInfo.nutrition.fat}
+                      </li>
+                  </ul> : <p>Recipe Nutrition Information is Loading, Try a Reload</p>}
+          
+              </div>
+          {cookbook ? <Link to = {`/cookbook/${id}`} > <button type = "button" > View Recipe</button> </Link>  : <button onClick={handleAddRecipe} >Add to Cookbook</button>}
 
         </div>
     )

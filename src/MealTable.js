@@ -1,34 +1,14 @@
-import React , { useEffect , useState }from "react";
-
-
 function MealTable({mealPlan}) {
     
     const days = Object.keys(mealPlan)
-    const tableCSS = {
-        width: '90%' , 
-        border: 'double' , 
-        margin: '10px' ,
-        borderCollapse: 'collapse' ,
-        fontFamily: 'Papyrus'
-    
-    }
-
-    const mealTimeCSS = {
-        border: 'double' 
-    }
-
-    const titleCSS = {fontStyle:'italic' , 
-    fontWeight: 'bold' ,
-    fontSize: '20px' ,
-    padding: '10px'
-}
+ 
     
     const table = days.map((day) => {
 
-        return <table style = {tableCSS}key = {`${day}Table`} id = {`${day}Table`}>
+        return <table key = {`${day}Table`} id = {`${day}Table`}>
             <tbody>
         <tr>
-            <th style = {{fontSize: '20px'}}>{day.slice(0,1).toUpperCase() + day.slice(1)}</th>
+            <th >{day.slice(0,1).toUpperCase() + day.slice(1)}</th>
             <th>Carbs (g)</th>
             <th>Protein (g)</th>
             <th>Fat (g)</th>
@@ -39,35 +19,35 @@ function MealTable({mealPlan}) {
 
     <tbody>
         <tr>
-            <td style={titleCSS}>Breakfast</td>
+            <td >Breakfast</td>
         </tr>
     </tbody>
 
-    <tbody style = {mealTimeCSS}  id = 'breakfast'>
+    <tbody   id = 'breakfast'>
         
-           {mealPlan[day]['breakfast'] ? mealPlan[day]['breakfast'] : null}
+           {mealPlan[day]['breakfast'] ? mealPlan[day]['breakfast'] : <></>}
 
     </tbody>
 
     <tbody>
         <tr>
-            <td style={titleCSS}>Lunch</td>
+            <td >Lunch</td>
         </tr>
     </tbody>
-    <tbody style = {mealTimeCSS} id = 'lunch'>
+    <tbody  id = 'lunch'>
 
-        {mealPlan[day]['lunch'] ? mealPlan[day]['lunch'] : null}
+        {mealPlan[day]['lunch'] ? mealPlan[day]['lunch'] : <></> }
 
     </tbody>
 
     <tbody>
         <tr>
-            <td style={titleCSS}>Dinner</td>
+            <td >Dinner</td>
         </tr>
     </tbody>
-    <tbody style = {mealTimeCSS} id = 'dinner'>
+    <tbody  id = 'dinner'>
       
-    {mealPlan[day]['dinner'] ? mealPlan[day]['dinner'] : null}
+    {mealPlan[day]['dinner'] ? mealPlan[day]['dinner'] : <></>}
 
     </tbody>
 
@@ -75,7 +55,7 @@ function MealTable({mealPlan}) {
 
     <tbody>
         <tr name ='totals'>
-            <th style={{fontSize: '20px' , padding: '10px'}}>Daily Total</th>
+            <th>Daily Total</th>
         </tr>
     </tbody>
     

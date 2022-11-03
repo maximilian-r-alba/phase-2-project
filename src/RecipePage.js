@@ -17,7 +17,7 @@ function RecipePage(){
             setRecipe(data)
             makeInstructions(data)
             makeIngredients(data)
-            console.log(data)
+            
         })
         .catch(console.log)
     }, [params.id])
