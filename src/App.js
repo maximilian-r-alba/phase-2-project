@@ -7,18 +7,22 @@ import RecipePage from './RecipePage'
 import MealPlan from './MealPlan';
 import {API_KEY} from './config.js'
 
+
+
 function App() {
   
 
   const [mealPlan, setMealPlan] = useState({
-    monday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}} , 
+    monday: {breakfast:[], lunch: [], dinner: [], total: {carbs: 0, protein: 0, fat: 0, calories: 0}}, 
     tuesday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}} , 
     wednesday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}} , 
     thursday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}} , 
     friday:{breakfast:[] , lunch: [] , dinner: [], total:{carbs: 0, protein: 0 , fat: 0, calories: 0}}
 })
+
   const [recipes, setRecipes] = useState([]) 
   const [cookbookRecipes, setCookbookRecipes] = useState([])
+  
 
   useEffect(() => {
     fetch("http://localhost:3000/cookbook")
@@ -51,19 +55,16 @@ function App() {
   return (
     <>
     <NavBar  />
-    
+
     <Routes>
       
-      <Route path="/" 
-      element = {<Search handleRecipes = {handleRecipes} recipes= {recipes} apiKey = {API_KEY}/>}/>
-      <Route path="/cookBook" 
-      element = {<CookBook setCookbookRecipes = {setCookbookRecipes} cookbookRecipes = {cookbookRecipes} handleDeleteRecipe = {handleDeleteRecipe}/>}/>
-      <Route path = "/cookBook/:id"
-      element = {<RecipePage />}/>
-      <Route path="/mealplan" 
-      element = {<MealPlan recipes = {cookbookRecipes} mealPlan = {mealPlan} setMealPlan = {setMealPlan}/>}/>
-     
-    </Routes>
+      <Route path="/" element = {<Search handleRecipes = {handleRecipes} recipes= {recipes} apiKey = {API_KEY}/>}/>
+
+      <Route path="/cookBook" element = {<CookBook setCookbookRecipes = {setCookbookRecipes} cookbookRecipes = {cookbookRecipes} handleDeleteRecipe = {handleDeleteRecipe}/>}/>
+
+      <Route path = "/cookBook/:id" element = {<RecipePage />}/>
+
+      <Route path="/mealplan" element = {<MealPlan recipes = {cookbookRecipes} mealPlan = {mealPlan} setMealPlan = {setMealPlan}/>}/></Routes>
     
     </>
   
