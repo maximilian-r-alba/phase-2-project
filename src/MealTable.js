@@ -1,37 +1,15 @@
 import { useEffect, useState } from "react"
-function MealTable({mealPlan , day}) {
+import { useParams } from "react-router-dom"
+function MealTable({mealPlan , removeFromMealPlan , day}) {
 
-    const days = Object.keys(mealPlan)    
-    const [dayObj, setDayObj] = useState(mealPlan[day])
-    const mealPlanKeys = Object.keys(dayObj)
+    const mealPlanKeys = Object.keys(mealPlan[day])
 
     const [table, setTable] = useState([])
-
-    useEffect(() =>{
-        setDayObj(mealPlan[day])
-        
-    }, [mealPlan])
 
     useEffect(() => {
         setTable(mealPlanKeys.map((key) => {
 
-            if (key !== 'total'){
-                return <> 
-            
-                <tbody>
-                    <tr>
-                        <td >{key.slice(0,1).toUpperCase() + key.slice(1)}</td>
-                    </tr>
-                </tbody>
-            
-                <tbody   id = {key}>
-                    
-                       {dayObj['breakfast'] ? dayObj[key] : <></>}
-            
-                </tbody>
-                </>
-            }
-            else {
+            if(key === 'total') {
                 return <>
             <tbody>
                 <tr name ='totals'>
@@ -52,11 +30,47 @@ function MealTable({mealPlan , day}) {
             </tbody>
             </>
             }
+
+            else if (mealPlan[day][key].length > 0){
+           
+            const recipes = mealPlan[day][key].map((meal) => {
+                   
+                return <tr id = {meal.id} key = {meal.id+key} className = 'meal'>
+                <th>{meal.title}</th>
+                <th>{(meal.nutrition.carbs).slice(0, -1)}</th>
+                <th>{(meal.nutrition.protein.slice(0, -1))}</th>
+                <th>{(meal.nutrition.fat).slice(0, -1)}</th>
+                <th>{(meal.nutrition.calories.slice(0, -4))}</th>
+                <th>{meal.servings}</th>
+                <th><button onClick={removeFromMealPlan}>remove?</button></th>
+            </tr>
+    
+                })
+
+                return <> 
+            
+                <tbody>
+                    <tr>
+                        <td >{key.slice(0,1).toUpperCase() + key.slice(1)}</td>
+                    </tr>
+                </tbody>
+            
+                <tbody   id = {key}>
+                    
+                       {mealPlan[day][key] ? recipes
+                       : <></>}
+            
+                </tbody>
+                </>
+
+            }
            
         }))
-    }, [dayObj])
-    
+    }, [mealPlan])
+
+   
     return (
+        
         <table key = {`${day}Table`} id = {`${day}Table`}>
         <tbody>
         <tr>
