@@ -1,4 +1,5 @@
 import React, { useState , useEffect} from "react";
+import styled from "styled-components";
 import {Link} from "react-router-dom"
 
 function RecipeCard({ recipeObj:{ id , title , url} , recipeObj , addRecipe , cookbook , handleDeleteRecipe}){
@@ -87,12 +88,12 @@ function handleAddRecipe(){
 
     return(
 
-      <div id = {id} >
+      <Card id = {id} >
 
           <h1 >{title}</h1>
-          {cookbook ? <button onClick = {handleDeleteRecipe}>X</button> : null}
+          {cookbook ? <button className="removeBtn" onClick = {handleDeleteRecipe}>X</button> : null}
           <img src = {url} alt = {title}></img>
-              <div >
+              <div className="nutrition">
                 <p >Per Serving</p>
                   {recipeInfo.nutrition ? <ul>
                       <li>
@@ -110,10 +111,62 @@ function handleAddRecipe(){
                   </ul> : <p>Recipe Nutrition Information is Loading, Try a Reload</p>}
           
               </div>
-          {cookbook ? <Link to = {`/cookbook/${id}`} > <button type = "button" > View Recipe</button> </Link>  : <button onClick={handleAddRecipe} >Add to Cookbook</button>}
+          {cookbook ? <Link to = {`/cookbook/${id}`} > <button className = "viewRecipe" type = "button" > View Recipe</button> </Link>  : <button onClick={handleAddRecipe} >Add to Cookbook</button>}
 
-        </div>
+        </Card>
     )
 }
 
 export default RecipeCard
+
+
+const Card = styled.div `
+background-color: #f7f4e6;
+color: #551A8B;
+font-family: 'Kalam', cursive;
+position: relative;
+border: 2px solid #551A8B;
+width: 500px;
+height: 500px;
+
+div.nutrition{
+  position: absolute;
+  bottom: 40px;
+  right: 150px;
+  width: 200px;
+}
+
+img{
+  width: 50%;
+  margin: auto;
+  display: block;
+  position: relative;
+  top: 20%;
+  
+}
+h1{
+  position: absolute;
+  left: 20px
+
+}
+button{
+  color: #551A8B;
+  border: 2px solid #551A8B;
+  border-radius: 15px;
+  background-color: #AAC6E6;
+}
+
+button.viewRecipe{
+  width: 200px;
+  position: absolute;
+  bottom: 30px;
+  right: 150px;
+
+}
+
+button.removeBtn{
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+`

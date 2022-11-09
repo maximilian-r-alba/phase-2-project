@@ -92,9 +92,6 @@ function MealPlan({mealPlan , setMealPlan , recipes , calculator}){
         
     }
 
-
-
-console.log(formValues)
 return (
     <>
 <div className = "mealplan">

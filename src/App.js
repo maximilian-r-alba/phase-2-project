@@ -1,13 +1,13 @@
 import React, { useState , useEffect } from 'react';
-import {Routes , Route} from "react-router-dom"
+import {Routes , Route} from "react-router-dom";
 import Search from './Search';
 import NavBar from './NavBar';
 import CookBook from './Cookbook';
-import RecipePage from './RecipePage'
+import RecipePage from './RecipePage';
 import MealPlan from './MealPlan';
-import {API_KEY} from './config.js'
+import {API_KEY} from './config.js';
 import MealTable from './MealTable';
-
+import './style.css';
 
 
 function App() {
@@ -84,32 +84,13 @@ function removeFromMealPlan(e){
   const totalObj = calculator(day, removedRecipe, servingSize , true)
   const mealPlanFilter = mealPlan[day][mealTime].filter((recipe) => recipe.id !== id)
 
-  console.log(mealPlanFilter)
   
   setMealPlan((mealPlan) => {
     return {...mealPlan, [day]: {...mealPlan[day], [mealTime] : mealPlanFilter , ['total'] : totalObj}}
   })
-  // setMealPlan((mealPlan) => {
-      
-  //     const jsxUpdater = mealPlan[day][mealTime].filter((meal) =>{
-  //         return meal[0].props.id != id
-  //     })
-
-  //     return {...mealPlan, [day]: {...mealPlan[day], [mealTime]: jsxUpdater,
-          
-  //     ['total']: {...mealPlan[day]['total'],
-          
-  //     carbs: parseFloat(mealPlan[day]['total'].carbs) - (multiplier*parseFloat(removedRecipe[0].nutrition.carbs)),
-
-  //     protein: parseFloat(mealPlan[day]['total'].protein) - (multiplier*parseFloat(removedRecipe[0].nutrition.protein)),  
-
-  //     fat: parseFloat(mealPlan[day]['total'].fat) - (multiplier*parseFloat(removedRecipe[0].nutrition.fat)), 
-
-  //     calories: parseFloat(mealPlan[day]['total'].calories) - (multiplier*parseFloat(removedRecipe[0].nutrition.calories))}}
-  //         }
-  //     })       
+  
 }
-console.log(mealPlan)
+
   return (
     <>
     <NavBar  />
@@ -123,11 +104,11 @@ console.log(mealPlan)
       <Route path = "/cookBook/:id" element = {<RecipePage />}/>
 
       <Route path="/mealplan" element = {<MealPlan calculator = {calculator}recipes = {cookbookRecipes} mealPlan = {mealPlan} setMealPlan = {setMealPlan}/>}>
-        <Route path = ":day" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'monday'} day = {'monday'}/>}/>
-        <Route path = ":day" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'tuesday'} day = {'tuesday'}/>}/>
-        <Route path = ":day" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'wednesday'} day = {'wednesday'}/>}/>
-        <Route path = ":day" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'thursday'} day = {'thursday'}/>}/>
-        <Route path = ":day" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'friday'} day = {'friday'}/>}/>
+        <Route path = "monday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'monday'} day = {'monday'}/>}/>
+        <Route path = "tuesday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'tuesday'} day = {'tuesday'}/>}/>
+        <Route path = "wednesday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'wednesday'} day = {'wednesday'}/>}/>
+        <Route path = "thursday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'thursday'} day = {'thursday'}/>}/>
+        <Route path = "friday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'friday'} day = {'friday'}/>}/>
       </Route>
       </Routes>
     

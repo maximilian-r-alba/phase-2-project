@@ -563,6 +563,571 @@
         "parsley": "4 servings"
       },
       "summary": "Broccoli Soup is a <b>gluten free, dairy free, and lacto ovo vegetarian</b> recipe with 4 servings. One portion of this dish contains roughly <b>6g of protein</b>, <b>4g of fat</b>, and a total of <b>90 calories</b>. For <b>$1.34 per serving</b>, this recipe <b>covers 18%</b> of your daily requirements of vitamins and minerals. 1 person were impressed by this recipe. Not a lot of people really liked this hor d'oeuvre. It can be enjoyed any time, but it is especially good for <b>Winter</b>. From preparation to the plate, this recipe takes around <b>30 minutes</b>. It is brought to you by Foodista. Head to the store and pick up salt, chicken broth, coconut cream, and a few other things to make it today. Taking all factors into account, this recipe <b>earns a spoonacular score of 78%</b>, which is solid. Similar recipes are <a href=\"https://spoonacular.com/recipes/tuscan-white-bean-soup-with-broccoli-rabe-a-completely-different-twist-on-vegetable-soup-626800\">Tuscan White Bean Soup with Broccoli Rabe – a Completely Different Twist on Vegetable Soup</a>, <a href=\"https://spoonacular.com/recipes/tuscan-white-bean-soup-with-broccoli-rabe-a-completely-different-twist-on-vegetable-soup-1274275\">Tuscan White Bean Soup with Broccoli Rabe – a Completely Different Twist on Vegetable Soup</a>, and <a href=\"https://spoonacular.com/recipes/cream-of-broccoli-soup-veg-cream-of-broccoli-soup-487534\">cream of broccoli soup , veg cream of broccoli soup</a>."
+    },
+    {
+      "id": 655145,
+      "title": "Peach Pie",
+      "url": "https://spoonacular.com/recipeImages/655145-312x231.jpg",
+      "instructions": [
+        [
+          {
+            "name": "",
+            "steps": [
+              {
+                "number": 1,
+                "step": "Preheat the oven at 37",
+                "ingredients": [],
+                "equipment": [
+                  {
+                    "id": 404784,
+                    "name": "oven",
+                    "localizedName": "oven",
+                    "image": "oven.jpg"
+                  }
+                ]
+              },
+              {
+                "number": 2,
+                "step": "Place the pastry dough on a 9 inch round pie plate. Poke lightly the pastry and prebake for 8 minutes in the hot oven.",
+                "ingredients": [
+                  {
+                    "id": 10018338,
+                    "name": "pastry dough",
+                    "localizedName": "pastry dough",
+                    "image": "dough.jpg"
+                  }
+                ],
+                "equipment": [
+                  {
+                    "id": 404784,
+                    "name": "oven",
+                    "localizedName": "oven",
+                    "image": "oven.jpg"
+                  }
+                ],
+                "length": {
+                  "number": 8,
+                  "unit": "minutes"
+                }
+              },
+              {
+                "number": 3,
+                "step": "Remove and set aside.In a large bowl mix together the eggs, almond paste, heavy cream, brown sugar and vanilla extract.",
+                "ingredients": [
+                  {
+                    "id": 2050,
+                    "name": "vanilla extract",
+                    "localizedName": "vanilla extract",
+                    "image": "vanilla-extract.jpg"
+                  },
+                  {
+                    "id": 12071,
+                    "name": "almond paste",
+                    "localizedName": "almond paste",
+                    "image": "marzipan-or-almond-paste.jpg"
+                  },
+                  {
+                    "id": 19334,
+                    "name": "brown sugar",
+                    "localizedName": "brown sugar",
+                    "image": "dark-brown-sugar.png"
+                  },
+                  {
+                    "id": 1053,
+                    "name": "heavy cream",
+                    "localizedName": "heavy cream",
+                    "image": "fluid-cream.jpg"
+                  },
+                  {
+                    "id": 1123,
+                    "name": "egg",
+                    "localizedName": "egg",
+                    "image": "egg.png"
+                  }
+                ],
+                "equipment": [
+                  {
+                    "id": 404783,
+                    "name": "bowl",
+                    "localizedName": "bowl",
+                    "image": "bowl.jpg"
+                  }
+                ]
+              },
+              {
+                "number": 4,
+                "step": "Add the cut up peaches to the pastry shell, cover with the eggs mixture.",
+                "ingredients": [
+                  {
+                    "id": 0,
+                    "name": "pastry shells",
+                    "localizedName": "pastry shells",
+                    "image": "tartlet-shells.jpg"
+                  },
+                  {
+                    "id": 9236,
+                    "name": "peach",
+                    "localizedName": "peach",
+                    "image": "peach.png"
+                  },
+                  {
+                    "id": 1123,
+                    "name": "egg",
+                    "localizedName": "egg",
+                    "image": "egg.png"
+                  }
+                ],
+                "equipment": []
+              },
+              {
+                "number": 5,
+                "step": "Bake at 350 for 45 minutes, or until the middle is solid firm.",
+                "ingredients": [],
+                "equipment": [
+                  {
+                    "id": 404784,
+                    "name": "oven",
+                    "localizedName": "oven",
+                    "image": "oven.jpg"
+                  }
+                ],
+                "length": {
+                  "number": 45,
+                  "unit": "minutes"
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "nutrition": {
+        "calories": "547.38 kcal",
+        "carbs": "45.3 g",
+        "fat": "37.08 g",
+        "protein": "9.8 g",
+        "servings": 6
+      },
+      "ingredients": {
+        "almond paste": "3 ounces",
+        "brown sugar": "0.5 cup",
+        "eggs": "4 large",
+        "heavy cream": "2 cups",
+        "pastry crust": "6 servings",
+        "peaches": "3 cups",
+        "vanilla extract": "1 tablespoon"
+      },
+      "summary": "Peach Pie is a <b>vegetarian</b> dessert. This recipe makes 6 servings with <b>543 calories</b>, <b>9g of protein</b>, and <b>37g of fat</b> each. For <b>$1.69 per serving</b>, this recipe <b>covers 11%</b> of your daily requirements of vitamins and minerals. This recipe from Foodista has 7 fans. A mixture of cut up peaches, vanillan extract, brown eggs, and a handful of other ingredients are all it takes to make this recipe so flavorful. From preparation to the plate, this recipe takes about <b>45 minutes</b>. All things considered, we decided this recipe <b>deserves a spoonacular score of 33%</b>. This score is rather bad. Try <a href=\"https://spoonacular.com/recipes/old-fashioned-peach-pie-909789\">Old-Fashioned Peach Pie</a>, <a href=\"https://spoonacular.com/recipes/cherry-pie-908329\">Cherry Pie</a>, and <a href=\"https://spoonacular.com/recipes/butterfinger-pie-917550\">Butterfinger Pie</a> for similar recipes."
+    },
+    {
+      "id": 632527,
+      "title": "Apple Cupcakes",
+      "url": "https://spoonacular.com/recipeImages/632527-312x231.jpg",
+      "instructions": [
+        [
+          {
+            "name": "",
+            "steps": [
+              {
+                "number": 1,
+                "step": "Beat (A) - butter and brown sugar till fluffy, add in (B) eggs, one at a time, beat mixture until thick.Fold in (C) plain yogurt and (D) flour mixture alternately till well mixed at low speed.Lastly add in (E) chopped green apples and raisins, fold well with a rubber spatula.Scoop batter into cupcake liners, place apple slices on top and bake in preheated oven at 170C for about 35 minutes or till well done.",
+                "ingredients": [
+                  {
+                    "id": 1069003,
+                    "name": "green apple",
+                    "localizedName": "green apple",
+                    "image": "grannysmith-apple.png"
+                  },
+                  {
+                    "id": 1001116,
+                    "name": "plain yogurt",
+                    "localizedName": "plain yogurt",
+                    "image": "plain-yogurt.jpg"
+                  },
+                  {
+                    "id": 19334,
+                    "name": "brown sugar",
+                    "localizedName": "brown sugar",
+                    "image": "dark-brown-sugar.png"
+                  },
+                  {
+                    "id": 18139,
+                    "name": "cupcakes",
+                    "localizedName": "cupcakes",
+                    "image": "plain-cupcake.jpg"
+                  },
+                  {
+                    "id": 9299,
+                    "name": "raisins",
+                    "localizedName": "raisins",
+                    "image": "raisins.jpg"
+                  },
+                  {
+                    "id": 1001,
+                    "name": "butter",
+                    "localizedName": "butter",
+                    "image": "butter-sliced.jpg"
+                  },
+                  {
+                    "id": 9003,
+                    "name": "apple",
+                    "localizedName": "apple",
+                    "image": "apple.jpg"
+                  },
+                  {
+                    "id": 20081,
+                    "name": "all purpose flour",
+                    "localizedName": "all purpose flour",
+                    "image": "flour.png"
+                  },
+                  {
+                    "id": 1123,
+                    "name": "egg",
+                    "localizedName": "egg",
+                    "image": "egg.png"
+                  }
+                ],
+                "equipment": [
+                  {
+                    "id": 404676,
+                    "name": "muffin liners",
+                    "localizedName": "muffin liners",
+                    "image": "muffin-or-cupcake-forms.png"
+                  },
+                  {
+                    "id": 404784,
+                    "name": "oven",
+                    "localizedName": "oven",
+                    "image": "oven.jpg",
+                    "temperature": {
+                      "number": 170,
+                      "unit": "Celsius"
+                    }
+                  },
+                  {
+                    "id": 404642,
+                    "name": "spatula",
+                    "localizedName": "spatula",
+                    "image": "spatula-or-turner.jpg"
+                  }
+                ],
+                "length": {
+                  "number": 35,
+                  "unit": "minutes"
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "nutrition": {
+        "calories": "327.33 kcal",
+        "carbs": "46.41 g",
+        "fat": "13.85 g",
+        "protein": "5.64 g",
+        "servings": 15
+      },
+      "ingredients": {
+        "baking powder": "1 tsp",
+        "brown sugar": "1 cup",
+        "butter": "200 g",
+        "cinnamon powder": "0.5 tsp",
+        "eggs": "3 ",
+        "flour": "15 servings",
+        "green apples": "2 ",
+        "ground almond": "50 g",
+        "plain yogurt": "80 g",
+        "raisin": "50 g"
+      },
+      "summary": "Apple Cupcakes might be just the <b>American</b> recipe you are searching for. This recipe serves 15 and costs 48 cents per serving. One serving contains <b>327 calories</b>, <b>6g of protein</b>, and <b>14g of fat</b>. 3 people have tried and liked this recipe. It works best as a dessert, and is done in about <b>45 minutes</b>. It is a good option if you're following a <b>vegetarian</b> diet. A mixture of sieve the flour, brown sugar, butter, and a handful of other ingredients are all it takes to make this recipe so delicious. All things considered, we decided this recipe <b>deserves a spoonacular score of 29%</b>. This score is not so super. Try <a href=\"https://spoonacular.com/recipes/apple-cinnamon-cupcakes-with-mead-frosting-and-a-honey-swirl-rosh-hashana-cupcakes-for-a-sweet-new-year-518726\">Apple Cinnamon Cupcakes with Mead Frosting and a Honey Swirl: Rosh Hashana Cupcakes for a Sweet New Year</a>, <a href=\"https://spoonacular.com/recipes/apple-crisp-cupcakes-with-apple-butter-frosting-554417\">Apple Crisp Cupcakes With Apple Butter Frosting</a>, and <a href=\"https://spoonacular.com/recipes/apple-cupcakes-48293\">Apple Cupcakes</a> for similar recipes."
+    },
+    {
+      "id": 637229,
+      "title": "Carrot Spice Cake",
+      "url": "https://spoonacular.com/recipeImages/637229-312x231.jpg",
+      "instructions": [
+        [
+          {
+            "name": "",
+            "steps": [
+              {
+                "number": 1,
+                "step": "Preheat oven to 32",
+                "ingredients": [],
+                "equipment": [
+                  {
+                    "id": 404784,
+                    "name": "oven",
+                    "localizedName": "oven",
+                    "image": "oven.jpg"
+                  }
+                ]
+              },
+              {
+                "number": 2,
+                "step": "Spray 2 9\" round baking pans with cooking spray & dust with flour.",
+                "ingredients": [
+                  {
+                    "id": 4679,
+                    "name": "cooking spray",
+                    "localizedName": "cooking spray",
+                    "image": "cooking-spray.png"
+                  },
+                  {
+                    "id": 20081,
+                    "name": "all purpose flour",
+                    "localizedName": "all purpose flour",
+                    "image": "flour.png"
+                  }
+                ],
+                "equipment": [
+                  {
+                    "id": 404646,
+                    "name": "baking pan",
+                    "localizedName": "baking pan",
+                    "image": "roasting-pan.jpg"
+                  }
+                ]
+              },
+              {
+                "number": 3,
+                "step": "Combine flours, sugar, baking soda, salt, cinnamon, and nutmeg in a large bowl, stirring well with a whisk.",
+                "ingredients": [
+                  {
+                    "id": 18372,
+                    "name": "baking soda",
+                    "localizedName": "baking soda",
+                    "image": "white-powder.jpg"
+                  },
+                  {
+                    "id": 2010,
+                    "name": "cinnamon",
+                    "localizedName": "cinnamon",
+                    "image": "cinnamon.jpg"
+                  },
+                  {
+                    "id": 2025,
+                    "name": "nutmeg",
+                    "localizedName": "nutmeg",
+                    "image": "ground-nutmeg.jpg"
+                  },
+                  {
+                    "id": 19335,
+                    "name": "sugar",
+                    "localizedName": "sugar",
+                    "image": "sugar-in-bowl.png"
+                  },
+                  {
+                    "id": 2047,
+                    "name": "salt",
+                    "localizedName": "salt",
+                    "image": "salt.jpg"
+                  }
+                ],
+                "equipment": [
+                  {
+                    "id": 404661,
+                    "name": "whisk",
+                    "localizedName": "whisk",
+                    "image": "whisk.png"
+                  },
+                  {
+                    "id": 404783,
+                    "name": "bowl",
+                    "localizedName": "bowl",
+                    "image": "bowl.jpg"
+                  }
+                ]
+              },
+              {
+                "number": 4,
+                "step": "Combine oil and eggs; stir well.",
+                "ingredients": [
+                  {
+                    "id": 1123,
+                    "name": "egg",
+                    "localizedName": "egg",
+                    "image": "egg.png"
+                  },
+                  {
+                    "id": 4582,
+                    "name": "cooking oil",
+                    "localizedName": "cooking oil",
+                    "image": "vegetable-oil.jpg"
+                  }
+                ],
+                "equipment": []
+              },
+              {
+                "number": 5,
+                "step": "Stir egg mixture, grated carrot, pineapple, and applesauce into flour mixture.",
+                "ingredients": [
+                  {
+                    "id": 9019,
+                    "name": "applesauce",
+                    "localizedName": "applesauce",
+                    "image": "applesauce.png"
+                  },
+                  {
+                    "id": 9266,
+                    "name": "pineapple",
+                    "localizedName": "pineapple",
+                    "image": "pineapple.jpg"
+                  },
+                  {
+                    "id": 11124,
+                    "name": "carrot",
+                    "localizedName": "carrot",
+                    "image": "sliced-carrot.png"
+                  },
+                  {
+                    "id": 20081,
+                    "name": "all purpose flour",
+                    "localizedName": "all purpose flour",
+                    "image": "flour.png"
+                  },
+                  {
+                    "id": 1123,
+                    "name": "egg",
+                    "localizedName": "egg",
+                    "image": "egg.png"
+                  }
+                ],
+                "equipment": []
+              },
+              {
+                "number": 6,
+                "step": "Pour batter into prepared pans.",
+                "ingredients": [],
+                "equipment": []
+              },
+              {
+                "number": 7,
+                "step": "Bake at 325 for 35 minutes or until a toothpick inserted in the center comes out clean.",
+                "ingredients": [],
+                "equipment": [
+                  {
+                    "id": 404644,
+                    "name": "toothpicks",
+                    "localizedName": "toothpicks",
+                    "image": "toothpicks.jpg"
+                  },
+                  {
+                    "id": 404784,
+                    "name": "oven",
+                    "localizedName": "oven",
+                    "image": "oven.jpg"
+                  }
+                ],
+                "length": {
+                  "number": 35,
+                  "unit": "minutes"
+                }
+              },
+              {
+                "number": 8,
+                "step": "Let sit in pans for 5 minutes, then invert onto wire racks and cool completely.",
+                "ingredients": [],
+                "equipment": [],
+                "length": {
+                  "number": 5,
+                  "unit": "minutes"
+                }
+              },
+              {
+                "number": 9,
+                "step": "For frosting, beat together butter and cream cheese until smooth.",
+                "ingredients": [
+                  {
+                    "id": 1017,
+                    "name": "cream cheese",
+                    "localizedName": "cream cheese",
+                    "image": "cream-cheese.jpg"
+                  },
+                  {
+                    "id": 19230,
+                    "name": "frosting",
+                    "localizedName": "frosting",
+                    "image": "vanilla-frosting.png"
+                  },
+                  {
+                    "id": 1001,
+                    "name": "butter",
+                    "localizedName": "butter",
+                    "image": "butter-sliced.jpg"
+                  }
+                ],
+                "equipment": []
+              },
+              {
+                "number": 10,
+                "step": "Add powdered sugar and vanilla just until mixed.",
+                "ingredients": [
+                  {
+                    "id": 19336,
+                    "name": "powdered sugar",
+                    "localizedName": "powdered sugar",
+                    "image": "powdered-sugar.jpg"
+                  },
+                  {
+                    "id": 1052050,
+                    "name": "vanilla",
+                    "localizedName": "vanilla",
+                    "image": "vanilla.jpg"
+                  }
+                ],
+                "equipment": []
+              },
+              {
+                "number": 11,
+                "step": "Spread frosting between layers and then over cake.",
+                "ingredients": [
+                  {
+                    "id": 19230,
+                    "name": "frosting",
+                    "localizedName": "frosting",
+                    "image": "vanilla-frosting.png"
+                  },
+                  {
+                    "id": 0,
+                    "name": "spread",
+                    "localizedName": "spread",
+                    "image": ""
+                  }
+                ],
+                "equipment": []
+              }
+            ]
+          }
+        ]
+      ],
+      "nutrition": {
+        "calories": "404.37 kcal",
+        "carbs": "85.23 g",
+        "fat": "6.68 g",
+        "protein": "6.09 g",
+        "servings": 12
+      },
+      "ingredients": {
+        "unbleached flour": "1 cup",
+        "whole wheat flour": "0.5 cup",
+        "evaporated cane juice": "1 cup",
+        "baking soda": "2 tsps",
+        "salt": "0.5 tsp",
+        "ground cinnamon": "2 tsps",
+        "ground nutmeg": "0.5 tsp",
+        "coconut oil": "3 T",
+        "egg": "1 large",
+        "ground flax seed": "1 T",
+        "carrot": "2 cups",
+        "canned pineapple": "1 cup",
+        "applesauce": "0.5 cup",
+        "golden raisins": "0.5 cup",
+        "butter": "2 T",
+        "cream cheese block": "8 oz",
+        "powdered sugar": "4.5 cups",
+        "vanilla extract": "2 tsps"
+      },
+      "summary": "Carrot Spice Cake requires about <b>around 45 minutes</b> from start to finish. One serving contains <b>406 calories</b>, <b>6g of protein</b>, and <b>7g of fat</b>. This recipe serves 12 and costs 82 cents per serving. It is brought to you by Foodista. This recipe is liked by 1 foodies and cooks. Head to the store and pick up applesauce, unbleached flour, golden raisins, and a few other things to make it today. It is a good option if you're following a <b>lacto ovo vegetarian</b> diet. Overall, this recipe earns a <b>not so spectacular spoonacular score of 20%</b>. If you like this recipe, you might also like recipes such as <a href=\"https://spoonacular.com/recipes/carrot-and-spice-cake-61412\">Carrot And Spice Cake</a>, <a href=\"https://spoonacular.com/recipes/carrot-spice-poke-cake-101323\">Carrot Spice Poke Cake</a>, and <a href=\"https://spoonacular.com/recipes/applesauce-carrot-spice-cake-168995\">Applesauce-Carrot Spice Cake</a>."
     }
   ]
 }

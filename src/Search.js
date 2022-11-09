@@ -4,30 +4,21 @@ import RecipeCard from "./RecipeCard";
 function Search ({apiKey , handleRecipes , recipes}){
 
     const [searchTerms, setSearchTerms] = useState("")
-    const [offset, setOffset] = useState(0)
-
-
 
     function handleChange(e){
         const value = e.target.value
         setSearchTerms(value)
     }
 
-    function handleOffset(e){
-
-       
-        setOffset((offset) => offset + parseInt(e.target.value))
-        handleSubmit(e)
-        
-    }
-    
+ 
     function handleSubmit(e){
         e.preventDefault()
         
-        fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${searchTerms}&number=1&offset=${offset}`)
+        fetch(`https://api.spoonacular.com/recipes/complexSearch?apiKey=${apiKey}&query=${searchTerms}&number=2`)
             .then((r) => r.json())
             .then((data) => {
                 
+                console.log(data)
                 const foundRecipes = data.results.map((recipe) =>{
                     const recipeObj = {id: recipe.id, title: recipe.title, url: recipe.image}
      
@@ -37,7 +28,7 @@ function Search ({apiKey , handleRecipes , recipes}){
 
                 if(foundRecipes.length <= 0) alert('No recipes found')
             })
-        
+        setSearchTerms("")
         
        
     }
@@ -66,13 +57,13 @@ function Search ({apiKey , handleRecipes , recipes}){
         </form>
 
         {recipes.length > 0 ? <h1>Found Recipes</h1> : <></>}
-
+        <div style= {{display: "flex"}}>
         {recipes.map((recipe) => {
             return <RecipeCard key = {recipe.id} addRecipe = {recipeFilter} recipeObj = {recipe} />
         })}
+        </div>
+        
        
-       { offset >0 ? <button onClick = {handleOffset} value = {-5}>Go backward</button> : null}
-       <button onClick= {handleOffset} value = {5}> Go forward</button>
         </>
        
     )

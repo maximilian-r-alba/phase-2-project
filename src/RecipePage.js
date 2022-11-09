@@ -1,13 +1,13 @@
-import React, { useEffect , useState } from 'react';
+import React, { useEffect , useState , useRef} from 'react';
 import { useParams } from "react-router-dom";
-
+import styled from 'styled-components';
 
 function RecipePage(){
     const [recipe, setRecipe] = useState(null)
     const params = useParams()
     const [instructions, setInstructions] = useState(null)
     const [ingredients, setIngredients] = useState([])
-  
+    const pageRef = useRef()
 
     useEffect(() =>{
         fetch(`http://localhost:3000/cookbook/${params.id}`)
@@ -21,12 +21,19 @@ function RecipePage(){
         })
         .catch(console.log)
     }, [params.id])
+
+    useEffect(()=> {
+        if(pageRef.current)
+        {
+            pageRef.current.scrollIntoView({ behavior: 'smooth' })
+        }
+       
+    }, [recipe])
     
 
     function makeInstructions(data){
        
         const stepsArray = data.instructions[0][0].steps
-        console.log(stepsArray)
         
         const stepTags = stepsArray.map((step) => {
             return <li key = {data.id + 'step' + step.number}>{step.step}</li>
@@ -46,10 +53,13 @@ function RecipePage(){
     }
 
 
-    return <div className = 'recipepage' style = {{position: 'relative' , border: '5px solid ' , margin: '30px' , backgroundColor: '#FAF9F6' , height: '85vh' , fontFamily :'Papyrus, fantasy'}}>
-        {recipe? <img src = {recipe.url} alt = {recipe.title}></img> : <p>Loading Picture</p>}
-        <ol>{instructions ? instructions : <></>}</ol>
-        <ul>{recipe ? <>
+    return <>{ recipe ? <Card ref = {pageRef} className = 'recipepage'>
+        <h1>{recipe.title}</h1>
+        <img src = {recipe.url} alt = {recipe.title}></img> 
+        <ul id = "ingredients">
+            {ingredients? ingredients : <p>Ingredients loading</p>}
+        </ul>
+        <ul>
                         <li>
                             Calories: {recipe.nutrition.calories}
                         </li>
@@ -62,13 +72,42 @@ function RecipePage(){
                         <li>
                             Fat: {recipe.nutrition.fat}
                         </li>
-                     </>: <p>Nutrition Info Loading</p>}
         </ul>
-        <ul>
-            {ingredients? ingredients : <p>Ingredients loading</p>}
-
-        </ul>
-    </div>
+       
+        <ol >{instructions ? instructions : <h1>Loading Recipe</h1>}</ol>
+        
+      
+    </Card> : <></>}
+    </>
 }
 
 export default RecipePage
+
+const Card = styled.div `
+background-color: #f7f4e6;
+font-family: 'Kalam', cursive;
+border: dotted #551A8B;
+min-height: 500;
+width: 100vw;
+position: relative;
+
+img{
+
+}
+ul#ingredients{
+    
+    column-count:3;
+    column-fill: balance;
+    column-gap: 40px;
+    position: absolute;
+    top: 30px;
+    left: 30%;
+}
+ol{
+    column-count:2;
+    column-fill: balance;
+    column-gap: 40px;
+}
+`
+
+// style = {{position: 'relative' , border: '5px solid ' , margin: '30px' , backgroundColor: '#FAF9F6' , height: '85vh' , fontFamily :'Papyrus, fantasy'}}
