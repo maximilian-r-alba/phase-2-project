@@ -1,5 +1,6 @@
 import { useEffect , useState }from "react";
 import { Link, Outlet } from "react-router-dom";
+import styled from "styled-components";
 
 function MealPlan({mealPlan , setMealPlan , recipes , calculator}){
     
@@ -143,3 +144,4 @@ return (
 )}
 
 export default MealPlan
+

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import RecipeCard from "./RecipeCard";
+import styled from "styled-components";
 
 function Search ({apiKey , handleRecipes , recipes}){
 
@@ -57,11 +58,11 @@ function Search ({apiKey , handleRecipes , recipes}){
         </form>
 
         {recipes.length > 0 ? <h1>Found Recipes</h1> : <></>}
-        <div style= {{display: "flex"}}>
+        <CardConatiner >
         {recipes.map((recipe) => {
             return <RecipeCard key = {recipe.id} addRecipe = {recipeFilter} recipeObj = {recipe} />
         })}
-        </div>
+        </CardConatiner>
         
        
         </>
@@ -71,3 +72,10 @@ function Search ({apiKey , handleRecipes , recipes}){
 
 
 export default Search
+
+const CardConatiner = styled.div`
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 30px;
+`

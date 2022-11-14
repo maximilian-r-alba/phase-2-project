@@ -154,19 +154,18 @@ button{
   border: 2px solid #551A8B;
   border-radius: 15px;
   background-color: #AAC6E6;
-}
-
-button.viewRecipe{
   width: 200px;
   position: absolute;
   bottom: 30px;
   right: 150px;
-
 }
+
 
 button.removeBtn{
   position: absolute;
   right: 10px;
   top: 10px;
+  width: 25px;
+  height: 25px;
 }
 `

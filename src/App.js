@@ -77,7 +77,7 @@ function App() {
 
 function removeFromMealPlan(e){
   const id = parseInt(e.target.parentNode.parentNode.id)
-  const mealTime = e.target.parentNode.parentNode.parentNode.id
+  const mealTime = e.target.parentNode.parentNode.parentNode.className
   const day = e.target.parentNode.parentNode.parentNode.parentNode.id.slice(0,-5)
   const removedRecipe = mealPlan[day][mealTime].filter((recipe) => recipe.id === id).pop()
   const servingSize = removedRecipe.servings
@@ -103,12 +103,25 @@ function removeFromMealPlan(e){
 
       <Route path = "/cookBook/:id" element = {<RecipePage />}/>
 
-      <Route path="/mealplan" element = {<MealPlan calculator = {calculator}recipes = {cookbookRecipes} mealPlan = {mealPlan} setMealPlan = {setMealPlan}/>}>
-        <Route path = "monday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'monday'} day = {'monday'}/>}/>
-        <Route path = "tuesday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'tuesday'} day = {'tuesday'}/>}/>
-        <Route path = "wednesday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'wednesday'} day = {'wednesday'}/>}/>
-        <Route path = "thursday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'thursday'} day = {'thursday'}/>}/>
-        <Route path = "friday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'friday'} day = {'friday'}/>}/>
+      <Route path="/mealplan" element = {<MealPlan calculator = {calculator} recipes = {cookbookRecipes} mealPlan = {mealPlan} setMealPlan = {setMealPlan}/>}>
+          <Route path = '' element = {<div> 
+            <MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'monday'} day = {'monday'}/>
+            <MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'tuesday'} day = {'tuesday'}/>
+            <MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'wednesday'} day = {'wednesday'}/>
+            <MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'thursday'} day = {'thursday'}/>
+            <MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'friday'} day = {'friday'}/>
+            </div>} />
+
+          <Route path = "monday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'monday'} day = {'monday'}/>}/>
+          
+          <Route path = "tuesday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'tuesday'} day = {'tuesday'}/>}/>
+          
+          <Route path = "wednesday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'wednesday'} day = {'wednesday'}/>}/>
+          
+          <Route path = "thursday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'thursday'} day = {'thursday'}/>}/>
+          
+          <Route path = "friday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'friday'} day = {'friday'}/>}/>
+
       </Route>
       </Routes>
     

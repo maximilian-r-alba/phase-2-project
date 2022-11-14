@@ -100,14 +100,13 @@ ul#ingredients{
     column-fill: balance;
     column-gap: 40px;
     position: absolute;
-    top: 30px;
+    top: 80px;
     left: 30%;
 }
 ol{
-    column-count:2;
+    column-count:auto;
     column-fill: balance;
     column-gap: 40px;
+    column-width: 50vw;
 }
 `
-
-// style = {{position: 'relative' , border: '5px solid ' , margin: '30px' , backgroundColor: '#FAF9F6' , height: '85vh' , fontFamily :'Papyrus, fantasy'}}
