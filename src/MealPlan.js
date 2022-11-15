@@ -95,53 +95,122 @@ function MealPlan({mealPlan , setMealPlan , recipes , calculator}){
 
 return (
     <>
-<div className = "mealplan">
-    
-    <form onSubmit = {addMeal}>
-        <div style = {{margin: '20px'}}>
-        <input onChange={handleChange} id = 'monday' className='day' type = 'radio' name = 'weekday' value = 'monday' defaultChecked></input>
-        <label htmlFor = 'monday'>Monday</label>
-        <br></br>
-
-        <input onChange={handleChange} id = 'tuesday' className= 'day' type = 'radio' name = 'weekday' value = 'tuesday'></input>
-        <label htmlFor = 'tuesday'>Tuesday</label>
-
-        <input onChange={handleChange} id = 'wednesday' className='day' type = 'radio' name = 'weekday' value = 'wednesday'></input>
-        <label htmlFor = 'wednesday'>Wednesday</label>
-        <br></br>
-        
-        <input onChange={handleChange} id = 'thursday' className= 'day' type = 'radio' name = 'weekday' value = 'thursday'></input>
-        <label htmlFor = 'thursday'>Thursday</label>
-
-        <input onChange={handleChange} id = 'friday' className= 'day' type = 'radio' name = 'weekday' value = 'friday'></input>
-        <label htmlFor = 'friday'>Friday</label>
-        </div>
-        
-        <div>
-        <select onChange={handleChange} className='mealTime' >
-            <option value = "breakfast">Breakfast</option>
-            <option value = "lunch">Lunch</option>
-            <option value = "dinner">Dinner</option>
-        </select>
-        
-        <select onChange={handleChange} className='recipe'>{options}</select>
-        <input type = 'number' onChange={handleChange} className = 'servingSize' defaultValue={1}></input>
-        {recipes.length > 0 ? <input type = 'submit' value = "Add Meal"></input> : <input disabled  type = 'submit' value = "Add Meal"></input>}
-        </div>
-       
-    </form>
-    <div>
+     <DayLinks>
         <Link to ="">Weekly Overview</Link>
         <Link to ="monday">Monday</Link>
         <Link to ="tuesday">Tuesday</Link>
         <Link to ="wednesday">Wednesday</Link>
         <Link to ="thursday">Thursday</Link>
         <Link to ="friday">Friday</Link>
-    </div>
+    </DayLinks>
+
+<div className = "mealplan">
+    
+    <MealForm onSubmit = {addMeal}>
+        <div className="radioDays">
+        <input onChange={handleChange} id = 'monday' className='day' type = 'radio' name = 'weekday' value = 'monday' defaultChecked></input>
+        <RadioLablel htmlFor = 'monday'>Monday</RadioLablel>
+        <br></br>
+
+        <input onChange={handleChange} id = 'tuesday' className= 'day' type = 'radio' name = 'weekday' value = 'tuesday'></input>
+        <RadioLablel htmlFor = 'tuesday'>Tuesday</RadioLablel>
+
+        <input onChange={handleChange} id = 'wednesday' className='day' type = 'radio' name = 'weekday' value = 'wednesday'></input>
+        <RadioLablel htmlFor = 'wednesday'>Wednesday</RadioLablel>
+        <br></br>
+        
+        <input onChange={handleChange} id = 'thursday' className= 'day' type = 'radio' name = 'weekday' value = 'thursday'></input>
+        <RadioLablel htmlFor = 'thursday'>Thursday</RadioLablel>
+
+        <input onChange={handleChange} id = 'friday' className= 'day' type = 'radio' name = 'weekday' value = 'friday'></input>
+        <RadioLablel htmlFor = 'friday'>Friday</RadioLablel>
+        </div>
+        
+        <div className="formOptions">
+        <select onChange={handleChange} className='mealTime' >
+            <optgroup>
+                <option value = "breakfast">Breakfast</option>
+                <option value = "lunch">Lunch</option>
+                <option value = "dinner">Dinner</option>
+            </optgroup>
+        </select>
+        
+        <select onChange={handleChange} className='recipe'>{options}</select>
+        <input type = 'number' onChange={handleChange} className = 'servingSize' defaultValue={1}></input>
+      
+        </div>
+        {recipes.length > 0 ? <input type = 'submit' className = 'addMeal' value = "Add to Meal Plan"></input> : <input disabled  type = 'submit' value = "Add to Meal Plan"></input>}
+    </MealForm>
+  
 </div>
+
+   
+
 <Outlet/>
 </>
 )}
 
 export default MealPlan
 
+const RadioLablel = styled.label`
+color: #551A8B;
+font-family: 'Kalam', cursive;
+font-weight: bold;
+`
+
+const DayLinks = styled.div`
+font-family: 'Kalam', cursive;
+font-weight: bold;
+margin: 50px auto auto auto;
+text-align: center;
+
+a{
+    text-align: center;
+    margin-left: 20px;
+    padding: 10px;
+    border: solid #025ced;
+    border-radius: 10px;
+    background-color: #f7f4e6;
+    font-size: 15px;
+}
+`
+
+const MealForm = styled.form`
+margin-top: 50px;
+padding-bottom: 20px;
+display: flex;
+justify-content: center;
+
+.formOptions{
+ 
+    align-self: center;
+}
+.recipe , .mealTime , .servingSize{
+    margin-left: 20px;
+    background-color: #f7f4e6;
+    border: solid #025ced;
+    font-family: 'Kalam', cursive;
+    color: #551A8B;
+    font-size: 15px;
+    font-weight: bold;
+}
+.servingSize{
+    width: 40px;
+}
+.addMeal{
+    font-size: 15px;
+    margin-left: 20px;
+    color:#551A8B;
+    background-color: #f7f4e6;
+    border: solid #025ced;
+    height: 30px;
+    align-self: center;
+    font-family: 'Kalam', cursive;
+    font-weight: bold;
+}
+.radioDays{
+    border: solid;
+    background-color: #f7f4e6;
+    border: solid #025ced;
+}
+`

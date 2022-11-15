@@ -93,11 +93,14 @@ function MealTable({mealPlan , removeFromMealPlan , day}) {
 export default MealTable
 
 const Table = styled.table`
-margin-top: 30px;
+margin-top: 40px;
 border: solid #025ced;
 border-collapse: collapse;
 background-color: #f7f4e6;
 color: #551A8B;
+width: 80vw;
+margin-left: auto;
+margin-right: auto;
 th{
     padding: 8px;
     background-color: none;
