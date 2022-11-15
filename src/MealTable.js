@@ -12,14 +12,14 @@ function MealTable({mealPlan , removeFromMealPlan , day}) {
 
             if(key === 'total') {
                 return <>
-            <tbody>
+            <tbody key = {key + 'TotalsHeader'}>
                 <tr name ='totals'>
                     <th>Daily Total</th>
                 </tr>
             </tbody>
             
         
-            <tbody name = 'totals'>
+            <tbody key = {key + 'TotalsData'} name = 'totals'>
                 <tr>
                     <th></th>
                     <th>{mealPlan[day]['total'].carbs.toFixed(2)}</th>
@@ -50,13 +50,13 @@ function MealTable({mealPlan , removeFromMealPlan , day}) {
 
                 return <> 
             
-                <tbody>
+                <tbody key = {key}>
                     <tr>
                         <td className={key} >{key.slice(0,1).toUpperCase() + key.slice(1)}</td>
                     </tr>
                 </tbody>
             
-                <tbody   id = {day + key} className={key}>
+                <tbody key = {day + key + 'recipes'}  id = {day + key} className={key}>
                     
                        {mealPlan[day][key] ? recipes
                        : <></>}

@@ -41,10 +41,11 @@ function Search ({apiKey , handleRecipes , recipes}){
         handleRecipes(filteredList , recipeObj)
     }
 
+    console.log(recipes.length)
 
     return (
         <>
-        <Header1>Find Good Eats!</Header1>  
+        {recipes.length <= 0 ? <Header1>Find Good Eats!</Header1> : <Header1></Header1>}  
          <SearchForm onSubmit = {handleSubmit}> 
             <div className="searchFields">
             <input className = 'searchText' onChange = {handleChange} type = "text" 

@@ -1,5 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom"
+import styled from "styled-components";
 
 
 function NavBar() {
@@ -11,16 +12,24 @@ function NavBar() {
         <img src={require('./Images/good-eats-logo.png')} style= {{display:'block' , marginLeft: 'auto', marginRight: 'auto' , width: '400px'}} alt="good eats logo"></img>
         
    
-        <nav style={{width: '30vw' , height:'2em' , fontSize: '20px' , fontFamily:'Lucida Handwriting , cursive' , width: '100vw'}} >
+        <Nav >
             
             <NavLink to="/" style={navLinkCSS}>Search </NavLink>
             <NavLink to="/cookbook" style={navLinkCSS}>Cookbook </NavLink>
             <NavLink to="/mealplan" style={navLinkCSS}>Meal Plan </NavLink>
 
-        </nav>
+        </Nav>
         </>
         
     );
 }
 
 export default NavBar;
+
+const Nav = styled.nav`
+width: 100vw;
+height: 2em;
+font-size: 20px;
+font-family: 'Kalam', cursive;
+font-weight: bold;
+`

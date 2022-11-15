@@ -46,7 +46,7 @@ function RecipePage(){
         const ingredientNames = Object.keys(ingredientObj)
         const ingredientTags = ingredientNames.map((ingredient) => {
 
-            return <li>{ingredientObj[ingredient]}  {ingredient}</li>
+            return <li key = {ingredient}>{ingredientObj[ingredient]}  {ingredient}</li>
 
         })
         setIngredients(ingredientTags)
