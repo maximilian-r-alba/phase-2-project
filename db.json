@@ -1309,6 +1309,225 @@
         "sriracha": "1 serving"
       },
       "summary": "Sausage and Egg Breakfast Burrito is a Mexican main course. For <b>$3.01 per serving</b>, this recipe <b>covers 34%</b> of your daily requirements of vitamins and minerals. This recipe serves 1. One portion of this dish contains approximately <b>30g of protein</b>, <b>49g of fat</b>, and a total of <b>714 calories</b>. 1 person were impressed by this recipe. From preparation to the plate, this recipe takes about <b>20 minutes</b>. It is brought to you by Foodista. If you have ground sausage, sriracha, butter, and a few other ingredients on hand, you can make it. All things considered, we decided this recipe <b>deserves a spoonacular score of 69%</b>. This score is solid. <a href=\"https://spoonacular.com/recipes/egg-sausage-breakfast-burrito-125195\">Egg & Sausage Breakfast Burrito</a>, <a href=\"https://spoonacular.com/recipes/sausage-and-egg-burrito-44602\">Sausage and Egg Burrito</a>, and <a href=\"https://spoonacular.com/recipes/egg-and-avocado-breakfast-burrito-477868\">Egg and Avocado Breakfast Burrito</a> are very similar to this recipe."
+    },
+    {
+      "id": 653971,
+      "title": "Orange Truffles",
+      "url": "https://spoonacular.com/recipeImages/653971-312x231.jpg",
+      "instructions": [
+        [
+          {
+            "name": "",
+            "steps": [
+              {
+                "number": 1,
+                "step": "Heat semisweet chocolate in heavy 2-quart saucepan over low heat, stirring constantly, until melted; remove from heat. Stir in margarine. Stir in whipping cream and orange-flavored liqueur.Refrigerate 10 to 15 minutes, stirring frequently, just until thick enough to hold a shape. Drop mixture by teaspoonfuls onto aluminum foil-covered cookie sheet. Shape into balls. (If mixture is too sticky, refrigerate until firm enough to shape.) Freeze 30 minutes.",
+                "ingredients": [
+                  {
+                    "id": 19903,
+                    "name": "semisweet chocolate",
+                    "localizedName": "semisweet chocolate",
+                    "image": "dark-chocolate-pieces.jpg"
+                  },
+                  {
+                    "id": 1001053,
+                    "name": "whipping cream",
+                    "localizedName": "whipping cream",
+                    "image": "fluid-cream.jpg"
+                  },
+                  {
+                    "id": 4073,
+                    "name": "margarine",
+                    "localizedName": "margarine",
+                    "image": "butter-sliced.jpg"
+                  },
+                  {
+                    "id": 0,
+                    "name": "liqueur",
+                    "localizedName": "liqueur",
+                    "image": "rum-dark.jpg"
+                  },
+                  {
+                    "id": 10118192,
+                    "name": "cookies",
+                    "localizedName": "cookies",
+                    "image": "shortbread-cookies.jpg"
+                  },
+                  {
+                    "id": 9200,
+                    "name": "orange",
+                    "localizedName": "orange",
+                    "image": "orange.png"
+                  }
+                ],
+                "equipment": [
+                  {
+                    "id": 404765,
+                    "name": "aluminum foil",
+                    "localizedName": "aluminum foil",
+                    "image": "aluminum-foil.png"
+                  },
+                  {
+                    "id": 404727,
+                    "name": "baking sheet",
+                    "localizedName": "baking sheet",
+                    "image": "baking-sheet.jpg"
+                  },
+                  {
+                    "id": 404669,
+                    "name": "sauce pan",
+                    "localizedName": "sauce pan",
+                    "image": "sauce-pan.jpg"
+                  }
+                ],
+                "length": {
+                  "number": 40,
+                  "unit": "minutes"
+                }
+              },
+              {
+                "number": 2,
+                "step": "Heat shortening and chocolate chips over very low heat, stirring constantly, until chocolate is melted and mixture is smooth; remove from heat. Dip truffles, one at a time, into chocolate.",
+                "ingredients": [
+                  {
+                    "id": 99278,
+                    "name": "chocolate chips",
+                    "localizedName": "chocolate chips",
+                    "image": "chocolate-chips.jpg"
+                  },
+                  {
+                    "id": 4615,
+                    "name": "shortening",
+                    "localizedName": "shortening",
+                    "image": "shortening.jpg"
+                  },
+                  {
+                    "id": 19081,
+                    "name": "chocolate",
+                    "localizedName": "chocolate",
+                    "image": "milk-chocolate.jpg"
+                  },
+                  {
+                    "id": 0,
+                    "name": "truffles",
+                    "localizedName": "truffles",
+                    "image": ""
+                  },
+                  {
+                    "id": 0,
+                    "name": "dip",
+                    "localizedName": "dip",
+                    "image": ""
+                  }
+                ],
+                "equipment": []
+              },
+              {
+                "number": 3,
+                "step": "Place on aluminum foil-covered cookie sheet. Immediately sprinkle some of the truffles with finely chopped nuts if desired.Refrigerate truffles about 10 minutes or until coating is set.",
+                "ingredients": [
+                  {
+                    "id": 0,
+                    "name": "truffles",
+                    "localizedName": "truffles",
+                    "image": ""
+                  },
+                  {
+                    "id": 10118192,
+                    "name": "cookies",
+                    "localizedName": "cookies",
+                    "image": "shortbread-cookies.jpg"
+                  },
+                  {
+                    "id": 12135,
+                    "name": "nuts",
+                    "localizedName": "nuts",
+                    "image": "nuts-mixed.jpg"
+                  }
+                ],
+                "equipment": [
+                  {
+                    "id": 404765,
+                    "name": "aluminum foil",
+                    "localizedName": "aluminum foil",
+                    "image": "aluminum-foil.png"
+                  },
+                  {
+                    "id": 404727,
+                    "name": "baking sheet",
+                    "localizedName": "baking sheet",
+                    "image": "baking-sheet.jpg"
+                  }
+                ],
+                "length": {
+                  "number": 10,
+                  "unit": "minutes"
+                }
+              },
+              {
+                "number": 4,
+                "step": "Drizzle some of the truffles with a mixture of 1/4 cup powdered sugar and 1/2 teaspoon milk if desired. Refrigerate just until set.",
+                "ingredients": [
+                  {
+                    "id": 19336,
+                    "name": "powdered sugar",
+                    "localizedName": "powdered sugar",
+                    "image": "powdered-sugar.jpg"
+                  },
+                  {
+                    "id": 0,
+                    "name": "truffles",
+                    "localizedName": "truffles",
+                    "image": ""
+                  },
+                  {
+                    "id": 1077,
+                    "name": "milk",
+                    "localizedName": "milk",
+                    "image": "milk.png"
+                  }
+                ],
+                "equipment": []
+              },
+              {
+                "number": 5,
+                "step": "Serve at room temperature. Store truffles in airtight container. 15 CANDIES; 165",
+                "ingredients": [
+                  {
+                    "id": 0,
+                    "name": "truffles",
+                    "localizedName": "truffles",
+                    "image": ""
+                  },
+                  {
+                    "id": 0,
+                    "name": "candy",
+                    "localizedName": "candy",
+                    "image": ""
+                  }
+                ],
+                "equipment": []
+              }
+            ]
+          }
+        ]
+      ],
+      "nutrition": {
+        "calories": "390.12 kcal",
+        "carbs": "28.86 g",
+        "fat": "28.56 g",
+        "protein": "3.25 g",
+        "servings": 8
+      },
+      "ingredients": {
+        "margarine": "2 tablespoons",
+        "milk chocolate chips": "1 cup",
+        "pear liqueur": "2 tablespoons",
+        "semisweet chocolate": "6 ounces",
+        "shortening": "1 tablespoon",
+        "whipping cream": "1 cup"
+      },
+      "summary": "The recipe Orange Truffles could satisfy your Southern craving in about <b>45 minutes</b>. For <b>$1.31 per serving</b>, this recipe <b>covers 5%</b> of your daily requirements of vitamins and minerals. One serving contains <b>392 calories</b>, <b>3g of protein</b>, and <b>29g of fat</b>. Head to the store and pick up margarine, milk chocolate chips, whipping cream, and a few other things to make it today. This recipe from Foodista has 1 fans. Not a lot of people really liked this side dish. It is a good option if you're following a <b>gluten free</b> diet. All things considered, we decided this recipe <b>deserves a spoonacular score of 14%</b>. This score is rather bad. Similar recipes include <a href=\"https://spoonacular.com/recipes/orange-truffles-447670\">Orange Truffles</a>, <a href=\"https://spoonacular.com/recipes/orange-chocolate-truffles-553483\">Orange chocolate truffles</a>, and <a href=\"https://spoonacular.com/recipes/chocolate-orange-truffles-604694\">Chocolate Orange Truffles</a>."
     }
   ]
 }

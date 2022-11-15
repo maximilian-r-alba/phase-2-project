@@ -86,6 +86,7 @@ export default RecipePage
 const Card = styled.div `
 background-color: #f7f4e6;
 font-family: 'Kalam', cursive;
+color: #551A8B;
 border: dotted #551A8B;
 min-height: 500;
 width: 100vw;

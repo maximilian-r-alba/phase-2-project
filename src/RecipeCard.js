@@ -77,8 +77,6 @@ function handleAddRecipe(){
       headers: {"Content-Type" : "application/json"},
       body: JSON.stringify({...recipeInfo})})
       .then((r) => r.json())
-      .then((data) => console.log(data))
-      
     
     addRecipe(recipeInfo)
   

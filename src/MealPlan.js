@@ -168,9 +168,9 @@ a{
     text-align: center;
     margin-left: 20px;
     padding: 10px;
-    border: solid #025ced;
-    border-radius: 10px;
-    background-color: #f7f4e6;
+    border: solid #551A8B;
+    border-radius: 20px;
+    background-color: #AAC6E6;
     font-size: 15px;
 }
 `

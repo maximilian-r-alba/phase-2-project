@@ -19,7 +19,6 @@ function Search ({apiKey , handleRecipes , recipes}){
             .then((r) => r.json())
             .then((data) => {
                 
-                console.log(data)
                 const foundRecipes = data.results.map((recipe) =>{
                     const recipeObj = {id: recipe.id, title: recipe.title, url: recipe.image}
      
@@ -45,19 +44,19 @@ function Search ({apiKey , handleRecipes , recipes}){
 
     return (
         <>
-         <form onSubmit = {handleSubmit}>
-            <h1>Find Good Eats!</h1>   
-            <div>
-            <input onChange = {handleChange} type = "text" 
+        <Header1>Find Good Eats!</Header1>  
+         <SearchForm onSubmit = {handleSubmit}> 
+            <div className="searchFields">
+            <input className = 'searchText' onChange = {handleChange} type = "text" 
                 name = "search" 
                 placeholder = "e.g. chicken and broccoli" 
                 value = {searchTerms} >
             </input>
-            <input type = "submit" value = "Search"></input>
+            <input className = 'submit' type = "submit" value = "Search"></input>
             </div>
-        </form>
+        </SearchForm>
 
-        {recipes.length > 0 ? <h1>Found Recipes</h1> : <></>}
+        {recipes.length > 0 ? <Header1>Found Recipes</Header1> : <></>}
         <CardConatiner >
         {recipes.map((recipe) => {
             return <RecipeCard key = {recipe.id} addRecipe = {recipeFilter} recipeObj = {recipe} />
@@ -78,4 +77,34 @@ const CardConatiner = styled.div`
     flex-wrap: wrap;
     justify-content: space-evenly;
     gap: 30px;
+`
+
+const Header1 = styled.h1`
+font-family: 'Kalam', cursive;
+font-weight: bold;
+color: #551A8B;
+text-align: center;
+`
+
+const SearchForm = styled.form`
+display: flex;
+justify-content: center;
+input{
+    width: 200px;
+    height: 30px;
+    font-size: 15px;
+    background-color: #AAC6E6;
+    border: solid #551A8B;
+    border-radius: 20px;
+    font-family: 'Kalam', cursive;
+    font-weight: bold;
+    color: #551A8B;
+}
+input.searchText{
+    text-align: center;
+}
+input.submit{
+    margin-left: 20px;
+    width: 100px;
+}
 `
