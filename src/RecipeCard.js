@@ -1,11 +1,11 @@
 import React, { useState , useEffect} from "react";
 import styled from "styled-components";
 import {Link} from "react-router-dom"
+import {API_KEY} from './config.js';
 
 function RecipeCard({ recipeObj:{ id , title , url} , recipeObj , addRecipe , cookbook , handleDeleteRecipe}){
 
   
-    const apiKey = "c7d05118b4bd43739598790d73ed2abb"
     const [recipeInfo, setRecipeInfo] = useState({...recipeObj})
 
 
@@ -14,11 +14,11 @@ function RecipeCard({ recipeObj:{ id , title , url} , recipeObj , addRecipe , co
 
       if(cookbook !== true){
   
-        fetch(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${apiKey}`)
+        fetch(`https://api.spoonacular.com/recipes/${id}/analyzedInstructions?apiKey=${API_KEY}`)
           .then((r) => r.json())
           .then((data) => setRecipeInfo({...recipeInfo , instructions:[data]}))
   
-        fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}&includeNutrition=true`)
+        fetch(`https://api.spoonacular.com/recipes/${id}/information?apiKey=${API_KEY}&includeNutrition=true`)
           .then((r) => r.json())
           .then((data) => {
       

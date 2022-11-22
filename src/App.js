@@ -93,7 +93,7 @@ function removeFromMealPlan(e){
 
   return (
     <>
-    <NavBar  />
+    <NavBar />
 
     <Routes>
       
