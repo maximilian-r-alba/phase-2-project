@@ -41,7 +41,7 @@ function Search ({apiKey , handleRecipes , recipes}){
         handleRecipes(filteredList , recipeObj)
     }
 
-    console.log(recipes.length)
+
 
     return (
         <>

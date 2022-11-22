@@ -3,8 +3,8 @@ import styled from "styled-components"
 
 function MealTable({mealPlan , removeFromMealPlan , day}) {
 
-    const mealPlanKeys = Object.keys(mealPlan[day])
-
+    const mealPlanKeys = Object.keys(mealPlan)
+   
     const [table, setTable] = useState([])
 
     useEffect(() => {
@@ -22,19 +22,19 @@ function MealTable({mealPlan , removeFromMealPlan , day}) {
             <tbody key = {key + 'TotalsData'} name = 'totals'>
                 <tr>
                     <th></th>
-                    <th>{mealPlan[day]['total'].carbs.toFixed(2)}</th>
-                    <th>{mealPlan[day]['total'].protein.toFixed(2)}</th>
-                    <th>{mealPlan[day]['total'].fat.toFixed(2)}</th>
-                    <th>{mealPlan[day]['total'].calories.toFixed(2)}</th>
+                    <th>{mealPlan['total'].carbs.toFixed(2)}</th>
+                    <th>{mealPlan['total'].protein.toFixed(2)}</th>
+                    <th>{mealPlan['total'].fat.toFixed(2)}</th>
+                    <th>{mealPlan['total'].calories.toFixed(2)}</th>
                 </tr>
         
             </tbody>
             </>
             }
 
-            else if (mealPlan[day][key].length > 0){
+            else if (mealPlan[key].length > 0){
            
-            const recipes = mealPlan[day][key].map((meal) => {
+            const recipes = mealPlan[key].map((meal) => {
                    
                 return <tr id = {meal.id} key = {meal.id+key} className = 'meal'>
                 <th>{meal.title}</th>
@@ -58,7 +58,7 @@ function MealTable({mealPlan , removeFromMealPlan , day}) {
             
                 <tbody key = {day + key + 'recipes'}  id = {day + key} className={key}>
                     
-                       {mealPlan[day][key] ? recipes
+                       {mealPlan[key] ? recipes
                        : <></>}
             
                 </tbody>

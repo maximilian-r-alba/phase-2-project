@@ -1,208 +1,6 @@
 {
   "cookbook": [
     {
-      "id": 656329,
-      "title": "Pizza bites with pumpkin",
-      "url": "https://spoonacular.com/recipeImages/656329-312x231.jpg",
-      "instructions": [
-        [
-          {
-            "name": "",
-            "steps": [
-              {
-                "number": 1,
-                "step": "Chop pumpkin using a food processor until rice-like.",
-                "ingredients": [
-                  {
-                    "id": 11422,
-                    "name": "pumpkin",
-                    "localizedName": "pumpkin",
-                    "image": "pumpkin.png"
-                  },
-                  {
-                    "id": 20444,
-                    "name": "rice",
-                    "localizedName": "rice",
-                    "image": "uncooked-white-rice.png"
-                  }
-                ],
-                "equipment": [
-                  {
-                    "id": 404771,
-                    "name": "food processor",
-                    "localizedName": "food processor",
-                    "image": "food-processor.png"
-                  }
-                ]
-              },
-              {
-                "number": 2,
-                "step": "Saut pumpkin in hot olive oil for 3 minutes. Set aside and let cool.",
-                "ingredients": [
-                  {
-                    "id": 4053,
-                    "name": "olive oil",
-                    "localizedName": "olive oil",
-                    "image": "olive-oil.jpg"
-                  },
-                  {
-                    "id": 11422,
-                    "name": "pumpkin",
-                    "localizedName": "pumpkin",
-                    "image": "pumpkin.png"
-                  }
-                ],
-                "equipment": [],
-                "length": {
-                  "number": 3,
-                  "unit": "minutes"
-                }
-              },
-              {
-                "number": 3,
-                "step": "Mix feta and mozzarella; add, one at a time, eggs.",
-                "ingredients": [
-                  {
-                    "id": 1026,
-                    "name": "mozzarella",
-                    "localizedName": "mozzarella",
-                    "image": "mozzarella.png"
-                  },
-                  {
-                    "id": 1123,
-                    "name": "egg",
-                    "localizedName": "egg",
-                    "image": "egg.png"
-                  },
-                  {
-                    "id": 1019,
-                    "name": "feta cheese",
-                    "localizedName": "feta cheese",
-                    "image": "feta.png"
-                  }
-                ],
-                "equipment": []
-              },
-              {
-                "number": 4,
-                "step": "Mix and combine.",
-                "ingredients": [],
-                "equipment": []
-              },
-              {
-                "number": 5,
-                "step": "Add pumpkin and spices, mix well until well blended.",
-                "ingredients": [
-                  {
-                    "id": 11422,
-                    "name": "pumpkin",
-                    "localizedName": "pumpkin",
-                    "image": "pumpkin.png"
-                  },
-                  {
-                    "id": 2035,
-                    "name": "spices",
-                    "localizedName": "spices",
-                    "image": "spices.png"
-                  }
-                ],
-                "equipment": []
-              },
-              {
-                "number": 6,
-                "step": "Evenly spoon the mixture into the greased muffin tin molds. Press pizza dough down evenly and firmly (the pressing down firmly is very important to make sure they stick together).",
-                "ingredients": [
-                  {
-                    "id": 93610,
-                    "name": "pizza dough",
-                    "localizedName": "pizza dough",
-                    "image": "pizza-dough.jpg"
-                  }
-                ],
-                "equipment": [
-                  {
-                    "id": 404671,
-                    "name": "muffin tray",
-                    "localizedName": "muffin tray",
-                    "image": "muffin-tray.jpg"
-                  }
-                ]
-              },
-              {
-                "number": 7,
-                "step": "Place in the oven and bake for 30 minutes at 200C.",
-                "ingredients": [],
-                "equipment": [
-                  {
-                    "id": 404784,
-                    "name": "oven",
-                    "localizedName": "oven",
-                    "image": "oven.jpg",
-                    "temperature": {
-                      "number": 200,
-                      "unit": "Celsius"
-                    }
-                  }
-                ],
-                "length": {
-                  "number": 30,
-                  "unit": "minutes"
-                }
-              },
-              {
-                "number": 8,
-                "step": "Remove the pizza bites from the oven and let set until cool (this is also very important  let the pizza bites set in their pan for 5  10 minutes before removing  if you take them out while they are too hot they will break).",
-                "ingredients": [
-                  {
-                    "id": 0,
-                    "name": "pizza rolls",
-                    "localizedName": "pizza rolls",
-                    "image": ""
-                  }
-                ],
-                "equipment": [
-                  {
-                    "id": 404784,
-                    "name": "oven",
-                    "localizedName": "oven",
-                    "image": "oven.jpg"
-                  },
-                  {
-                    "id": 404645,
-                    "name": "frying pan",
-                    "localizedName": "frying pan",
-                    "image": "pan.png"
-                  }
-                ],
-                "length": {
-                  "number": 10,
-                  "unit": "minutes"
-                }
-              }
-            ]
-          }
-        ]
-      ],
-      "nutrition": {
-        "calories": "309 kcal",
-        "carbs": "13.31 g",
-        "fat": "22.46 g",
-        "protein": "15.53 g",
-        "servings": 4
-      },
-      "ingredients": {
-        "pumpkin": "600 g",
-        "olive oil": "2 Tbs",
-        "feta cheese": "120 g",
-        "mozzarella": "120 g",
-        "eggs": "2 ",
-        "oregano": "2 tsp",
-        "parsley": "4 Tbs",
-        "garlic": "4 cloves"
-      },
-      "summary": "Pizza bites with pumpkin might be just the hor d'oeuvre you are searching for. This recipe serves 4. For <b>$1.95 per serving</b>, this recipe <b>covers 22%</b> of your daily requirements of vitamins and minerals. One serving contains <b>309 calories</b>, <b>16g of protein</b>, and <b>22g of fat</b>. Head to the store and pick up garlic, parsley, eggs, and a few other things to make it today. 9 people have tried and liked this recipe. It is brought to you by Foodista. It is an <b>affordable</b> recipe for fans of Mediterranean food. From preparation to the plate, this recipe takes approximately <b>approximately 45 minutes</b>. It is a good option if you're following a <b>gluten free, lacto ovo vegetarian, and primal</b> diet. All things considered, we decided this recipe <b>deserves a spoonacular score of 66%</b>. This score is solid. If you like this recipe, you might also like recipes such as <a href=\"https://spoonacular.com/recipes/pizza-bites-89274\">Pizza Bites</a>, <a href=\"https://spoonacular.com/recipes/pizza-bites-568070\">Pizza Bites</a>, and <a href=\"https://spoonacular.com/recipes/zucchini-pizza-bites-540333\">Zucchini Pizza Bites</a>."
-    },
-    {
       "id": 1096263,
       "title": "Broccoli Soup",
       "url": "https://spoonacular.com/recipeImages/1096263-312x231.jpg",
@@ -1713,6 +1511,159 @@
         "sweetened condensed milk": "1 can"
       },
       "summary": "For <b>100 cents per serving</b>, this recipe <b>covers 6%</b> of your daily requirements of vitamins and minerals. This recipe makes 8 servings with <b>268 calories</b>, <b>5g of protein</b>, and <b>10g of fat</b> each. If you have condensed milk, lemon juice and a little rind, carnation milk, and a few other ingredients on hand, you can make it. Not a lot of people made this recipe, and 1 would say it hit the spot. From preparation to the plate, this recipe takes roughly <b>45 minutes</b>. All things considered, we decided this recipe <b>deserves a spoonacular score of 36%</b>. This score is rather bad. Similar recipes include <a href=\"https://spoonacular.com/recipes/cherry-pie-908329\">Cherry Pie</a>, <a href=\"https://spoonacular.com/recipes/butterfinger-pie-917550\">Butterfinger Pie</a>, and <a href=\"https://spoonacular.com/recipes/sandys-tomato-pie-914569\">Sandy’s Tomato Pie</a>."
+    },
+    {
+      "id": 1096057,
+      "title": "Cheesy Beef Burrito",
+      "url": "https://spoonacular.com/recipeImages/1096057-312x231.jpg",
+      "instructions": [
+        [
+          {
+            "name": "",
+            "steps": [
+              {
+                "number": 1,
+                "step": "In a skillet over medium high heat, add peanut oil and let warm up.  Brown cubed meat in 3 batches.",
+                "ingredients": [
+                  {
+                    "id": 4042,
+                    "name": "peanut oil",
+                    "localizedName": "peanut oil",
+                    "image": "peanut-oil.jpg"
+                  },
+                  {
+                    "id": 1065062,
+                    "name": "meat",
+                    "localizedName": "meat",
+                    "image": "whole-chicken.jpg"
+                  }
+                ],
+                "equipment": [
+                  {
+                    "id": 404645,
+                    "name": "frying pan",
+                    "localizedName": "frying pan",
+                    "image": "pan.png"
+                  }
+                ]
+              },
+              {
+                "number": 2,
+                "step": "Add in chopped red onion, crushed garlic, enchilada sauce, tomato juice, chopped green chiles, green salsa verde, salt and chili powder.  Stir all together and lower heat to low.  Cover and simmer for 4 hours.  Stir occasionally.Warm tortillas in the microwave for 30 seconds and place on a plate.  Spoon meat mixture down centers of tortillas; top with remaining ingredients.Fold in opposite sides of each tortilla, then roll up burrito-style.",
+                "ingredients": [
+                  {
+                    "id": 10011980,
+                    "name": "diced green chiles",
+                    "localizedName": "diced green chiles",
+                    "image": "pickled-jalapenos.png"
+                  },
+                  {
+                    "id": 6599,
+                    "name": "enchilada sauce",
+                    "localizedName": "enchilada sauce",
+                    "image": "harissa.jpg"
+                  },
+                  {
+                    "id": 2009,
+                    "name": "chili powder",
+                    "localizedName": "chili powder",
+                    "image": "chili-powder.jpg"
+                  },
+                  {
+                    "id": 11886,
+                    "name": "tomato juice",
+                    "localizedName": "tomato juice",
+                    "image": "tomato-juice.jpg"
+                  },
+                  {
+                    "id": 27028,
+                    "name": "salsa verde",
+                    "localizedName": "salsa verde",
+                    "image": "salsa-verde.png"
+                  },
+                  {
+                    "id": 10011282,
+                    "name": "red onion",
+                    "localizedName": "red onion",
+                    "image": "red-onion.png"
+                  },
+                  {
+                    "id": 18364,
+                    "name": "tortilla",
+                    "localizedName": "tortilla",
+                    "image": "flour-tortilla.jpg"
+                  },
+                  {
+                    "id": 11215,
+                    "name": "garlic",
+                    "localizedName": "garlic",
+                    "image": "garlic.png"
+                  },
+                  {
+                    "id": 1065062,
+                    "name": "meat",
+                    "localizedName": "meat",
+                    "image": "whole-chicken.jpg"
+                  },
+                  {
+                    "id": 0,
+                    "name": "roll",
+                    "localizedName": "roll",
+                    "image": "dinner-yeast-rolls.jpg"
+                  },
+                  {
+                    "id": 2047,
+                    "name": "salt",
+                    "localizedName": "salt",
+                    "image": "salt.jpg"
+                  }
+                ],
+                "equipment": [
+                  {
+                    "id": 404762,
+                    "name": "microwave",
+                    "localizedName": "microwave",
+                    "image": "microwave.jpg"
+                  }
+                ],
+                "length": {
+                  "number": 240,
+                  "unit": "minutes"
+                }
+              }
+            ]
+          }
+        ]
+      ],
+      "nutrition": {
+        "calories": "817.91 kcal",
+        "carbs": "61.97 g",
+        "fat": "32.28 g",
+        "protein": "67.7 g",
+        "servings": 4
+      },
+      "ingredients": {
+        "peanut oil": "0.5 cup",
+        "stew meat": "2 pounds",
+        "red onion": "1 ",
+        "garlic": "4 cloves",
+        "red enchilada sauce": "10 oz",
+        "tomato juice": "5.5 oz",
+        "canned green chiles": "4.5 oz",
+        "salsa verde": "0.5 cup",
+        "salt": "0.5 teaspoon",
+        "chili powder": "1 teaspoon",
+        "flour tortillas": "4 large",
+        "sharp cheddar cheese": "0.6666667 cup",
+        "onion": "1 ",
+        "cooked rice": "1 cup",
+        "black beans": "1 can",
+        "tomato": "1 ",
+        "romaine lettuce": "1 cup",
+        "green onions": "3 ",
+        "sour cream": "0.5 cup"
+      },
+      "summary": "The recipe Cheesy Beef Burrito could satisfy your Mexican craving in approximately <b>4 hours and 30 minutes</b>. This main course has <b>1005 calories</b>, <b>68g of protein</b>, and <b>53g of fat</b> per serving. For <b>$3.99 per serving</b>, this recipe <b>covers 48%</b> of your daily requirements of vitamins and minerals. This recipe serves 4. 1 person were impressed by this recipe. It is brought to you by Foodista. A mixture of green onions, sour cream, salsa verde, and a handful of other ingredients are all it takes to make this recipe so delicious. All things considered, we decided this recipe <b>deserves a spoonacular score of 86%</b>. This score is amazing. If you like this recipe, you might also like recipes such as <a href=\"https://spoonacular.com/recipes/cheesy-beef-and-bean-burrito-rice-bowls-923340\">Cheesy Beef and Bean Burrito Rice Bowls</a>, <a href=\"https://spoonacular.com/recipes/cheesy-beef-and-bean-burrito-rice-bowls-1355975\">Cheesy Beef and Bean Burrito Rice Bowls</a>, and <a href=\"https://spoonacular.com/recipes/cheesy-burrito-scramble-to-go-264694\">Cheesy Burrito Scramble to Go</a>."
     }
   ]
 }

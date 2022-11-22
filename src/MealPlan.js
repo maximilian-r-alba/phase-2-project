@@ -1,8 +1,9 @@
 import { useEffect , useState }from "react";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet , Routes , Route , useParams} from "react-router-dom";
 import styled from "styled-components";
+import MealTable from "./MealTable"
 
-function MealPlan({mealPlan , setMealPlan , recipes , calculator}){
+function MealPlan({mealPlan , setMealPlan , recipes , calculator , removeFromMealPlan}){
     
     const [options,setOptions] = useState()
     
@@ -53,6 +54,7 @@ function MealPlan({mealPlan , setMealPlan , recipes , calculator}){
              
                 updater.servings = updater.servings + parseInt(servingSize)
                 remover.push(updater)
+
                 return {...mealPlan, [day]: {...mealPlan[day], [mealTime]: remover}}
             })
         }
@@ -92,7 +94,14 @@ function MealPlan({mealPlan , setMealPlan , recipes , calculator}){
         })}
         
     }
+//refactor to show dynamically show individual and weekly plans record video after refactor
+    const dayKeys = Object.keys(mealPlan)
+    const weeklyMealPlan = dayKeys.map((day) => {
+        return <MealTable mealPlan={mealPlan[day]} removeFromMealPlan={removeFromMealPlan} key = {day} day = {day}/>
+    })
 
+    const { '*': day }= useParams()
+    
 return (
     <>
      <DayLinks>
@@ -143,10 +152,14 @@ return (
     </MealForm>
   
 </div>
-
    
+<Routes>
 
-<Outlet/>
+    <Route path = "/:day" element = {<MealTable mealPlan={mealPlan[day]} removeFromMealPlan={removeFromMealPlan} key = {day} day = {day}/>} />
+    <Route path="/" element ={weeklyMealPlan}/>
+    
+</Routes>
+
 </>
 )}
 
