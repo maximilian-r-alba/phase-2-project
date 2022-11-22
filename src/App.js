@@ -105,24 +105,6 @@ function removeFromMealPlan(e){
 
       <Route path="/mealplan/*" element = {<MealPlan removeFromMealPlan = {removeFromMealPlan} calculator = {calculator} recipes = {cookbookRecipes} mealPlan = {mealPlan} setMealPlan = {setMealPlan}/>}>
 
-          {/* <Route path = '' element = {<div> 
-            <MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'monday'} day = {'monday'}/>
-            <MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'tuesday'} day = {'tuesday'}/>
-            <MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'wednesday'} day = {'wednesday'}/>
-            <MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'thursday'} day = {'thursday'}/>
-            <MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'friday'} day = {'friday'}/>
-            </div>} /> */}
-
-          
-          {/* <Route path = "monday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'monday'} day = {'monday'}/>}/>
-          
-          <Route path = "tuesday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'tuesday'} day = {'tuesday'}/>}/>
-          
-          <Route path = "wednesday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'wednesday'} day = {'wednesday'}/>}/>
-          
-          <Route path = "thursday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'thursday'} day = {'thursday'}/>}/>
-          
-          <Route path = "friday" element = {<MealTable mealPlan={mealPlan} removeFromMealPlan={removeFromMealPlan} key = {'friday'} day = {'friday'}/>}/> */}
 
       </Route>
       </Routes>
